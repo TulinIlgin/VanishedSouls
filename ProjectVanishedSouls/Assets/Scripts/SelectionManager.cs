@@ -31,7 +31,7 @@ public class SelectionManager : MonoBehaviour
         if (mouse.leftButton.isPressed)
         {
             Ray ray = cam.ScreenPointToRay(mouse.position.ReadValue());
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, 500f, groundLayer))
                 selectedAria.MoveTo(hit.point);
         }
         // Sol tık bırakıldı → dur

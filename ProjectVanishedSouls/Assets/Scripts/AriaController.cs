@@ -354,7 +354,11 @@ public class AriaController : MonoBehaviour
 
     public void MoveTo(Vector3 destination)
     {
-        if (!Busy) agent.SetDestination(destination);
+        if (Busy) return;
+        if (NavMesh.SamplePosition(destination, out NavMeshHit navHit, 3.0f, NavMesh.AllAreas))
+            agent.SetDestination(navHit.position);
+        else
+            agent.SetDestination(destination);
     }
 
     void Attack(string state)
