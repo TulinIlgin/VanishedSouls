@@ -3,9 +3,9 @@ using UnityEngine;
 // Düşman. Küpe (sonra gerçek düşmana) ekle.
 public class Enemy : MonoBehaviour
 {
-    bool dead;
+    protected bool dead;
 
-    public void Die()
+    public virtual void Die()
     {
         if (dead) return;
         dead = true;

@@ -36,6 +36,8 @@ public class AriaController : MonoBehaviour
     string current;
     GameObject heldStone;
     bool customHand;   // handPoint Inspector'dan atandı mı
+    Vector3 clickGoal;
+    bool hasClickGoal;
 
     void Awake()
     {
@@ -46,14 +48,22 @@ public class AriaController : MonoBehaviour
         if (handPoint == null) handPoint = FindHand(transform);
 
         FindKnifeObjects();
+
+        if (GetComponent<PlayerCharacter>() == null)
+        {
+            var pc = gameObject.AddComponent<PlayerCharacter>();
+            pc.characterName = "Aria";
+        }
         SetKnifeVisual(false);
+        EnemyAI.EnsureSceneConfigured();
     }
 
     void Start()
     {
         agent.ResetPath();
         PlayState(idleState, 0f);
-        SetKnifeVisual(false); // Başlangıçta elinde hiçbir şey olmasın!
+        SetKnifeVisual(false);
+        EnemyAI.EnsureSceneConfigured(); // Başlangıçta elinde hiçbir şey olmasın!
     }
 
     void FindKnifeObjects()
@@ -90,7 +100,7 @@ public class AriaController : MonoBehaviour
             {
                 foreach (var m in r.sharedMaterials)
                 {
-                    if (m != null && (m.name.Contains("Material.006") || m.name.ToLower().Contains("knife")))
+                    if (m != null && m.name.ToLower().Contains("knife"))
                     {
                         isKnife = true;
                         break;
@@ -115,7 +125,6 @@ public class AriaController : MonoBehaviour
             if (r != null)
             {
                 r.enabled = visible;
-                r.gameObject.SetActive(visible);
             }
         }
     }
@@ -136,6 +145,26 @@ public class AriaController : MonoBehaviour
         }
 
         if (Busy) return;
+
+        // Tıklanan hedef ile Aria arasında duvar (Cube.007 vb.) varsa etrafından dolanacak köşeye yönlendir
+        if (hasClickGoal)
+        {
+            Vector3 toGoal = clickGoal - transform.position;
+            toGoal.y = 0f;
+            if (toGoal.magnitude <= 0.35f)
+            {
+                hasClickGoal = false;
+            }
+            else
+            {
+                Vector3 steered = WallObstacle.GetSteeredTarget(transform.position, clickGoal, 0.75f);
+                if (Vector3.Distance(agent.destination, steered) > 0.2f)
+                    agent.SetDestination(steered);
+            }
+        }
+
+        transform.position = WallObstacle.PushOutOfWalls(transform.position, 0.5f);
+
         bool moving = agent.hasPath && agent.velocity.magnitude > 0.1f;
         if (moving) anim.speed = 1f; PlayState(moving ? walkState : idleState, 0.15f);
     }
@@ -164,6 +193,7 @@ public class AriaController : MonoBehaviour
             return;
         }
 
+        hasClickGoal = false;
         Collider col = target.GetComponent<Collider>();
         Vector3 closest = col != null ? col.ClosestPoint(transform.position) : target.position;
         Vector3 d = closest - transform.position; d.y = 0;
@@ -180,9 +210,11 @@ public class AriaController : MonoBehaviour
 
     IEnumerator MoveAndStrike(Transform target)
     {
-        agent.SetDestination(target.position);
         while (target != null && KnifeMode)
         {
+            Vector3 steered = WallObstacle.GetSteeredTarget(transform.position, target.position, 0.75f);
+            agent.SetDestination(steered);
+
             Collider col = target.GetComponent<Collider>();
             Vector3 closest = col != null ? col.ClosestPoint(transform.position) : target.position;
             Vector3 d = closest - transform.position; d.y = 0;
@@ -198,6 +230,7 @@ public class AriaController : MonoBehaviour
 
     IEnumerator KnifeStrike(Transform target, Vector3 dir)
     {
+        hasClickGoal = false;
         agent.ResetPath();
         dir.y = 0;
         if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
@@ -233,6 +266,7 @@ public class AriaController : MonoBehaviour
     // ---------- E: eğil, yakındaki taşı al ----------
     IEnumerator PickUp()
     {
+        hasClickGoal = false;
         Transform target = FindNearestStone(out float dist);
 
         agent.ResetPath();
@@ -297,6 +331,7 @@ public class AriaController : MonoBehaviour
     public void ThrowStoneAt(Transform target)
     {
         if (Busy || !HasStone) { Debug.Log("Önce E ile taş al!"); return; }
+        hasClickGoal = false;
         StartCoroutine(Throw(target));
     }
 
@@ -350,19 +385,30 @@ public class AriaController : MonoBehaviour
     }
 
     // ---------- Ortak ----------
-    public void Stop() => agent.ResetPath();
+    public void Stop()
+    {
+        hasClickGoal = false;
+        agent.ResetPath();
+    }
 
     public void MoveTo(Vector3 destination)
     {
         if (Busy) return;
         if (NavMesh.SamplePosition(destination, out NavMeshHit navHit, 3.0f, NavMesh.AllAreas))
-            agent.SetDestination(navHit.position);
+            clickGoal = navHit.position;
         else
-            agent.SetDestination(destination);
+            clickGoal = destination;
+
+        clickGoal = WallObstacle.PushOutOfWalls(clickGoal, 0.65f);
+        hasClickGoal = true;
+
+        Vector3 steered = WallObstacle.GetSteeredTarget(transform.position, clickGoal, 0.75f);
+        agent.SetDestination(steered);
     }
 
     void Attack(string state)
     {
+        hasClickGoal = false;
         agent.ResetPath();
         PlayState(state, 0.1f, true);
         busyUntil = Time.time + ClipLength(state);

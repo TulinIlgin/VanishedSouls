@@ -1,36 +1,23 @@
 
 Server arguments:
   --memory-size 1073741824
-  --shared-postfix 1348ec003a54302f0b34e7b4cc9558a5
+  --shared-postfix 431e51b1b788ecbe477eaa08b78383a9
   --working-directory Library/DataStore
   --silent-console
   --shutdown-grace 0
   --client-process-check 0
-  --uds-log-file C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls/Logs/UDS-Service.log
+  --uds-log-file C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls/Logs/UDS-Service.log
   --debug-log 2
   -name
   Unity.DataStore
 
 Initialising UDS system complete:
   - System type: Service
-  - Resource namespace: 1348ec003a54302f0b34e7b4cc9558a5
+  - Resource namespace: 431e51b1b788ecbe477eaa08b78383a9
   - Shared memory size: 1073741824
   - Command buffer id: 1052576
   - Command buffer size: 8192
   - Hashmap size: 4194304
 Starting Unity Data Store Application
-[Error] Failed to remove data for hash 39b176f73b5cc151708f665fd1ddc24c. Failure received from service
-0x00007ff69489ce65 (Unity.DataStore) uds_wait_handle_complete
-0x00007ff694860075 (Unity.DataStore) uds_cleanup
-0x00007ff69484ee6f (Unity.DataStore) 
-0x00007ff69485015d (Unity.DataStore) 
-0x00007ff694837395 (Unity.DataStore) 
-0x00007ff69483681a (Unity.DataStore) 
-0x00007ff694836aff (Unity.DataStore) 
-0x00007ff6948328b5 (Unity.DataStore) 
-0x00007ff6948b88f4 (Unity.DataStore) uds_wait_handle_complete
-0x00007ffdf588dda7 (KERNEL32) BaseThreadInitThunk
-0x00007ffdf62fee4c (ntdll) RtlUserThreadStart
-
 Unity Data Store Application Complete
 Shut down UDS service system complete

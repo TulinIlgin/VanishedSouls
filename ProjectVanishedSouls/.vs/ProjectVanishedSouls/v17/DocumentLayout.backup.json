@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\fullscreengameview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\fullscreengameview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fullscreengameview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +38,52 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CameraFollow.cs",
+              "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\CameraFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
+              "ToolTip": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\CameraFollow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T18:51:02.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyAI.cs",
+              "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
+              "ToolTip": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T18:50:29.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
+              "ToolTip": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T10:58:39.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AriaController.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AriaController.cs",
@@ -38,16 +91,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AriaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T23:10:42.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-10-31T23:10:42.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FullscreenGameView.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\FullscreenGameView.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FullscreenGameView.cs",
@@ -55,12 +103,11 @@
               "RelativeToolTip": "Assets\\Scripts\\FullscreenGameView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T23:10:29.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-31T23:10:29.366Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "SelectionManager.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\SelectionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SelectionManager.cs",
@@ -72,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Stone.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Stone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Stone.cs",
