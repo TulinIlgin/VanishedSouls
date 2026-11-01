@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Stone.cs" />
     <Compile Include="Assets\Scripts\FullscreenGameView.cs" />
     <Compile Include="Assets\TutorialInfo\Readme.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\AriaController.cs" />
     <Compile Include="Assets\Scripts\SelectionManager.cs" />
   </ItemGroup>

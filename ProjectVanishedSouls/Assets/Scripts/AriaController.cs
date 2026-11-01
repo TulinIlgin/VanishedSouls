@@ -27,6 +27,9 @@ public class AriaController : MonoBehaviour
 
     public bool HasStone => heldStone != null;
 
+    [Header("Bıçak Görseli")]
+    public Renderer[] knifeRenderers; // Otomatik bulunur
+
     NavMeshAgent agent;
     Animator anim;
     float busyUntil;
@@ -41,12 +44,80 @@ public class AriaController : MonoBehaviour
         anim.applyRootMotion = false;
         customHand = handPoint != null;
         if (handPoint == null) handPoint = FindHand(transform);
+
+        FindKnifeObjects();
+        SetKnifeVisual(false);
     }
 
     void Start()
     {
         agent.ResetPath();
         PlayState(idleState, 0f);
+        SetKnifeVisual(false); // Başlangıçta elinde hiçbir şey olmasın!
+    }
+
+    void FindKnifeObjects()
+    {
+        var list = new System.Collections.Generic.List<Renderer>();
+        foreach (var r in GetComponentsInChildren<Renderer>(true))
+        {
+            string n = r.gameObject.name.ToLower();
+
+            // Vücut ve kıyafet materyallerine sahip olanları ASLA gizleme
+            bool isBody = false;
+            if (r.sharedMaterials != null)
+            {
+                foreach (var m in r.sharedMaterials)
+                {
+                    if (m != null)
+                    {
+                        string mn = m.name.ToLower();
+                        if (mn.Contains("hand") || mn.Contains("arm") || mn.Contains("shoe") ||
+                            mn.Contains("cloth") || mn.Contains("head") || mn.Contains("hair") ||
+                            mn.Contains("leg") || mn.Contains("sock") || mn.Contains("eye"))
+                        {
+                            isBody = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (isBody) continue;
+
+            // Sadece ismi "knife" içerenler veya materyali "Material.006" olanlar bıçaktır
+            bool isKnife = n.Contains("knife") || n.Contains("bicak");
+            if (!isKnife && r.sharedMaterials != null)
+            {
+                foreach (var m in r.sharedMaterials)
+                {
+                    if (m != null && (m.name.Contains("Material.006") || m.name.ToLower().Contains("knife")))
+                    {
+                        isKnife = true;
+                        break;
+                    }
+                }
+            }
+
+            if (isKnife)
+            {
+                list.Add(r);
+                Debug.Log($"Bıçak parçası: {r.gameObject.name} (Material: {(r.sharedMaterial != null ? r.sharedMaterial.name : "none")})");
+            }
+        }
+        knifeRenderers = list.ToArray();
+    }
+
+    public void SetKnifeVisual(bool visible)
+    {
+        if (knifeRenderers == null) return;
+        foreach (var r in knifeRenderers)
+        {
+            if (r != null)
+            {
+                r.enabled = visible;
+                r.gameObject.SetActive(visible);
+            }
+        }
     }
 
     void OnDrawGizmosSelected()
@@ -60,13 +131,101 @@ public class AriaController : MonoBehaviour
         var kb = Keyboard.current;
         if (kb != null && !Busy)
         {
-            if (kb.fKey.wasPressedThisFrame) Attack(knifeState);
-            if (kb.eKey.wasPressedThisFrame && !HasStone) StartCoroutine(PickUp());
+            if (kb.fKey.wasPressedThisFrame) ToggleKnife();
+            if (kb.eKey.wasPressedThisFrame && !HasStone) { SetKnifeVisual(false); StartCoroutine(PickUp()); }
         }
 
         if (Busy) return;
         bool moving = agent.hasPath && agent.velocity.magnitude > 0.1f;
-        PlayState(moving ? walkState : idleState, 0.15f);
+        if (moving) anim.speed = 1f; PlayState(moving ? walkState : idleState, 0.15f);
+    }
+
+    // ---------- F: sadece bıçağı göster / gizle ----------
+    [Header("Bıçak Ayarları")]
+    public float knifeImpactTime = 1.25f;  // Darbenin indiği an (bu anda küp yok olur)
+    public float knifeRange = 2.0f;       // Vurabilmek için düşmana yaklaşma mesafesi
+
+    public bool KnifeMode { get; private set; }
+
+    void ToggleKnife()
+    {
+        KnifeMode = !KnifeMode;
+        SetKnifeVisual(KnifeMode);
+        Debug.Log(KnifeMode ? "Bıçak çekildi!" : "Bıçak kınına koyuldu.");
+    }
+
+    // ---------- Sağ tık: düşmana bıçakla saldır ----------
+    public void KnifeAttackAt(Transform target)
+    {
+        if (target == null || Busy) return;
+        if (!KnifeMode)
+        {
+            Debug.Log("Bıçak çekili değil! Önce F tuşuna bas.");
+            return;
+        }
+
+        Collider col = target.GetComponent<Collider>();
+        Vector3 closest = col != null ? col.ClosestPoint(transform.position) : target.position;
+        Vector3 d = closest - transform.position; d.y = 0;
+
+        if (d.magnitude > knifeRange)
+        {
+            StopCoroutine("MoveAndStrike");
+            StartCoroutine(MoveAndStrike(target));
+            return;
+        }
+
+        StartCoroutine(KnifeStrike(target, target.position - transform.position));
+    }
+
+    IEnumerator MoveAndStrike(Transform target)
+    {
+        agent.SetDestination(target.position);
+        while (target != null && KnifeMode)
+        {
+            Collider col = target.GetComponent<Collider>();
+            Vector3 closest = col != null ? col.ClosestPoint(transform.position) : target.position;
+            Vector3 d = closest - transform.position; d.y = 0;
+            if (d.magnitude <= knifeRange)
+            {
+                agent.ResetPath();
+                StartCoroutine(KnifeStrike(target, target.position - transform.position));
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator KnifeStrike(Transform target, Vector3 dir)
+    {
+        agent.ResetPath();
+        dir.y = 0;
+        if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
+
+        anim.speed = 1f;
+        current = knifeState;
+        float clipLen = ClipLength(knifeState);
+        busyUntil = Time.time + clipLen;
+
+        // Bıçak animasyonunu EN BAŞTAN (0'dan) oynat
+        anim.CrossFadeInFixedTime(knifeState, 0.1f, 0, 0f);
+
+        // Darbenin indiği ana kadar bekle
+        yield return new WaitForSeconds(knifeImpactTime);
+
+        // Darbe anı: Düşman yok olur!
+        if (target != null)
+        {
+            var e = target.GetComponentInParent<Enemy>();
+            if (e != null) e.Die(); else Destroy(target.gameObject);
+            Debug.Log("Darbe indi, düşman yok oldu!");
+        }
+
+        // Animasyonun kalan kısmını bekle (vuruş tamamlanması)
+        yield return new WaitForSeconds(Mathf.Max(0.1f, clipLen - knifeImpactTime));
+
+        // Saldırı bitti: Idle'a dön (Bıçak F ile kapatılana kadar elinde kalır)
+        PlayState(idleState, 0.15f);
     }
 
     bool Busy => Time.time < busyUntil;

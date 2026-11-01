@@ -67,25 +67,47 @@ public class SelectionManager : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
         Vector3 myPos = selectedAria.transform.position;
 
-        // Düşmanın üstüne tıkladıysa ona at
+        // Düşmanın üstüne tıkladıysa
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, enemyLayer))
         {
-            if (Vector3.Distance(myPos, hit.transform.position) <= selectedAria.throwRange)
-                selectedAria.ThrowStoneAt(hit.transform);
-            else
-                Debug.Log("Hedef menzil dışında!");
+            // Elinde taş varsa → Taş fırlat
+            if (selectedAria.HasStone && !selectedAria.KnifeMode)
+            {
+                if (Vector3.Distance(myPos, hit.transform.position) <= selectedAria.throwRange)
+                    selectedAria.ThrowStoneAt(hit.transform);
+                else
+                    Debug.Log("Hedef menzil dışında!");
+                return;
+            }
+
+            // Bıçak modundaysa (F'ye basılmışsa) → Bıçak saldırısı
+            if (selectedAria.KnifeMode)
+            {
+                selectedAria.KnifeAttackAt(hit.transform);
+                return;
+            }
+
+            Debug.Log("Düşmana saldırmak için önce F ile bıçağını çek!");
             return;
         }
 
-        // Boşa tıkladıysa menzildeki en yakın düşmana at
+        // Boşa tıkladıysa en yakın düşmana yönel (sadece elinde taş veya bıçak varsa)
         Transform best = null;
         float bestDist = float.MaxValue;
-        foreach (var c in Physics.OverlapSphere(myPos, selectedAria.throwRange, enemyLayer))
+        float searchRange = selectedAria.HasStone ? selectedAria.throwRange : selectedAria.knifeRange + 3f;
+        foreach (var c in Physics.OverlapSphere(myPos, searchRange, enemyLayer))
         {
             float d = Vector3.Distance(myPos, c.transform.position);
             if (d < bestDist) { bestDist = d; best = c.transform; }
         }
-        if (best != null) selectedAria.ThrowStoneAt(best);
+
+        if (best != null)
+        {
+            if (selectedAria.HasStone && !selectedAria.KnifeMode)
+                selectedAria.ThrowStoneAt(best);
+            else if (selectedAria.KnifeMode)
+                selectedAria.KnifeAttackAt(best);
+        }
     }
 
     void Deselect()
