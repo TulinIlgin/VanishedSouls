@@ -109,35 +109,25 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IsDead) return;
 
-        // Lumen gibi tek vuruşta ölen karakterler devrilip yok olsun
+        // Lumen vurulduğunda devrilip ölür ve Oyun Bitti ekranı açılır
         if (diePermanentlyOnHit || characterName == "Lumen")
         {
             Debug.Log($"{characterName} düşman tarafından vuruldu ve öldü!");
-            StartCoroutine(DieFallOverRoutine());
+            StartCoroutine(DieFallOverRoutine($"{characterName} düşman tarafından öldürüldü!"));
             return;
         }
 
-        currentHealth = Mathf.Max(0, currentHealth - 1);
-        Debug.Log($"{characterName} düşmandan saldırı aldı! Kalan Can: {currentHealth}/{maxHealth}");
+        // Aria yakalandığında / vurulduğunda öldürme koduna geçer ve Yakalandın menüsü açılır
+        currentHealth = 0;
+        Debug.Log($"{characterName} düşman tarafından yakalandı!");
+        var agent = GetComponent<NavMeshAgent>();
+        if (agent != null && agent.enabled)
+            agent.ResetPath();
 
-        if (currentHealth <= 0)
-        {
-            Debug.Log($"{characterName} yakalandı! Başlangıç noktasına dönüyor...");
-            currentHealth = maxHealth;
-            var agent = GetComponent<NavMeshAgent>();
-            if (agent != null && agent.enabled)
-            {
-                agent.ResetPath();
-                agent.Warp(startPosition);
-            }
-            else
-            {
-                transform.position = startPosition;
-            }
-        }
+        StartCoroutine(DieFallOverRoutine("Düşman seni yakaladı!"));
     }
 
-    IEnumerator DieFallOverRoutine()
+    IEnumerator DieFallOverRoutine(string gameOverReason = "Düşman seni yakaladı!")
     {
         IsDead = true;
         AllPlayers.Remove(this);
@@ -157,14 +147,16 @@ public class PlayerCharacter : MonoBehaviour
                 rotated += step;
                 yield return null;
             }
-            yield return new WaitForSeconds(0.45f);
+            yield return new WaitForSeconds(0.35f);
             lumenCtrl.HideVisualOnDeath();
+            GameMenuManager.ShowGameOver(gameOverReason);
             gameObject.SetActive(false);
             yield break;
         }
 
         Vector3 pivot = WorldPosition;
         Transform visualTarget = cachedRenderer != null ? cachedRenderer.transform : transform;
+        Quaternion originalRot = visualTarget.rotation;
         while (rotated < 90f)
         {
             float step = (90f / duration) * Time.deltaTime;
@@ -174,7 +166,31 @@ public class PlayerCharacter : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(0.35f);
+        GameMenuManager.ShowGameOver(gameOverReason);
+
+        // Eğer arkadaşın henüz GameOver UI panelini bağlamadıysa testlerin bölünmemesi için Aria'yı başlangıç noktasına dirilt
+        if (GameMenuManager.Instance == null || GameMenuManager.Instance.gameOverPanel == null)
+        {
+            visualTarget.rotation = originalRot;
+            currentHealth = maxHealth;
+            IsDead = false;
+            if (!AllPlayers.Contains(this))
+                AllPlayers.Add(this);
+
+            var agent = GetComponent<NavMeshAgent>();
+            if (agent != null && agent.enabled)
+            {
+                agent.ResetPath();
+                agent.Warp(startPosition);
+            }
+            else
+            {
+                transform.position = startPosition;
+            }
+            yield break;
+        }
+
         gameObject.SetActive(false);
     }
 }

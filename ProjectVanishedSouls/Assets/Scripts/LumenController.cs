@@ -99,7 +99,7 @@ public class LumenController : MonoBehaviour
     {
         if (ariaTransform == null)
         {
-            var ariaCtrl = FindFirstObjectByType<AriaController>();
+            var ariaCtrl = FindAnyObjectByType<AriaController>();
             if (ariaCtrl != null)
             {
                 ariaTransform = ariaCtrl.transform;
@@ -114,6 +114,8 @@ public class LumenController : MonoBehaviour
 
     void Update()
     {
+        if (GameMenuManager.IsMenuOpen) return;
+
         if (selfPlayer != null && selfPlayer.IsDead)
         {
             currentVelocity = Vector3.zero;

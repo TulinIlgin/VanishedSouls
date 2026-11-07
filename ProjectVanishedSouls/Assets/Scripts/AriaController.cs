@@ -47,6 +47,12 @@ public class AriaController : MonoBehaviour
         customHand = handPoint != null;
         if (handPoint == null) handPoint = FindHand(transform);
 
+        // Sahnede Inspector'dan hatalı kaydedilmiş animasyon/menzil değerlerini düzelt
+        if (releaseAt >= throwEnd || releaseAt > 2.3f) releaseAt = 2.15f;
+        if (throwEnd < 2.5f) throwEnd = 2.9f;
+        if (throwRange < 18f) throwRange = 18f;
+        if (pickupRange < 4.5f) pickupRange = 4.5f;
+
         FindKnifeObjects();
 
         if (GetComponent<PlayerCharacter>() == null)
@@ -137,11 +143,18 @@ public class AriaController : MonoBehaviour
 
     void Update()
     {
+        if (GameMenuManager.IsMenuOpen) return;
+
         var kb = Keyboard.current;
         if (kb != null && !Busy)
         {
             if (kb.fKey.wasPressedThisFrame) ToggleKnife();
-            if (kb.eKey.wasPressedThisFrame && !HasStone) { SetKnifeVisual(false); StartCoroutine(PickUp()); }
+            if (kb.eKey.wasPressedThisFrame && !HasStone)
+            {
+                KnifeMode = false;
+                SetKnifeVisual(false);
+                StartCoroutine(PickUp());
+            }
         }
 
         if (Busy) return;
@@ -312,64 +325,105 @@ public class AriaController : MonoBehaviour
         heldStone.transform.position = palm;
     }
 
-    // Stone bileşeni olan ya da adı Taş/Stone olan en yakın obje (yatay mesafe)
+    // Stone bileşeni olan ya da adı Sphere/Stone olan en yakın taşınabilir obje (yatay mesafe)
     Transform FindNearestStone(out float bestDist)
     {
         Transform best = null; bestDist = float.MaxValue;
-        foreach (var t in FindObjectsByType<Transform>(FindObjectsSortMode.None))
+        foreach (var t in FindObjectsByType<Transform>())
         {
+            if (t == null || t.IsChildOf(transform)) continue;
+            // LumenFinalNoktasi gibi içinde "tas" hecesi geçen objeleri taş sanmaması için filtrele
             string n = t.name.ToLower();
-            bool isStone = t.GetComponent<Stone>() != null || n.Contains("taş") || n.Contains("tas") || n.Contains("stone") || n.Contains("sphere") || n.Contains("küre");
-            if (!isStone || t.IsChildOf(transform)) continue;
+            if (n.Contains("nokta") || n.Contains("final") || n.Contains("lumen")) continue;
+
+            bool isStone = t.GetComponent<Stone>() != null || n == "sphere" || n.StartsWith("sphere") ||
+                           n == "taş" || n == "tas" || n.StartsWith("stone") || n.Contains("küre");
+            if (!isStone) continue;
+
             Vector3 d = t.position - transform.position; d.y = 0;
             if (d.magnitude < bestDist) { bestDist = d.magnitude; best = t; }
         }
         return best;
     }
 
-    // ---------- Sağ tık: düşmana fırlat ----------
+    // ---------- Sağ tık: sağ tıklanan noktaya dikkat dağıtmak için taş fırlat ----------
     public void ThrowStoneAt(Transform target)
+    {
+        if (target == null) return;
+        ThrowStoneToPoint(target.position);
+    }
+
+    public void ThrowStoneToPoint(Vector3 targetPoint)
     {
         if (Busy || !HasStone) { Debug.Log("Önce E ile taş al!"); return; }
         hasClickGoal = false;
-        StartCoroutine(Throw(target));
+
+        // Menzil sınırını aşarsa menzil içindeki en uç noktaya at
+        Vector3 flatDelta = targetPoint - transform.position;
+        flatDelta.y = 0f;
+        if (flatDelta.magnitude > throwRange)
+        {
+            targetPoint = transform.position + flatDelta.normalized * throwRange;
+        }
+
+        // Duvarın içine düşmesin
+        targetPoint = WallObstacle.PushOutOfWalls(targetPoint, 0.45f);
+        StartCoroutine(ThrowToPointRoutine(targetPoint));
     }
 
-    IEnumerator Throw(Transform target)
+    IEnumerator ThrowToPointRoutine(Vector3 targetPoint)
     {
         agent.ResetPath();
-        Vector3 dir = target.position - transform.position; dir.y = 0;
-        if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
+        Vector3 dir = targetPoint - transform.position;
+        dir.y = 0f;
+        if (dir.sqrMagnitude > 0.001f)
+            transform.rotation = Quaternion.LookRotation(dir);
 
         busyUntil = Time.time + (throwEnd - throwStart);
         current = throwState;
-        anim.CrossFadeInFixedTime(throwState, 0.15f, 0, throwStart);  // sadece atış kısmı
+        anim.CrossFadeInFixedTime(throwState, 0.15f, 0, throwStart); // sadece atış kısmı
 
         yield return new WaitForSeconds(Mathf.Max(0f, releaseAt - throwStart));
 
-        // Taşı elden bırak ve kavisle hedefin yüzeyine uçur
-        GameObject stone = heldStone; heldStone = null;
+        if (heldStone == null) yield break;
+
+        // Taşı elden bırak ve kavisle sağ tıklanan yere uçur
+        GameObject stone = heldStone;
+        heldStone = null;
         Vector3 start = stone.transform.position;
-        Collider tc = target.GetComponent<Collider>();
-        Vector3 end   = tc != null ? tc.ClosestPoint(start) : target.position;
-        end += (start - end).normalized * stone.transform.lossyScale.x * 0.5f;   // içine girmesin
-        float flight  = Mathf.Max(0.05f, Vector3.Distance(start, end) / stoneSpeed);
-        for (float t = 0; t < 1f; t += Time.deltaTime / flight)
+
+        float stoneRadius = Mathf.Max(0.12f, stone.transform.lossyScale.y * 0.5f);
+        Vector3 end = new Vector3(targetPoint.x, transform.position.y + stoneRadius, targetPoint.z);
+        if (Physics.Raycast(targetPoint + Vector3.up * 3f, Vector3.down, out RaycastHit groundHit, 8f, ~((1 << 2) | (1 << 6) | (1 << 8))))
         {
-            stone.transform.position = Vector3.Lerp(start, end, t) + Vector3.up * Mathf.Sin(t * Mathf.PI) * 0.7f;
+            end.y = groundHit.point.y + stoneRadius;
+        }
+
+        float dist = Vector3.Distance(start, end);
+        float flight = Mathf.Max(0.12f, dist / Mathf.Max(1f, stoneSpeed));
+        float arcHeight = Mathf.Clamp(dist * 0.22f, 0.5f, 1.6f);
+
+        for (float t = 0f; t < 1f; t += Time.deltaTime / flight)
+        {
+            stone.transform.position = Vector3.Lerp(start, end, t) + Vector3.up * (Mathf.Sin(t * Mathf.PI) * arcHeight);
             yield return null;
         }
         stone.transform.position = end;
 
-        // Çarptı → taş geri seker ve yere düşer, sonra tekrar alınabilir
-        Debug.Log($"Taş {target.name}'a çarptı!");
+        // Taş yere düştü -> Collider'ı aç, zeminin içinden düşmemesi için yerde sabit tut (tekrar E ile alınabilir)
         Collider sc = stone.GetComponent<Collider>();
         if (sc != null) sc.enabled = true;
         Rigidbody rb = stone.GetComponent<Rigidbody>();
-        if (rb == null) rb = stone.AddComponent<Rigidbody>();
-        rb.isKinematic = false;
-        Vector3 back = start - end; back.y = 0;
-        rb.linearVelocity = back.normalized * 2.5f + Vector3.up * 2f;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        // Düşmanların dikkatini taşın düştüğü noktaya çek!
+        Debug.Log($"Taş {end} noktasına düştü! Yakındaki düşmanlar sesi duyup oraya yöneliyor.");
+        EnemyAI.NotifyStoneNoise(end);
     }
 
     Transform FindHand(Transform root)

@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\gamemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\bush.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bush.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|c:\\githup\\vanishedsouls\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F5931B-B377-71CA-3438-2B326C90D86E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,6 +51,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameMenuManager.cs",
+              "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\GameMenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameMenuManager.cs",
+              "ToolTip": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\GameMenuManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameMenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-07T03:16:16.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Bush.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Bush.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bush.cs",
@@ -58,12 +79,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
@@ -71,12 +88,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T18:51:02.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-01T18:51:02.652Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnemyAI.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AriaController.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AriaController.cs",
@@ -112,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FullscreenGameView.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\FullscreenGameView.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FullscreenGameView.cs",
@@ -124,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SelectionManager.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\SelectionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SelectionManager.cs",
@@ -136,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Stone.cs",
               "DocumentMoniker": "C:\\githup\\VanishedSouls\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\Stone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Stone.cs",

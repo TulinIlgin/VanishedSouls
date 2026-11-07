@@ -301,7 +301,7 @@ public class WallObstacle : MonoBehaviour
     {
         if (AllWalls.Count == 0)
         {
-            foreach (var w in FindObjectsByType<WallObstacle>(FindObjectsSortMode.None))
+            foreach (var w in FindObjectsByType<WallObstacle>())
             {
                 if (w != null && !AllWalls.Contains(w))
                 {

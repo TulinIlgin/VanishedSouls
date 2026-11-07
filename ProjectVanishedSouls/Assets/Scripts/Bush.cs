@@ -1,16 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Çimen / çalı gizlenme alanı. İçine giren PlayerCharacter (Aria, Lumen vb.) düşmanlara görünmez olur.
+// Çimen / çalı gizlenme alanı.
+// KURAL:
+// 1. Düşman arkasını döndüğünde (bizi görmüyorken) veya bizi fark etmeden (0.1 sn hata payı içinde) çalıya girersek,
+//    çalıdayken düşman dibimizden geçse bile bizi ASLA göremez.
+// 2. Ancak düşman bizi dışarıda 0.1 saniyeden uzun süre gördükten sonra (kırmızı alana/kovalamaya geçtikten sonra)
+//    onun gözü önünde çalıya girersek, çalı bizi koruyamaz; düşman çalının içine gelip bizi yakalar.
 public class Bush : MonoBehaviour
 {
     public static readonly List<Bush> AllBushes = new List<Bush>();
 
-    // Ignore Raycast katmanı (Layer 2): Tıklamaları engellemez ama fizik taraması ile gerçek çimen üçgenlerini yakalar
+    // Düşmanın hangi karakteri çalıya girmeden önce (0.1sn hata payı sonrasında) gördüğünü tutar
+    static readonly HashSet<(EnemyAI enemy, PlayerCharacter player)> spottedBeforeBushPairs = new HashSet<(EnemyAI, PlayerCharacter)>();
+
+    // Ignore Raycast katmanı (Layer 2): Tıklamaları ve NavMesh'i engellemez ama fizik taraması ile gerçek çimen üçgenlerini yakalar
     const int GrassLayer = 2;
 
     [Tooltip("Çimenlerin arasındaki boşlukları da kapsama yarıçapı (metre)")]
     public float stealthRadius = 1.65f;
+
+    [Tooltip("Düşmanın bizi gördükten sonra öldürme/kovalama moduna geçmesi için hata payı süresi (saniye)")]
+    public const float DetectionGraceTime = 0.1f;
 
     static bool collidersConfigured;
 
@@ -18,6 +29,7 @@ public class Bush : MonoBehaviour
     static void ResetStatics()
     {
         AllBushes.Clear();
+        spottedBeforeBushPairs.Clear();
         collidersConfigured = false;
     }
 
@@ -36,6 +48,48 @@ public class Bush : MonoBehaviour
     void Start()
     {
         SetupGrassColliders();
+    }
+
+    // Düşman karakteri 0.1 saniye boyunca açıkta gördüğünde çağrılır:
+    // Artık bu karakter bu düşmanın gözü önünde çalıya girse bile çalı etki etmez!
+    public static void MarkSpottedBeforeBush(EnemyAI enemy, PlayerCharacter player)
+    {
+        if (enemy == null || player == null) return;
+        spottedBeforeBushPairs.Add((enemy, player));
+    }
+
+    // Düşman takibi bıraktığında veya karakter düşmanın görüşünden tamamen kurtulduğunda sıfırlanır
+    public static void ClearSpottedState(EnemyAI enemy, PlayerCharacter player = null)
+    {
+        if (enemy == null) return;
+        if (player != null)
+        {
+            spottedBeforeBushPairs.Remove((enemy, player));
+            return;
+        }
+
+        spottedBeforeBushPairs.RemoveWhere(pair => pair.enemy == enemy);
+    }
+
+    public static bool WasSpottedBeforeEnteringBush(EnemyAI enemy, PlayerCharacter player)
+    {
+        if (enemy == null || player == null) return false;
+        return spottedBeforeBushPairs.Contains((enemy, player));
+    }
+
+    // Karakterin belirli bir düşmana karşı çalıda gerçekten gizli olup olmadığını döndürür.
+    // Düşman karakteri dışarıda 0.1sn+ gördükten sonra karakter çalıya girdiyse false döner (düşman gelip yakalar).
+    // Düşman görmeden (veya 0.1sn hata payı içinde) çalıya girdiyse true döner (dibinden geçse bile göremez).
+    public static bool IsHiddenFromEnemy(PlayerCharacter player, EnemyAI enemy)
+    {
+        if (player == null) return false;
+        bool physicallyInBush = player.isHidden || IsPointInAnyBush(player.WorldPosition);
+        if (!physicallyInBush) return false;
+
+        if (enemy != null && WasSpottedBeforeEnteringBush(enemy, player))
+            return false;
+
+        return true;
     }
 
     public void SetupGrassColliders()

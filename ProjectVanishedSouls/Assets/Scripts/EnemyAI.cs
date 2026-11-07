@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +25,8 @@ public class EnemyAI : Enemy
     [Tooltip("Düşmanın vurabilmesi için karaktere fiziksel olarak dokunma mesafesi (metre)")]
     public float attackRange = 0.55f;
     public float attackCooldown = 1.1f;
+    [Tooltip("Düşman bizi gördükten sonra öldürme/kovalama moduna geçmeden önceki hata payı süresi (saniye)")]
+    public float detectionGraceTime = 0.1f;
 
     [Header("Bağlı Görsel Model (Küp-Düşman Bağlantısı)")]
     public Transform visualModel;
@@ -41,10 +44,13 @@ public class EnemyAI : Enemy
 
     Animator anim;
     PlayerCharacter targetPlayer;
+    PlayerCharacter pendingPlayer;
+    float currentSeenDuration;
     Vector3 lastSeenPosition;
     int currentPointIndex;
     float stateTimer;
     float nextAttackTime;
+    float distractedByStoneUntil;
     float baseGroundY;
     float currentLungeOffset;
     bool isLunging;
@@ -55,59 +61,106 @@ public class EnemyAI : Enemy
     Mesh coneMesh;
     readonly List<BoundPart> boundParts = new List<BoundPart>();
 
+    static bool navMeshRebuiltInPlayMode;
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void AutoConfigureSceneOnPlay()
     {
+        navMeshRebuiltInPlayMode = false;
         EnsureSceneConfigured();
+        if (!navMeshRebuiltInPlayMode)
+        {
+            navMeshRebuiltInPlayMode = true;
+            RebuildSceneNavMesh();
+        }
+    }
+
+    static void SetLayerRecursively(Transform root, int layer)
+    {
+        if (root == null || layer < 0) return;
+        root.gameObject.layer = layer;
+        for (int i = 0; i < root.childCount; i++)
+            SetLayerRecursively(root.GetChild(i), layer);
     }
 
     public static void EnsureSceneConfigured()
     {
-        // 1. Eski test küpünü ("Cube") kapat
-        foreach (var go in FindObjectsByType<GameObject>(FindObjectsSortMode.None))
+        int ignoreRaycastLayer = 2; // Ignore Raycast (Çimenler, yer sarmaşıkları ve görsel çizgiler NavMesh'i engellemesin)
+        int charLayer = LayerMask.NameToLayer("Character");
+        if (charLayer < 0) charLayer = 6;
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        if (enemyLayer < 0) enemyLayer = 8;
+
+        // 1. Eski test küpünü ("Cube") ve yanlışlıkla kopyalanmış "blockout (1)" objesini kapat
+        foreach (var go in FindObjectsByType<GameObject>())
         {
-            if (go != null && go.name == "Cube" && go.transform.parent == null && go.GetComponent<BoxCollider>() != null)
+            if (go == null) continue;
+            if (go.name == "Cube" && go.transform.parent == null && go.GetComponent<BoxCollider>() != null)
+            {
+                go.SetActive(false);
+            }
+            else if (go.name == "blockout (1)")
             {
                 go.SetActive(false);
             }
         }
 
-        // 2. Çimen kök objesine ("Sketchfab_model.003" / "g2_0") ve altındaki tüm çimenlere (Object_4.001 ve Object_5*) Bush kur,
+        // 2. Çimen objelerine ("Sketchfab_model.003", "g2_0", "sketchfabGrass", "grasspatches", "Object_4.001", "Object_5*") Bush kur (Layer 2),
+        //    "YerSarmasik" (zemin sarmaşıkları) ve taşları ("Sphere") Layer 2'ye al ki NavMesh zemini kapatmasın,
         //    "Cube.007" objesini de duvar (WallObstacle) olarak ayarla
-        foreach (var t in FindObjectsByType<Transform>(FindObjectsSortMode.None))
+        foreach (var t in FindObjectsByType<Transform>())
         {
             if (t == null) continue;
-            if (t.name == "Sketchfab_model.003" || t.name == "g2_0" ||
-                ((t.name == "Object_4.001" || t.name.StartsWith("Object_5")) && t.GetComponent<Renderer>() != null))
+            string n = t.name;
+
+            if (n == "Sketchfab_model.003" || n == "g2_0" || n == "sketchfabGrass" || n == "grasspatches" ||
+                ((n == "Object_4.001" || n.StartsWith("Object_5")) && t.GetComponent<Renderer>() != null))
             {
                 var bush = t.GetComponent<Bush>();
                 if (bush == null) bush = t.gameObject.AddComponent<Bush>();
                 bush.SetupGrassColliders();
             }
-            else if (t.name == "Cube.007")
+            else if (n == "Cube.007")
             {
                 var wall = t.GetComponent<WallObstacle>();
                 if (wall == null) wall = t.gameObject.AddComponent<WallObstacle>();
                 wall.SetupWall();
             }
+            else if (n == "YerSarmasik" || n == "VisionConeVisual" || n == "LumenPathLine" || n == "FinalPointVisual" || n == "FinishLineVisual")
+            {
+                SetLayerRecursively(t, ignoreRaycastLayer);
+            }
+            else if (n.StartsWith("Sphere") && t.GetComponent<Rigidbody>() != null)
+            {
+                t.gameObject.layer = ignoreRaycastLayer;
+            }
+            else if (n == "Enemy" || n.StartsWith("Enemy_Humainoid_Enemy"))
+            {
+                SetLayerRecursively(t, enemyLayer);
+            }
         }
 
-        // 3. Aria'da PlayerCharacter olduğundan emin ol
-        var aria = FindFirstObjectByType<AriaController>();
-        if (aria != null && aria.GetComponent<PlayerCharacter>() == null)
+        // 3. Aria'da PlayerCharacter olduğundan ve Layer 6 (Character) katmanında olduğundan emin ol
+        var aria = FindAnyObjectByType<AriaController>();
+        if (aria != null)
         {
-            var pc = aria.gameObject.AddComponent<PlayerCharacter>();
-            pc.characterName = "Aria";
+            SetLayerRecursively(aria.transform, charLayer);
+            if (aria.GetComponent<PlayerCharacter>() == null)
+            {
+                var pc = aria.gameObject.AddComponent<PlayerCharacter>();
+                pc.characterName = "Aria";
+            }
         }
 
-        // 4. Sarı karakteri (Sketchfab_model -> Object_2) Lumen olarak kur ve LumenFinalNoktasi oluştur
+        // 4. Sarı karakteri (Sketchfab_model -> Object_2) Lumen olarak kur, Layer 6'ya al ve LumenFinalNoktasi oluştur
         Transform lumenVisual = null;
-        foreach (var t in FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var t in FindObjectsByType<Transform>(FindObjectsInactive.Include))
         {
             if (t == null) continue;
-            if (t.name == "Sketchfab_model")
+            if (t.name == "Sketchfab_model" && t.root.name != "blockout (1)")
             {
                 t.gameObject.SetActive(true);
+                SetLayerRecursively(t, charLayer);
                 // Eski doğrudan eklenmiş PlayerCharacter varsa hemen temizle (sadece Lumen kök objesi kullanılacak)
                 var oldPc = t.GetComponent<PlayerCharacter>();
                 if (oldPc != null && t.GetComponent<LumenController>() == null)
@@ -133,7 +186,7 @@ public class EnemyAI : Enemy
         }
 
         // 5. FBX içindeki "Enemy" düğümünde hatalı NavMeshAgent veya EnemyAI varsa devre dışı bırak
-        foreach (var ai in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
+        foreach (var ai in FindObjectsByType<EnemyAI>())
         {
             if (ai != null && ai.visualModel == null && ai.transform.parent != null && ai.transform.name == "Enemy")
             {
@@ -145,9 +198,9 @@ public class EnemyAI : Enemy
 
         // 6. İki kırmızı düşman modeli için Dusman_1 ve Dusman_2 kök objelerini hazırla
         Transform mesh1 = null, mesh2 = null, leftEye = null, rightEye = null;
-        foreach (var t in FindObjectsByType<Transform>(FindObjectsSortMode.None))
+        foreach (var t in FindObjectsByType<Transform>())
         {
-            if (t == null) continue;
+            if (t == null || t.root.name == "blockout (1)") continue;
             if (t.name == "Enemy_Humainoid_Enemy_0") mesh1 = t;
             else if (t.name == "Enemy_Humainoid_Enemy_0.001") mesh2 = t;
             else if (t.name == "Left_Eye") leftEye = t;
@@ -159,6 +212,52 @@ public class EnemyAI : Enemy
 
         if (mesh2 != null)
             SetupOrUpdateEnemyHost("Dusman_2", mesh2, null, "Patrol3", "Patrol4");
+
+        // 7. Arkadaşının UI panellerini ve butonlarını bağlayabileceği boş GameMenuManager objesini hazırla
+        if (FindAnyObjectByType<GameMenuManager>() == null)
+        {
+            var menuHost = GameObject.Find("GameMenuManager");
+            if (menuHost == null) menuHost = new GameObject("GameMenuManager");
+            if (menuHost.GetComponent<GameMenuManager>() == null)
+                menuHost.AddComponent<GameMenuManager>();
+        }
+
+        // 8. Main Camera'ya CameraFollow bileşenini ekle ve Aria'yı takip etmesini sağla
+        Camera mainCam = Camera.main;
+        if (mainCam != null)
+        {
+            var camFollow = mainCam.GetComponent<CameraFollow>();
+            if (camFollow == null) camFollow = mainCam.gameObject.AddComponent<CameraFollow>();
+            if (aria != null && camFollow.target == null)
+                camFollow.target = aria.transform;
+        }
+    }
+
+    // ---------- SAHNEDEKİ TÜM YENİ HARİTA OBJELERİYLE NAVMESH'İ GÜNCELLE ----------
+    public static void RebuildSceneNavMesh()
+    {
+        EnsureSceneConfigured();
+
+        // Karakterleri (Layer 6), Düşmanları (Layer 8) ve Çimen/YerSarmaşık/Görsel Çizgileri (Layer 2: Ignore Raycast)
+        // NavMesh bake işleminden hariç tut ki karakterlerin altı ve çimenlerin içi her zaman yürünebilir (walkable) kalsın!
+        int excludedLayers = (1 << 2) | (1 << 6) | (1 << 8);
+        int bakeLayerMask = ~excludedLayers;
+
+        var surfaces = FindObjectsByType<NavMeshSurface>();
+        foreach (var surface in surfaces)
+        {
+            if (surface == null || !surface.gameObject.activeInHierarchy) continue;
+            if (surface.gameObject.name == "blockout (1)")
+            {
+                surface.enabled = false;
+                continue;
+            }
+
+            surface.collectObjects = CollectObjects.All;
+            surface.layerMask = bakeLayerMask;
+            surface.useGeometry = NavMeshCollectGeometry.RenderMeshes;
+            surface.BuildNavMesh();
+        }
     }
 
     static void SetupOrUpdateLumenHost(Transform lumenVisualMesh)
@@ -201,6 +300,7 @@ public class EnemyAI : Enemy
             finalObj.transform.position = new Vector3(-23.5f, footPos.y, 17.5f);
         }
         lumenCtrl.finalPoint = finalObj.transform;
+        FinishLine.EnsureOnFinalPoint(finalObj.transform);
 
         if (Application.isPlaying)
             lumenCtrl.BindVisualModel();
@@ -426,12 +526,12 @@ public class EnemyAI : Enemy
         return false;
     }
 
-    // ---------- ÜÇGEN GÖRÜŞ ALANI KONTROLÜ (Sadece FARK EDER ve KOVALAMAYA BAŞLAR, uzaktan öldürmez!) ----------
+    // ---------- ÜÇGEN GÖRÜŞ ALANI KONTROLÜ (0.1 SN HATA PAYI + ÇALI GİZLENME KURALI) ----------
     void LookForPlayers()
     {
         if (PlayerCharacter.AllPlayers.Count == 0)
         {
-            foreach (var pc in FindObjectsByType<PlayerCharacter>(FindObjectsSortMode.None))
+            foreach (var pc in FindObjectsByType<PlayerCharacter>())
             {
                 if (pc != null && !pc.IsDead && !PlayerCharacter.AllPlayers.Contains(pc))
                     PlayerCharacter.AllPlayers.Add(pc);
@@ -451,8 +551,10 @@ public class EnemyAI : Enemy
 
             Vector3 playerPos = player.WorldPosition;
 
-            // Çimende (veya çimenlerin arasında / Aria ile birlikte çimende) gizleniyorsa ASLA görme!
-            if (player.isHidden || Bush.IsPointInAnyBush(playerPos)) continue;
+            // KURAL: Karakter düşman görmeden (veya 0.1sn hata payı dolmadan) çalıya girdiyse,
+            // düşman dibinden geçse bile onu ASLA göremez!
+            // Ama düşman bizi 0.1sn+ gördükten sonra çalıya girdiysek IsHiddenFromEnemy false döner ve yakalar!
+            if (Bush.IsHiddenFromEnemy(player, this)) continue;
 
             // Arada duvar (Cube.007 vb.) varsa duvarın arkasını görme!
             if (WallObstacle.IsSegmentBlocked(myPos, playerPos, 0.05f)) continue;
@@ -465,9 +567,13 @@ public class EnemyAI : Enemy
 
             float angle = dist > 0.05f ? Vector3.Angle(fwd, toPlayer.normalized) : 0f;
             bool insideTriangle = angle <= (viewAngle * 0.5f + 2f);
-            bool touchingBody = dist <= 0.6f;
+            bool touchingBodyOutsideBush = dist <= 0.55f;
 
-            if (!insideTriangle && !touchingBody) continue;
+            // Düşman atılan taşın sesine doğru giderken (dikkat dağıtılmışken) karaktere fiziksel olarak çarpmadıkça taşa gitmeye devam etsin!
+            if (Time.time < distractedByStoneUntil && !touchingBodyOutsideBush)
+                continue;
+
+            if (!insideTriangle && !touchingBodyOutsideBush) continue;
 
             if (dist < bestDist)
             {
@@ -478,13 +584,32 @@ public class EnemyAI : Enemy
 
         if (bestTarget != null)
         {
-            targetPlayer = bestTarget;
-            lastSeenPosition = bestTarget.WorldPosition;
-            if (currentState != State.Attack && currentState != State.Chase)
+            if (pendingPlayer != bestTarget)
             {
-                currentState = State.Chase;
-                Debug.Log($"{name}, sarı alanda {bestTarget.characterName} karakterini gördü! Yakalamak için koşuyor...");
+                pendingPlayer = bestTarget;
+                currentSeenDuration = Bush.WasSpottedBeforeEnteringBush(this, bestTarget) ? detectionGraceTime : 0f;
             }
+
+            currentSeenDuration += Time.deltaTime;
+
+            // 0.1 saniye hata payı (detectionGraceTime) dolduğunda kovalama/öldürme moduna geç!
+            // Bu andan sonra karakter çalıya girse bile düşman onun çalıya girdiğini gördüğü için çalıya gelip yakalar.
+            if (currentSeenDuration >= detectionGraceTime)
+            {
+                Bush.MarkSpottedBeforeBush(this, bestTarget);
+                targetPlayer = bestTarget;
+                lastSeenPosition = bestTarget.WorldPosition;
+                if (currentState != State.Attack && currentState != State.Chase)
+                {
+                    currentState = State.Chase;
+                    Debug.Log($"{name}, {bestTarget.characterName} karakterini ({detectionGraceTime:F1}sn) gördü! Çalıya girse bile yakalayacak!");
+                }
+            }
+        }
+        else
+        {
+            pendingPlayer = null;
+            currentSeenDuration = 0f;
         }
     }
 
@@ -512,9 +637,12 @@ public class EnemyAI : Enemy
     // ---------- KOVALAMA (CHASE: Düşman karaktere fiziksel olarak dokunana kadar yürür) ----------
     void HandleChase()
     {
+        // Düşman bizi 0.1sn gördükten sonra çalıya girdiysek IsHiddenFromEnemy FALSE döner,
+        // yani çalı artık bizi korumaz ve düşman çalının içine gelip bizi yakalar!
         if (targetPlayer == null || !targetPlayer.isActiveAndEnabled || targetPlayer.IsDead ||
-            targetPlayer.isHidden || Bush.IsPointInAnyBush(targetPlayer.WorldPosition))
+            Bush.IsHiddenFromEnemy(targetPlayer, this))
         {
+            Bush.ClearSpottedState(this, targetPlayer);
             currentState = State.Search;
             stateTimer = 0f;
             targetPlayer = null;
@@ -522,6 +650,17 @@ public class EnemyAI : Enemy
         }
 
         Vector3 playerPos = targetPlayer.WorldPosition;
+
+        // Eğer karakter bir duvarın (Cube.007 vb.) arkasına geçip görüşü tamamen kopardıysa son görülen noktayı ara
+        if (WallObstacle.IsSegmentBlocked(transform.position, playerPos, 0.05f))
+        {
+            Bush.ClearSpottedState(this, targetPlayer);
+            currentState = State.Search;
+            stateTimer = 0f;
+            targetPlayer = null;
+            return;
+        }
+
         lastSeenPosition = playerPos;
 
         // Düşman karaktere fiziksel olarak dokunacak mesafeye (0.55m) gelene kadar kovalar
@@ -532,10 +671,64 @@ public class EnemyAI : Enemy
         }
     }
 
-    // ---------- ARAMA (ÇİMENE GİRİNCE) ----------
+    // ---------- TAŞ İLE DİKKAT DAĞITMA VE ARAMA ----------
+    public static void NotifyStoneNoise(Vector3 stoneLandingPos, float hearingRadius = 20f)
+    {
+        EnemyAI closestEnemy = null;
+        float closestDist = float.MaxValue;
+        bool anyReacted = false;
+
+        foreach (var enemy in FindObjectsByType<EnemyAI>())
+        {
+            if (enemy == null || !enemy.isActiveAndEnabled || enemy.dead) continue;
+            // Sadece FBX içindeki boş "Enemy" objesini atla, gerçek düşmanların (Dusman_1, Dusman_2) hepsi sese tepki versin
+            if (enemy.visualModel == null && enemy.gameObject.name == "Enemy") continue;
+
+            float d = Vector2.Distance(
+                new Vector2(enemy.transform.position.x, enemy.transform.position.z),
+                new Vector2(stoneLandingPos.x, stoneLandingPos.z));
+
+            if (d < closestDist)
+            {
+                closestDist = d;
+                closestEnemy = enemy;
+            }
+
+            if (d <= hearingRadius)
+            {
+                enemy.InvestigateStone(stoneLandingPos);
+                anyReacted = true;
+            }
+        }
+
+        // Eğer menzil içinde düşman yoksa en yakındaki düşman yine de taşın sesini duyup oraya yönelsin
+        if (!anyReacted && closestEnemy != null)
+        {
+            closestEnemy.InvestigateStone(stoneLandingPos);
+        }
+    }
+
+    public void InvestigateStone(Vector3 stonePos)
+    {
+        if (dead) return;
+
+        targetPlayer = null;
+        pendingPlayer = null;
+        currentSeenDuration = 0f;
+        Bush.ClearSpottedState(this);
+
+        // Taşın düştüğü noktaya gitmesi ve orada etrafa bakınması boyunca dikkatini taşta tut
+        distractedByStoneUntil = Time.time + 5.5f;
+        lastSeenPosition = new Vector3(stonePos.x, baseGroundY, stonePos.z);
+        currentState = State.Search;
+        stateTimer = -1.5f;
+        Debug.Log($"{name} taşın düştüğü sesi duydu ve {lastSeenPosition} noktasına doğru gidiyor!");
+    }
+
+    // ---------- ARAMA (GÖRÜŞ KAYBOLUNCA VEYA TAŞ ATILINCA) ----------
     void HandleSearch()
     {
-        bool reachedLastSeen = MoveTowardsPoint(lastSeenPosition, patrolSpeed, 0.35f);
+        bool reachedLastSeen = MoveTowardsPoint(lastSeenPosition, patrolSpeed * 1.15f, 0.35f);
         if (reachedLastSeen)
         {
             stateTimer += Time.deltaTime;
@@ -544,6 +737,8 @@ public class EnemyAI : Enemy
             if (stateTimer >= 2.2f)
             {
                 stateTimer = 0f;
+                distractedByStoneUntil = 0f;
+                Bush.ClearSpottedState(this);
                 currentState = State.Patrol;
             }
         }
@@ -553,8 +748,9 @@ public class EnemyAI : Enemy
     void HandleAttack()
     {
         if (targetPlayer == null || !targetPlayer.isActiveAndEnabled || targetPlayer.IsDead ||
-            targetPlayer.isHidden || Bush.IsPointInAnyBush(targetPlayer.WorldPosition))
+            Bush.IsHiddenFromEnemy(targetPlayer, this))
         {
+            Bush.ClearSpottedState(this, targetPlayer);
             currentState = State.Search;
             stateTimer = 0f;
             targetPlayer = null;
@@ -595,15 +791,15 @@ public class EnemyAI : Enemy
             float normalized = t / duration;
             currentLungeOffset = Mathf.Sin(normalized * Mathf.PI) * 0.45f;
 
-            // Tam temas anında (ortada) karakter hâlâ dokunma mesafesindeyse ve gizlenmediyse hasar ver
+            // Tam temas anında (ortada) karakter hâlâ dokunma mesafesindeyse ve geçerli şekilde gizlenmediyse öldür
             if (!hitApplied && normalized >= 0.45f)
             {
                 hitApplied = true;
-                if (victim != null && !victim.IsDead && !victim.isHidden && !Bush.IsPointInAnyBush(victim.WorldPosition))
+                if (victim != null && !victim.IsDead && !Bush.IsHiddenFromEnemy(victim, this))
                 {
                     Vector3 d = victim.WorldPosition - transform.position;
                     d.y = 0f;
-                    if (d.magnitude <= attackRange + 0.3f)
+                    if (d.magnitude <= attackRange + 0.35f)
                     {
                         victim.TakeHit();
                     }

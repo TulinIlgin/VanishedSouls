@@ -1,27 +1,27 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda" at "2026-11-03T09:31:52.2629515Z"
 Built from '6000.6/staging' branch; Version is '6000.6.7f1 (b22767f04f04) revision 11675495'; Using compiler version '194234433'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26200) Professional' Language: 'tr' Physical Memory: 31764 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc" at "2026-11-07T00:02:11.3613748Z"
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'tr' Physical Memory: 32499 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-03T09:31:52Z
+Date: 2026-11-07T00:02:11Z
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe
+D:\unity1\ınstalls\6000.6.7f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorkerHW0
 -projectPath
-C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
+C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
 -logFile
 Logs/AssetImportWorkerHW0.log
 -srvPort
-57198
+60853
 -parentPid
-31148
+2824
 -analyticsCloudUserId
 anonymous
 -analyticsCloudProjectId
@@ -31,14 +31,14 @@ f22794d068e11a94daf8e7b064b181e3
 -editorAnalyticsEnabled
 1
 -cbmEditorLicense
-39ca964ad7071d2b4da0e82504b63986f9461596
+c0841c19aa84d7caf3bd0527fe21e275dbf83c44
 -cbmMachineId
-owOiYBJUSDZ9rd9ZLrP0/5NtWlo=
+oGEfRbwbEU9RurTXCj3z8AdOdqo=
 -licensingIpc
-LicenseClient-Enes Arda
+LicenseClient-gnc
 -noDiagnosticSwitchPersistentStore
 -job-worker-count
-7
+9
 -background-job-worker-count
 8
 -asset-garbage-collectors
@@ -46,8 +46,8 @@ LicenseClient-Enes Arda
 -force-d3d12
 -name
 AssetImport
-Successfully changed project path to: C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
-C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
+Successfully changed project path to: C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
+C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
@@ -85,27 +85,46 @@ C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [30672]  Target information:
+Player connection [5064]  Target information:
 
-Player connection [30672]  * "[IP] 10.168.79.107 [Port] 0 [Flags] 2 [Guid] 4037748759 [EditorId] 4037748759 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MTVPCQS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5064]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3355101009 [EditorId] 3355101009 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [30672] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [30672] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 7
+Player connection [5064]  * "[IP] 10.66.154.104 [Port] 0 [Flags] 2 [Guid] 3355101009 [EditorId] 3355101009 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [5064] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5064] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
 Library Redirect Path: Library/
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.3'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-gnc"
+[Licensing::IpcConnector] LicenseClient-gnc channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7" at "2026-11-07T00:02:13.0710333Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21396, path: "D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              3e23ea1909f841f6bc8cbd829da7a14a
+  Correlation Id:          710119a7ea86afe41173d286242040e8
+  External correlation Id: 2299954913369150669
+  Machine Id:              oGEfRbwbEU9RurTXCj3z8AdOdqo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-gnc-6000.6.7" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7-notifications" at "2026-11-07T00:02:13.0843063Z"
+[Licensing::Module] Licensing Background thread has ended after 1.72s
 Initialising UDS system complete:
   - System type: Client
-  - Resource namespace: 1348ec003a54302f0b34e7b4cc9558a5
+  - Resource namespace: 431e51b1b788ecbe477eaa08b78383a9
   - Shared memory size: 1073741824
   - Command buffer id: 1052576
   - Command buffer size: 8192
   - Hashmap size: 4194304
   - Service connected: true
   - Service working directory: Library/DataStore/
-Refreshing native plugins compatible for Editor in 2.53 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.92 ms, found 3 plugins.
 [Physics::Module] Selected backend (deferred post-plugins).
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -114,56 +133,29 @@ Refreshing native plugins compatible for Editor in 2.53 ms, found 3 plugins.
 [Physics::Module] Threading Mode: Multi-Threaded
 Initialize engine version: 6000.6.7f1 (b22767f04f04)
 [EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=262144, entitiesPerBlock=1024, blocksPerSlotPage=0, slots reserved=4294967296 bytes
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls/Assets
+[Subsystems] Discovering subsystems at path D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls/Assets
 Forcing GfxDevice: Direct3D 12
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 d3d12: failed to query info queue interface (0x80004002).
 Direct3D:
     Version:         Direct3D 12 [level 12.2]
-    Renderer:        NVIDIA GeForce RTX 5070 Laptop GPU (ID=0x2d18)
+    Renderer:        NVIDIA GeForce RTX 4060 Laptop GPU (ID=0x28a0)
     Vendor:          NVIDIA
-    VRAM:            7891 MB
-    App VRAM Budget: 7123 MB
-    Driver:          32.0.15.9282
+    VRAM:            7956 MB
+    App VRAM Budget: 7188 MB
+    Driver:          32.0.16.1742
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
-Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
+Mono path[0] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Managed'
+Mono path[1] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56232
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-[Licensing::Module] Licensing is not yet initialized.
-[Licensing::Client] Error: HandshakeResponse reported an error:
-	ResponseCode: 505
-	ResponseStatus: Unsupported protocol version '1.18.3'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-Enes Arda"
-[Licensing::IpcConnector] LicenseClient-Enes Arda channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda-6000.6.7" at "2026-11-03T09:31:53.6501903Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 28740, path: "C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
-[Licensing::Module] LicensingClient has failed validation; ignoring
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.3+d7ffd15
-  Session Id:              5a0576aaef3a4368ab19d91c4d44938f
-  Correlation Id:          024d82cf62f918925b21829ee4a2f8cd
-  External correlation Id: 7930952434228287140
-  Machine Id:              owOiYBJUSDZ9rd9ZLrP0/5NtWlo=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Enes Arda-6000.6.7" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda-6000.6.7-notifications" at "2026-11-03T09:31:53.6604245Z"
-[Licensing::Module] Licensing Background thread has ended after 1.40s
-[Licensing::Module] Licensing is initialized (took 0.04s).
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: 18966888549583-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.043702 seconds.
-Native extension for Android target not found
+Register platform support module: D:/unity1/ınstalls/6000.6.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002374 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -171,335 +163,1346 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.530 seconds
-Domain Reload Profiling: 1467ms
-	BeginReloadAssembly (195ms)
-	RebuildCommonClasses (8ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (134ms)
-	LoadAllAssembliesAndSetupDomain (578ms)
-		LoadAssemblies (192ms)
-		TypeCache.Refresh (449ms)
-			TypeCache.ScanAssembly (431ms)
+- Finished resetting the current domain, in  0.789 seconds
+Domain Reload Profiling: 1752ms
+	BeginReloadAssembly (199ms)
+	RebuildCommonClasses (10ms)
+	RebuildNativeTypeToScriptingClass (36ms)
+	initialDomainReloadingComplete (108ms)
+	LoadAllAssembliesAndSetupDomain (609ms)
+		LoadAssemblies (198ms)
+		TypeCache.Refresh (427ms)
+			TypeCache.ScanAssembly (402ms)
 		AnalyzeDomain (1ms)
-	FinalizeReload (531ms)
+	FinalizeReload (791ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			BeforeProcessingInitializeOnLoad (108ms)
-			ProcessInitializeOnLoadAttributes (104ms)
-			ProcessInitializeOnLoadMethodAttributes (205ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (170ms)
+			ProcessInitializeOnLoadAttributes (188ms)
+			ProcessInitializeOnLoadMethodAttributes (296ms)
 Initializing Unity extensions:
 [Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967893274657-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.79 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.82 ms, found 3 plugins.
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.000 seconds
-Domain Reload Profiling: 2218ms
-	BeginReloadAssembly (324ms)
-		DisableScriptedObjects (21ms)
-		CreateAndSetChildDomain (53ms)
-	RebuildCommonClasses (15ms)
-	RebuildNativeTypeToScriptingClass (27ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (773ms)
-		LoadAssemblies (422ms)
-		TypeCache.Refresh (201ms)
-			TypeCache.ScanAssembly (183ms)
-		AnalyzeDomain (90ms)
-			BuildScriptInfoCaches (84ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (1001ms)
+- Finished resetting the current domain, in  1.331 seconds
+Domain Reload Profiling: 2730ms
+	BeginReloadAssembly (357ms)
+		DisableScriptedObjects (17ms)
+		CreateAndSetChildDomain (59ms)
+	RebuildCommonClasses (14ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (86ms)
+	LoadAllAssembliesAndSetupDomain (911ms)
+		LoadAssemblies (539ms)
+		TypeCache.Refresh (231ms)
+			TypeCache.ScanAssembly (208ms)
+		AnalyzeDomain (99ms)
+			BuildScriptInfoCaches (93ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1333ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			BeforeProcessingInitializeOnLoad (155ms)
-			ProcessInitializeOnLoadAttributes (383ms)
-			ProcessInitializeOnLoadMethodAttributes (101ms)
-			AfterProcessingInitializeOnLoad (6ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (181ms)
+			ProcessInitializeOnLoadAttributes (461ms)
+			ProcessInitializeOnLoadMethodAttributes (137ms)
+			AfterProcessingInitializeOnLoad (5ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
 AcceleratorClientConnectionCallback - disconnected - :0
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 3.20 ms, found 3 plugins.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4659 unused Assets / (6.6 MB). Loaded Objects now: 5586.
-Memory consumption went from 314.5 MB to 307.9 MB.
-Total: 10.953600 ms (FindLiveObjects: 0.488700 ms CreateObjectMapping: 0.706100 ms MarkObjects: 7.723900 ms  DeleteObjects: 1.754500 ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 3.58 ms, found 3 plugins.
+Unloading 63 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4697 unused Assets / (9.7 MB). Loaded Objects now: 5519.
+Memory consumption went from 304.3 MB to 294.6 MB.
+Total: 23.809300 ms (FindLiveObjects: 1.404300 ms CreateObjectMapping: 0.647500 ms MarkObjects: 13.938000 ms  DeleteObjects: 7.388700 ms)
 
 ========================================================================
 Received Prepare
 AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5586.
-Memory consumption went from 309.6 MB to 306.6 MB.
-Total: 6.429800 ms (FindLiveObjects: 0.334300 ms CreateObjectMapping: 0.070400 ms MarkObjects: 5.420100 ms  DeleteObjects: 0.449800 ms)
+Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
+Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (5.9 MB). Loaded Objects now: 5519.
+Memory consumption went from 298.3 MB to 292.5 MB.
+Total: 17.768400 ms (FindLiveObjects: 0.624300 ms CreateObjectMapping: 0.273600 ms MarkObjects: 11.787400 ms  DeleteObjects: 4.473400 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T09:32:16.6612329Z
-  Time since last request: 1538.67734270000005 seconds.
-  importAddress: GUID: a9a1b119bf268f0439d53d0b795ee502 - Path: Assets/Characters/Aria/AriaThrowRock.anim - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: a9a1b119bf268f0439d53d0b795ee502 - Path: Assets/Characters/Aria/AriaThrowRock.anim - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: a9a1b119bf268f0439d53d0b795ee502' -> (Import Result ID: '68765d6c4127b929f655081526385567') in 0.175 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=48d6fe501ef2589e6be633edfc7de8bf DependenciesID=09ecea06535700d03d4c551388505a16 StaticDependenciesID=c5536758277857d1ee1300349a6102e5 
+  Time of request: 2026-11-07T00:02:38.8028352Z
+  Time since last request: 31739.00082750000001 seconds.
+  importAddress: GUID: 7a728dc81fd23754e9ae0c870ad2e783 - Path: Assets/MapAssets/modular-vines/source/Bramble/Bramble.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 7a728dc81fd23754e9ae0c870ad2e783 - Path: Assets/MapAssets/modular-vines/source/Bramble/Bramble.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 7a728dc81fd23754e9ae0c870ad2e783' -> (Import Result ID: 'dd63b40c0ddc6f8d030fdb49bb2feaf4') in 0.363 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dff3ba9b2a7992d512d1b9acfd743923 DependenciesID=95642a1c2d7574aac8c123ddadf66eb1 StaticDependenciesID=3d764dfd8267b129fc38d1d155cd751d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.1910034Z
+  Time since last request: 0.00167 seconds.
+  importAddress: GUID: ac69dfed6d5dbd149b8e903a380a1c1b - Path: Assets/Materials/mud_forest/mud_forest_nor_gl_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ac69dfed6d5dbd149b8e903a380a1c1b - Path: Assets/Materials/mud_forest/mud_forest_nor_gl_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ac69dfed6d5dbd149b8e903a380a1c1b' -> (Import Result ID: 'e4ca94374d1b3365bb7de9797cdaa0dd') in 0.103 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=de4f109be358df5dfcc0077b85fa5294 DependenciesID=9ff6bcbd57a007b398a9199e346aadae StaticDependenciesID=04773e12f4ae3c9c9b158b184d892d96 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T09:32:16.8646311Z
-  Time since last request: 0.0028409 seconds.
-  importAddress: GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: ceade2e7e79362e499e5b1c8611f5900' -> (Import Result ID: 'f45ec0a25419699d1fb3e5c98d91e7aa') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=029980081e1df73a06aab958c2e86d39 DependenciesID=f5fb232c55c91a8093db9498c41e3f59 StaticDependenciesID=7eff03ee27504ac43853bb4858e6e4a7 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Refreshing native plugins compatible for Editor in 2.29 ms, found 3 plugins.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5588.
-Memory consumption went from 311.8 MB to 308.8 MB.
-Total: 7.192000 ms (FindLiveObjects: 0.369100 ms CreateObjectMapping: 0.122800 ms MarkObjects: 6.043800 ms  DeleteObjects: 0.470800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T09:37:43.521472Z
-  Time since last request: 326.63679610000003 seconds.
-  importAddress: GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: ceade2e7e79362e499e5b1c8611f5900' -> (Import Result ID: '40c08918ca3738982c868374132dc749') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e67035ca0613a646757b9d88f808cacd DependenciesID=54a55abfc46a37f28bafda4b3f4dd2db StaticDependenciesID=ab3ded65b8c0268ea11549a1fd3fe57b 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Refreshing native plugins compatible for Editor in 2.04 ms, found 3 plugins.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5588.
-Memory consumption went from 314.1 MB to 311.1 MB.
-Total: 7.098100 ms (FindLiveObjects: 0.396800 ms CreateObjectMapping: 0.073500 ms MarkObjects: 6.022500 ms  DeleteObjects: 0.446200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T09:39:38.7691231Z
-  Time since last request: 115.2282795 seconds.
-  importAddress: GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: ceade2e7e79362e499e5b1c8611f5900' -> (Import Result ID: 'cd177456694bce9475ef7254990ef51a') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c7e19b00741af9524b23082efe347da7 DependenciesID=7fb5556cc1c07131068ae214f12a30ed StaticDependenciesID=3396002ad1b448e4fa00a3d00c943bf2 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5588.
-Memory consumption went from 314.1 MB to 311.2 MB.
-Total: 10.754300 ms (FindLiveObjects: 0.477000 ms CreateObjectMapping: 0.172800 ms MarkObjects: 9.326800 ms  DeleteObjects: 0.564000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5588.
-Memory consumption went from 316.5 MB to 313.5 MB.
-Total: 9.537300 ms (FindLiveObjects: 0.520000 ms CreateObjectMapping: 0.108300 ms MarkObjects: 8.173100 ms  DeleteObjects: 0.551700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:01:06.1983313Z
-  Time since last request: 1287.41040780000003 seconds.
-  importAddress: GUID: 553a8390024703046bf2e94fe5c66b62 - Path: Assets/MapAssets - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 553a8390024703046bf2e94fe5c66b62 - Path: Assets/MapAssets - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: 553a8390024703046bf2e94fe5c66b62' -> (Import Result ID: 'c01527c1f58524bd5e61c4698d048248') in 0.003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ff9bf8b6b1d14461d115b4706ae35575 DependenciesID=4cb1b51afcccfbcdd2952717d5c3d802 StaticDependenciesID=421c50f42579f16e13684dc94be82123 
+  Time of request: 2026-11-07T00:02:39.3147817Z
+  Time since last request: 0.0007796 seconds.
+  importAddress: GUID: e5d4c51bf3359f14a96472cd70659b0b - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e5d4c51bf3359f14a96472cd70659b0b - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e5d4c51bf3359f14a96472cd70659b0b' -> (Import Result ID: '94f35645d7163af23b5d150239b31e74') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cff485fcc20727e7cd7c71883fbea26f DependenciesID=f041cb3ff10f9064d94d537364b82681 StaticDependenciesID=0bed0d5eb06606368f6a60aa61b2fcca 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:02:07.0125765Z
-  Time since last request: 60.7970411 seconds.
-  importAddress: GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: 519a4f314bc268c44a065fb198c11002' -> (Import Result ID: 'cd5002907f048c3a7076c58dfde48dc8') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b4c742857cf49106e80628483a88afbd DependenciesID=adbdd947a05cefeff6e58b3ef0a49d36 StaticDependenciesID=9d4db34be8bd9ab046a832a78cfd238f 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:02:07.0348238Z
-  Time since last request: 0.0029188 seconds.
-  importAddress: GUID: 3f9848837ac0b6c4586f2d7d6b83e878 - Path: Assets/MapAssets/DeadTreePack/Bark1C.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 3f9848837ac0b6c4586f2d7d6b83e878 - Path: Assets/MapAssets/DeadTreePack/Bark1C.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-[Licensing::Client] Successfully resolved entitlement details
-Imported 'GUID: 3f9848837ac0b6c4586f2d7d6b83e878' -> (Import Result ID: 'e5e68c204ef4b7f85e8215ac124b646c') in 0.053 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44033ea49b0120fdc7ac1ee6f8ee624b DependenciesID=53e4d010659154a34c4aef10aaac7648 StaticDependenciesID=87123f06be915a26a42948a334290513 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:02:07.1040634Z
-  Time since last request: 0.0029805 seconds.
-  importAddress: GUID: 017364cf68dfae94ea60aa4d04ce152c - Path: Assets/MapAssets/DeadTreePack/DeadTreePack.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 017364cf68dfae94ea60aa4d04ce152c - Path: Assets/MapAssets/DeadTreePack/DeadTreePack.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: 017364cf68dfae94ea60aa4d04ce152c' -> (Import Result ID: '45b569afe5c62d30b296557b13e47e9d') in 0.063 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=559aa09fdf3168aef9198479bd67f902 DependenciesID=a9b01f0d6e81cf2734d9a8b5f491a454 StaticDependenciesID=814606e02836fc97e519ff754f31d714 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 43
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:02:07.6532244Z
-  Time since last request: 0.4756948 seconds.
-  importAddress: GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: PreviewImporter
-Importing 'GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: PreviewImporter' with importer (PreviewImporter)
-Imported 'GUID: 519a4f314bc268c44a065fb198c11002' -> (Import Result ID: 'b547756ea7b5cb23f15dca2592914958') in 0.002 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e4f4b8d571c3285876a71bbbbacf43ec DependenciesID=650a84ee345d691805b7de44ed0daf89 StaticDependenciesID=fd4bcc7702753d6b61a0efe321181b79 
+  Time of request: 2026-11-07T00:02:39.337812Z
+  Time since last request: 0.0006905 seconds.
+  importAddress: GUID: d18b3ef138aaab04b8dabf1c6f2fc618 - Path: Assets/Scripts/WallObstacle.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d18b3ef138aaab04b8dabf1c6f2fc618 - Path: Assets/Scripts/WallObstacle.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d18b3ef138aaab04b8dabf1c6f2fc618' -> (Import Result ID: 'a9920d789e15d86507cc0005de4d1d65') in 0.008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=687dfb2d7d9f357c7a03bd1475d04394 DependenciesID=01b04653fce8138db3353d9442eb9b20 StaticDependenciesID=28fae857a0f06a4e92a44cf596d1364c 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5588.
-Memory consumption went from 312.9 MB to 310.0 MB.
-Total: 9.486100 ms (FindLiveObjects: 0.338000 ms CreateObjectMapping: 0.208000 ms MarkObjects: 8.054300 ms  DeleteObjects: 0.664700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:03:14.3270576Z
-  Time since last request: 66.6531128 seconds.
-  importAddress: GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: e31d823679b838a4a801d5b4d511f2eb' -> (Import Result ID: '296687a2d12c764073c3e022e341cf80') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f851a16ea8798b931d52980b67c4bfa0 DependenciesID=9e4105b81ba5dfaf88d640c167313203 StaticDependenciesID=e30a506fb2ba9b83b5c306549d774723 
+  Time of request: 2026-11-07T00:02:39.3635489Z
+  Time since last request: 0.0006139 seconds.
+  importAddress: GUID: a2a634508a3c29e4e8adf5f7fd1489e6 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Emissive.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a2a634508a3c29e4e8adf5f7fd1489e6 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Emissive.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a2a634508a3c29e4e8adf5f7fd1489e6' -> (Import Result ID: 'd7c867e457a61af87fde4aae6578c9f8') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=946d941cf3f44008c7ce5aa18ce558a8 DependenciesID=def13ec0ca0b69eb6ebea1194bed7712 StaticDependenciesID=d2c70cec25f78a8c31405cb7fc00b6c1 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:03:14.3637068Z
-  Time since last request: 0.0032064 seconds.
-  importAddress: GUID: c132c1922ae75564bacce28725509c50 - Path: Assets/MapAssets/archive/sketch.gltf - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: c132c1922ae75564bacce28725509c50 - Path: Assets/MapAssets/archive/sketch.gltf - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: c132c1922ae75564bacce28725509c50' -> (Import Result ID: '4987a44a6d37b28a9b2205e8e63e89a7') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a75a5cc3add741b2155b1fcadeecda05 DependenciesID=f7169b21295143d6bb243db5edb064b9 StaticDependenciesID=fe52669db3b5e9d8ad2d5c74f9568c52 
+  Time of request: 2026-11-07T00:02:39.4022818Z
+  Time since last request: 0.0018994 seconds.
+  importAddress: GUID: ff59f160c9189154f938b305fa7b40a6 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_tile_Diffuse2.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ff59f160c9189154f938b305fa7b40a6 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_tile_Diffuse2.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ff59f160c9189154f938b305fa7b40a6' -> (Import Result ID: '5117eeb5513f740d7844c18200df60d4') in 0.024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8936b0251166cf9468e71cce3b864c10 DependenciesID=6536ca7035546bf1f6bb474d3c2638c0 StaticDependenciesID=44e704a81c443ce5e45c380cac706970 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:03:14.3866911Z
-  Time since last request: 0.0032945 seconds.
+  Time of request: 2026-11-07T00:02:39.4499824Z
+  Time since last request: 0.0007404 seconds.
+  importAddress: GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ceade2e7e79362e499e5b1c8611f5900 - Path: Assets/Vanished.unity - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ceade2e7e79362e499e5b1c8611f5900' -> (Import Result ID: '045405481b98c7d72bcd39e700b482ef') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5282ca82ede59a5d06558468672b8c94 DependenciesID=ca0125eda27b605c0503d26fcce9872a StaticDependenciesID=e405a4033fdca8aa9a3b18fb25d81b84 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.4887859Z
+  Time since last request: 0.0006729 seconds.
+  importAddress: GUID: 66de956514b3516438ce52dc7c65399a - Path: Assets/MapAssets/grass/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 66de956514b3516438ce52dc7c65399a - Path: Assets/MapAssets/grass/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 66de956514b3516438ce52dc7c65399a' -> (Import Result ID: '6d265ccd74d17d9324884e6c192ce6e6') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=26729b14a765611b8db44f84a8e94247 DependenciesID=aef7340d2c4f348b1f234b57e488f289 StaticDependenciesID=6eb32c91f27723f6605407fd1bd2effd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.5173142Z
+  Time since last request: 0.0007933 seconds.
+  importAddress: GUID: 98ccfcc61246085459df316e38f1ab7a - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/source/Trees.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 98ccfcc61246085459df316e38f1ab7a - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/source/Trees.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 98ccfcc61246085459df316e38f1ab7a' -> (Import Result ID: '09314785a2ba8c0697b78663dc1acd3c') in 0.047 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=22a22e5a50c51dc1ef40c0d51a6f8e97 DependenciesID=8c7ceea3f61645e3eb4ac96a0688a07f StaticDependenciesID=c163b24d31e4dd6b8b88bd30aaba722a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.5859439Z
+  Time since last request: 0.000555 seconds.
+  importAddress: GUID: 70b167d48fd15ab4297f7b6e1583fdb8 - Path: Assets/MapAssets/grass/textures/Grass1_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 70b167d48fd15ab4297f7b6e1583fdb8 - Path: Assets/MapAssets/grass/textures/Grass1_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 70b167d48fd15ab4297f7b6e1583fdb8' -> (Import Result ID: 'd9c19674bbb8a1f0b0052546c67bb563') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=705a8639c7932f267b899fe713b55e13 DependenciesID=f16f545a84014d034694d4711396fb7e StaticDependenciesID=31ec31401cd0a3d93f130fe3935fe8f5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.620988Z
+  Time since last request: 0.0009129 seconds.
+  importAddress: GUID: 5e45fc1b722cc994493406412381acaf - Path: Assets/Vanished/NavMesh-Object_4.asset - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 5e45fc1b722cc994493406412381acaf - Path: Assets/Vanished/NavMesh-Object_4.asset - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 5e45fc1b722cc994493406412381acaf' -> (Import Result ID: '47429de2faa411637ca486f728ba3ca6') in 0.039 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=65aa38001982c001eeba140633a71ef8 DependenciesID=bc79e22d8ae143f2351bd41a0f4748de StaticDependenciesID=ad7108cda7fcebc778f6972d4bb5f28b 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.6789835Z
+  Time since last request: 0.0007084 seconds.
+  importAddress: GUID: ae6e634d43589f541bd8f88c9928094f - Path: Assets/Scripts/Bush.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ae6e634d43589f541bd8f88c9928094f - Path: Assets/Scripts/Bush.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ae6e634d43589f541bd8f88c9928094f' -> (Import Result ID: 'ec1eb50ec41ead169531410d7b2a5919') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c5bde5a2d62424c8b2c01006d3f44811 DependenciesID=5345e315f2cab82184c07e2b7a91370f StaticDependenciesID=f33bf66ff66c45403e6ae5d395bb9729 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.7047506Z
+  Time since last request: 0.0008324 seconds.
+  importAddress: GUID: d872cbf10a1660846a981b294162f412 - Path: Assets/MapAssets/ivy-set/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d872cbf10a1660846a981b294162f412 - Path: Assets/MapAssets/ivy-set/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d872cbf10a1660846a981b294162f412' -> (Import Result ID: 'bc9bb3132fdc070528b00c2c6b472878') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7b2fb72f9ede0f5b44b8dc5472446605 DependenciesID=d817494de088fce834b8d0d3d164b95b StaticDependenciesID=5b0033fc163d60a72da2d6f3e3e25160 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.7281017Z
+  Time since last request: 0.0006662 seconds.
+  importAddress: GUID: fbad5baea2f2fd449b352444959ea348 - Path: Assets/MapAssets/dry-grass/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: fbad5baea2f2fd449b352444959ea348 - Path: Assets/MapAssets/dry-grass/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: fbad5baea2f2fd449b352444959ea348' -> (Import Result ID: '140488a6fdaffe10c88ea04d03be8783') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=deaa17514e52ad17e3100698d44a6076 DependenciesID=3421a63b594691e6275abaee26930d04 StaticDependenciesID=fbc202107e44455c5a4706208ae534a4 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.7506052Z
+  Time since last request: 0.0007733 seconds.
   importAddress: GUID: d2163e5b729e2f64da86d5640213a76e - Path: Assets/MapAssets/archive - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
 Importing 'GUID: d2163e5b729e2f64da86d5640213a76e - Path: Assets/MapAssets/archive - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: d2163e5b729e2f64da86d5640213a76e' -> (Import Result ID: '1e95bfa2d6919918958860349954bef5') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=893fd6a1283401442ddb9b9689b0a5d3 DependenciesID=05934a9dfaf773f9f1f118e9b74cf7fe StaticDependenciesID=0ef6cef6f16fb5f1e0aa62df918ba16e 
+Imported 'GUID: d2163e5b729e2f64da86d5640213a76e' -> (Import Result ID: '646107ed792bc5677541f924e717a710') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=23d464fb08be85c16bd6422d06f556ef DependenciesID=0ba74e97d65fc8d46aae56f68692f094 StaticDependenciesID=62cbdf30656084b0a43e1f211826327b 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:03:14.4142214Z
-  Time since last request: 0.0026039 seconds.
-  importAddress: GUID: 001e794d7e9ae05478f512106fa5b7da - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-BumpMap.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 001e794d7e9ae05478f512106fa5b7da - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-BumpMap.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: 001e794d7e9ae05478f512106fa5b7da' -> (Import Result ID: '5177c829e497fc4f65deaaffae885691') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3aa6a936c1eca1fa16bf102cb7cce839 DependenciesID=312f9cba62911d7c85f2237a156f054f StaticDependenciesID=045da0012e426685e7288704bf567d8b 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:03:15.5361709Z
-  Time since last request: 1.0987702 seconds.
-  importAddress: GUID: d2163e5b729e2f64da86d5640213a76e - Path: Assets/MapAssets/archive - Importer: PreviewImporter
-Importing 'GUID: d2163e5b729e2f64da86d5640213a76e - Path: Assets/MapAssets/archive - Importer: PreviewImporter' with importer (PreviewImporter)
-Imported 'GUID: d2163e5b729e2f64da86d5640213a76e' -> (Import Result ID: '8f35545be5000a278c2ae6348d90fca9') in 0.001 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b7fce1512faaeefad7078b9fb1277450 DependenciesID=e1d4f9601e173ad0fffbadea740c8077 StaticDependenciesID=3129fb50a4d51077965aaa50ac27e249 
+  Time of request: 2026-11-07T00:02:39.7747495Z
+  Time since last request: 0.0007811 seconds.
+  importAddress: GUID: 303ccd3ae2c0c864daaad1e789851cfc - Path: Assets/Scripts/LumenController.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 303ccd3ae2c0c864daaad1e789851cfc - Path: Assets/Scripts/LumenController.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 303ccd3ae2c0c864daaad1e789851cfc' -> (Import Result ID: 'dafeb5788f7a07b9387b6a6b329ebd82') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0f1d2ad4544350bfa313a8d991b0b80c DependenciesID=c4a1ea6a3d310d3b8284be7102069dbf StaticDependenciesID=44fa1ed2c15fdc0c629f21e1b2cf0fb0 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:03:19.0920602Z
-  Time since last request: 3.5429754 seconds.
-  importAddress: GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: PreviewImporter
-Importing 'GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: PreviewImporter' with importer (PreviewImporter)
-Imported 'GUID: e31d823679b838a4a801d5b4d511f2eb' -> (Import Result ID: '8b8f4eb7b17915697d3458d2dfb417f0') in 0.054 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=61b128c4f1693f39a7c6b7556e820de5 DependenciesID=32ce4fd2aa1f41c562fae807262ddc6d StaticDependenciesID=125ffdcc044c88b1910a9ff9dd892c5c 
+  Time of request: 2026-11-07T00:02:39.8015009Z
+  Time since last request: 0.0010641 seconds.
+  importAddress: GUID: d8f7cdc802341024aac88277d7e86326 - Path: Assets/Scripts/EnemyAI.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d8f7cdc802341024aac88277d7e86326 - Path: Assets/Scripts/EnemyAI.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d8f7cdc802341024aac88277d7e86326' -> (Import Result ID: '18ab3a24bf6e2aaf290e1d8e9f5df165') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=044efe2173bcbb7b755d8f632a600598 DependenciesID=291fd06c8ae2832cacceefc90452733d StaticDependenciesID=7988696df13b974935d66c9e5b6c0724 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.8303252Z
+  Time since last request: 0.0008662 seconds.
+  importAddress: GUID: 6bb0b7859026a834aa9d49ce0d1a9916 - Path: Assets/MapAssets/grass/textures/Grass_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 6bb0b7859026a834aa9d49ce0d1a9916 - Path: Assets/MapAssets/grass/textures/Grass_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 6bb0b7859026a834aa9d49ce0d1a9916' -> (Import Result ID: 'eb2e99ef08fecd26710db990548b68b2') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1b060b21c2dc74e5474213c420ca9a9c DependenciesID=c5b865f5bb973aafc469e8c17eeb4593 StaticDependenciesID=4ee3cc36f74a298fe741da9651ff8879 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.8679367Z
+  Time since last request: 0.0012074 seconds.
+  importAddress: GUID: 4b31cb8c2d28b3a4db169e3e233d88df - Path: Assets/Editor - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 4b31cb8c2d28b3a4db169e3e233d88df - Path: Assets/Editor - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 4b31cb8c2d28b3a4db169e3e233d88df' -> (Import Result ID: 'e57bbb4311c52e9d151651f59f8219f9') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=52e94cb92f3a6867672fe47f178280ce DependenciesID=eb97df8703cd5f593c42ca050b272883 StaticDependenciesID=42e87c9cf896638e37d816a080419414 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.8918649Z
+  Time since last request: 0.0007382 seconds.
+  importAddress: GUID: e7214d63d26e6904bb970148c61c05e3 - Path: Assets/MapAssets/ivy-set/textures/Thorn_01.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e7214d63d26e6904bb970148c61c05e3 - Path: Assets/MapAssets/ivy-set/textures/Thorn_01.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e7214d63d26e6904bb970148c61c05e3' -> (Import Result ID: '0bd82401663e0947436f68597b6fdea5') in 0.016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c478b7f5b5fa5bbb4a26599150fa7404 DependenciesID=8aa97cc9f9ccd0417de2494f9cdaeed3 StaticDependenciesID=d8438ec6b86ddfba93baf64c49b523b0 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.9280352Z
+  Time since last request: 0.001936 seconds.
+  importAddress: GUID: 28a8377b132806f4890e1336e423b1d0 - Path: Assets/MapAssets/modular-vines/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 28a8377b132806f4890e1336e423b1d0 - Path: Assets/MapAssets/modular-vines/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 28a8377b132806f4890e1336e423b1d0' -> (Import Result ID: 'bc888066297fe3cc5f5455f3662a5091') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a93f6825c6d23c5367a41aa2471dfb0a DependenciesID=aa1d194be85ce2ee7fce51b7c551f184 StaticDependenciesID=cade754049a497a40d627afb647b507b 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.9498531Z
+  Time since last request: 0.000612 seconds.
+  importAddress: GUID: 831f1e4d3b0bc094eb9ffb2905e232f9 - Path: Assets/MapAssets/archive/sketch.tilt - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 831f1e4d3b0bc094eb9ffb2905e232f9 - Path: Assets/MapAssets/archive/sketch.tilt - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 831f1e4d3b0bc094eb9ffb2905e232f9' -> (Import Result ID: 'ba672f9df9bc3103106215a24ff544c8') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=649876f89c872cb77b00d8c892976915 DependenciesID=fadea9a2252d302a3c9ae5826b88dfc1 StaticDependenciesID=413e644fa5015cea08e5b0ba02260ecb 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.9741371Z
+  Time since last request: 0.0006683 seconds.
+  importAddress: GUID: 94af8d82b2b3d7c47b2dfaae2ebe9eba - Path: Assets/Scripts/AriaController.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 94af8d82b2b3d7c47b2dfaae2ebe9eba - Path: Assets/Scripts/AriaController.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 94af8d82b2b3d7c47b2dfaae2ebe9eba' -> (Import Result ID: '50f05d823f9dc5190947319fbca7bbc0') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0b6aa753b8270c6f59b75e46abbdfba2 DependenciesID=b280fd43d49b9054e21b343b9c6ddd1d StaticDependenciesID=5d239b3d31120e2f10a81b9b3c4f0a7a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:39.9969739Z
+  Time since last request: 0.0008377 seconds.
+  importAddress: GUID: 43ab386c2eaf59b409ab11b3d0920e60 - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Height.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 43ab386c2eaf59b409ab11b3d0920e60 - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Height.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 43ab386c2eaf59b409ab11b3d0920e60' -> (Import Result ID: '7820d0ba77ac8fe6f210bc10219749a1') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=45c3a44756e63ccdeb8b0afa514fe8c9 DependenciesID=dd636f0459431b6e82294092420f4e70 StaticDependenciesID=444ce7ba5e0ecd86f8b7133b7b9ca0d5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.0321033Z
+  Time since last request: 0.0009152 seconds.
+  importAddress: GUID: a3a27a92a63467541ad15d7b37b63e8e - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Normal_DirectX.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a3a27a92a63467541ad15d7b37b63e8e - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Normal_DirectX.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a3a27a92a63467541ad15d7b37b63e8e' -> (Import Result ID: '1b6090be30801cde80d83e064478b169') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=47577857b0b7da642095ac36f64a6d06 DependenciesID=b671bb4c18eea19f634fd6f71d9152b3 StaticDependenciesID=f4d00c076ec42fbb29dff27baf45ac06 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.0643148Z
+  Time since last request: 0.0007704 seconds.
+  importAddress: GUID: 001e794d7e9ae05478f512106fa5b7da - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-BumpMap.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 001e794d7e9ae05478f512106fa5b7da - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-BumpMap.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 001e794d7e9ae05478f512106fa5b7da' -> (Import Result ID: '9bd862f69452267ccbdad217c9ecf59f') in 0.016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ffbfe52fb10f17f57362d50ae5a2bc3d DependenciesID=b8fa1b63627b112d69b264c859f2da9f StaticDependenciesID=926e0278a71f5b8fccee22164104377a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.0984509Z
+  Time since last request: 0.000724 seconds.
+  importAddress: GUID: 658500db7cd38024e81c4c40ee1b93f9 - Path: Assets/Materials/mud_forest/mud_forest_rough_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 658500db7cd38024e81c4c40ee1b93f9 - Path: Assets/Materials/mud_forest/mud_forest_rough_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 658500db7cd38024e81c4c40ee1b93f9' -> (Import Result ID: 'ed004ffd0e5687217488f5a3611f6220') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5c5ebf0642691823c58f272f18f00f5c DependenciesID=bba77a25b3caa5a6ed0679a73ed8c46b StaticDependenciesID=c8c5ae5e4b4ec28b0d5ad7d30a0162e3 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.1348433Z
+  Time since last request: 0.0002249 seconds.
+  importAddress: GUID: 2d40a915aa4dd9d4381213eb8af73e66 - Path: Assets/Scripts/CameraFollow.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 2d40a915aa4dd9d4381213eb8af73e66 - Path: Assets/Scripts/CameraFollow.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 2d40a915aa4dd9d4381213eb8af73e66' -> (Import Result ID: 'ac9af616df4487e3a6a0a2c1bce9e00e') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=64206792fccf9e7c6dfeaa7b09b7fd19 DependenciesID=a9bc736a4e5796c8b78279820d19001f StaticDependenciesID=e31390de2bd6f8592ded774c6f4aaf49 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.155322Z
+  Time since last request: 0.0006319 seconds.
+  importAddress: GUID: da3d2dc9e38ff0049a1e7d59b19874ef - Path: Assets/MapAssets/ivy-set/textures/Bark_01.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: da3d2dc9e38ff0049a1e7d59b19874ef - Path: Assets/MapAssets/ivy-set/textures/Bark_01.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: da3d2dc9e38ff0049a1e7d59b19874ef' -> (Import Result ID: 'bb4ec86ed5641c385af3a7c45ab13c9d') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0859c94d1238e7c7e6e31197d100a986 DependenciesID=6163d866d8a9782dab3475d26d34ed92 StaticDependenciesID=4a9d46301ab920479f2cc75c8cf4ed1c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.1913989Z
+  Time since last request: 0.0005544 seconds.
+  importAddress: GUID: 758e7af3ee315574192a166e96235cf0 - Path: Assets/MapAssets/source/Collection.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 758e7af3ee315574192a166e96235cf0 - Path: Assets/MapAssets/source/Collection.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 758e7af3ee315574192a166e96235cf0' -> (Import Result ID: '5fe07a64486e24e7a098dae62a9be448') in 0.022 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a5fa754ae7ecabf777c3bf9cc04a1675 DependenciesID=40d9f5a6ed5b7e418ee6ea1e17230eab StaticDependenciesID=ae1eb7556aaa5ea11757a603e3ebfeac 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.2343606Z
+  Time since last request: 0.000998 seconds.
+  importAddress: GUID: 723789e0b644c574bbc5163ba94f508d - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_rough_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 723789e0b644c574bbc5163ba94f508d - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_rough_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 723789e0b644c574bbc5163ba94f508d' -> (Import Result ID: '5173df89597ae187d87afaf7788b1769') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3b64c7abbff2d6da9b599086c47b21ee DependenciesID=64c0cc200701ede2cfdeeba67807b282 StaticDependenciesID=870428d65902fbc1fbfb2ddb56f3d827 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.2784907Z
+  Time since last request: 0.0014797 seconds.
+  importAddress: GUID: 0dd1b2738b246104a80b43e06d0e79b7 - Path: Assets/MapAssets/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0dd1b2738b246104a80b43e06d0e79b7 - Path: Assets/MapAssets/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0dd1b2738b246104a80b43e06d0e79b7' -> (Import Result ID: 'e876914caa26c4d5a9a95c29352e22da') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1dcc282f4c148fa2ae7450ff0f681616 DependenciesID=880e1c2dc8cc1fdcace0cac2736cbbce StaticDependenciesID=533a2393b97e9bba78ba2e2a86c317aa 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.303944Z
+  Time since last request: 0.0009248 seconds.
+  importAddress: GUID: 188c6a4cc3040624eb0ae47e8187f149 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/floor_Specular.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 188c6a4cc3040624eb0ae47e8187f149 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/floor_Specular.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 188c6a4cc3040624eb0ae47e8187f149' -> (Import Result ID: '7ef102f86f65c40fa395fa2a2d24f7e3') in 0.022 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b8f2c0a2d0ac00d1698d2d4683a92b74 DependenciesID=a8a3192470386da90066f7a9faf25513 StaticDependenciesID=57862100b633e61ba4edd87ab8ea4e53 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.3492278Z
+  Time since last request: 0.000846 seconds.
+  importAddress: GUID: 3248d2c4c87f82e408843ba540316149 - Path: Assets/MapAssets/grass-patches (1)/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 3248d2c4c87f82e408843ba540316149 - Path: Assets/MapAssets/grass-patches (1)/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 3248d2c4c87f82e408843ba540316149' -> (Import Result ID: '16dba28e152fceac62c612856d7e0581') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=70d68da9e104156a69564bb596258f70 DependenciesID=aa761edfcdef6e58089e381094060562 StaticDependenciesID=1b8e6458434226be991acd406e451294 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.3734609Z
+  Time since last request: 0.0005788 seconds.
+  importAddress: GUID: 093c332311bcb5843943474af37995eb - Path: Assets/MapAssets/grass - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 093c332311bcb5843943474af37995eb - Path: Assets/MapAssets/grass - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 093c332311bcb5843943474af37995eb' -> (Import Result ID: 'd54d663124042aeed64fb3c65d5d140f') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5478bf38114772ada49d1e61d489803 DependenciesID=6a0ff0000c2d250ed43798153ff05057 StaticDependenciesID=9db45688c7abb48b5747dc923489efa5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.4015693Z
+  Time since last request: 0.0010245 seconds.
+  importAddress: GUID: 9f983b821cf248e40a0b0cf3fc098afd - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_BaseColor.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9f983b821cf248e40a0b0cf3fc098afd - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_BaseColor.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9f983b821cf248e40a0b0cf3fc098afd' -> (Import Result ID: 'dcfe27f307ee320caf575b2ec9c1d3a0') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d4d7eb6a34a7ec963597159f20cf7cec DependenciesID=a95a897291a0a571095936ed350c0445 StaticDependenciesID=644d462b013c05f3bc9f65c9f4a8cc59 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.6766781Z
+  Time since last request: 0.2368182 seconds.
+  importAddress: GUID: f3f3c1c96ec14ae43ade873ce0d29783 - Path: Assets/Materials/mud_forest/mud_forest_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: f3f3c1c96ec14ae43ade873ce0d29783 - Path: Assets/Materials/mud_forest/mud_forest_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: f3f3c1c96ec14ae43ade873ce0d29783' -> (Import Result ID: '70d3f34bde6bd211491afdd3e503dd27') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dbafc87aff38c0c38adaba02f555c71a DependenciesID=e5634c1070c1f631d3a7bcae8f9d5fa3 StaticDependenciesID=c2547a5f457dae81da9db0c9cb030b7c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.7157896Z
+  Time since last request: 0.0010336 seconds.
+  importAddress: GUID: 89d23e5b830631e4bb40271b0bf232b2 - Path: Assets/MapAssets/grass/textures/Grass3_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 89d23e5b830631e4bb40271b0bf232b2 - Path: Assets/MapAssets/grass/textures/Grass3_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 89d23e5b830631e4bb40271b0bf232b2' -> (Import Result ID: '8998e925f55f4a74b38a69a36b245628') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7b5b28c499782aa2ffe22869f435b66b DependenciesID=78e5461610b2781f82ccdb69added116 StaticDependenciesID=28515313b086e8bcc9e9f504247f7135 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.7512818Z
+  Time since last request: 0.0008368 seconds.
+  importAddress: GUID: eee39c6e04e263c499dac38819e30cc4 - Path: Assets/Scripts/Enemy.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: eee39c6e04e263c499dac38819e30cc4 - Path: Assets/Scripts/Enemy.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: eee39c6e04e263c499dac38819e30cc4' -> (Import Result ID: '5b9f1daa8aa330ce3e240e5d39e643c6') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b13069f66bdb2c3455bf529ffcd0ae46 DependenciesID=964d1af2c8574d47feaf104e8c6363fb StaticDependenciesID=551bb1de088b48ff40562686f150faa9 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.7809638Z
+  Time since last request: 0.0011476 seconds.
+  importAddress: GUID: 77fac5ac2caba1c4eb6ba8c014b73b50 - Path: Assets/MapAssets/archive/Brush_CelVinyl-700f3aa8-9a7c-2384-8b8a-ea028905dd8c-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 77fac5ac2caba1c4eb6ba8c014b73b50 - Path: Assets/MapAssets/archive/Brush_CelVinyl-700f3aa8-9a7c-2384-8b8a-ea028905dd8c-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 77fac5ac2caba1c4eb6ba8c014b73b50' -> (Import Result ID: 'e07cd32c50dc754a3cff2f22cc342182') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4d3d319c97c36560e4e1f256fdf08809 DependenciesID=02351695f30ad0fa6454b8c403dba3de StaticDependenciesID=192c6cf130dd4891b5bd7079fc6b93ab 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.8186775Z
+  Time since last request: 0.0003415 seconds.
+  importAddress: GUID: cf7ddd7128cf5834eb2ac7f6ef324a67 - Path: Assets/MapAssets/dry-grass/source/M_dry_grass.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: cf7ddd7128cf5834eb2ac7f6ef324a67 - Path: Assets/MapAssets/dry-grass/source/M_dry_grass.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: cf7ddd7128cf5834eb2ac7f6ef324a67' -> (Import Result ID: 'b359ab85e5209e9b6e7de36956662a77') in 0.081 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e8c5fcc06acf25cebc4c450443df983a DependenciesID=f74c0b5db4bba76c895d178c8fb3d268 StaticDependenciesID=a70bf27c2d5e4b0ddfeb7db8bde74e7e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.9201963Z
+  Time since last request: 0.0004095 seconds.
+  importAddress: GUID: 835045ce605a0d24cb6227f4583e6dc5 - Path: Assets/MapAssets/grass/textures/Grass3_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 835045ce605a0d24cb6227f4583e6dc5 - Path: Assets/MapAssets/grass/textures/Grass3_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 835045ce605a0d24cb6227f4583e6dc5' -> (Import Result ID: 'd5cef7514d9c42b75e999d314f3eb2b5') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c89c690b83a9f0f24fae2e8a212a0506 DependenciesID=29c3ec3585e08ba0c396f7f4a9758aef StaticDependenciesID=716184fbb1591c930b51aaeda68ea803 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.9585133Z
+  Time since last request: 0.0008451 seconds.
+  importAddress: GUID: 5ad95c92293baec45b7c0dea2d73f1b8 - Path: Assets/Materials/mud_cracked_dry_riverbed_002 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 5ad95c92293baec45b7c0dea2d73f1b8 - Path: Assets/Materials/mud_cracked_dry_riverbed_002 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 5ad95c92293baec45b7c0dea2d73f1b8' -> (Import Result ID: 'fafb927cc79698c17646ca3dd2199691') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c82cc0a85700dc3492b43d5a07573671 DependenciesID=fc6200e6fad6374087dfde9a3585cedb StaticDependenciesID=ffe434fb46e15f27d7b68d7d55333a78 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:40.9863871Z
+  Time since last request: 0.0011187 seconds.
+  importAddress: GUID: 0307180c1d8300b4bb621fbf315ee756 - Path: Assets/MapAssets/ivy-set/textures/Wall_3.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0307180c1d8300b4bb621fbf315ee756 - Path: Assets/MapAssets/ivy-set/textures/Wall_3.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0307180c1d8300b4bb621fbf315ee756' -> (Import Result ID: 'fc34113472c10fc5630642f011d3a5b6') in 0.016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5b03f555dab0e11d3e0af423b06d9c66 DependenciesID=6e98317fb97b27c45326e20bcd4508dc StaticDependenciesID=b799564b0919f6e721d1df04d2e71c81 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.024858Z
+  Time since last request: 0.000069 seconds.
+  importAddress: GUID: 88fb5e9a67fffa6438f51b788e3b7aa8 - Path: Assets/Editor/SceneAutoSetup.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 88fb5e9a67fffa6438f51b788e3b7aa8 - Path: Assets/Editor/SceneAutoSetup.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 88fb5e9a67fffa6438f51b788e3b7aa8' -> (Import Result ID: '5c7ea812c13df82f45d146881ad66914') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ec78b04fc7810defd846fe9a050cff8d DependenciesID=85efde6421dae59cea2d80d2fae76929 StaticDependenciesID=c0635a7465bab3c761ad2d570e3f80e6 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.0540505Z
+  Time since last request: 0.0009629 seconds.
+  importAddress: GUID: 33eb13a47e2d46143a145b3f815fbd06 - Path: Assets/Scripts/PlayerCharacter.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 33eb13a47e2d46143a145b3f815fbd06 - Path: Assets/Scripts/PlayerCharacter.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 33eb13a47e2d46143a145b3f815fbd06' -> (Import Result ID: 'db47fb46dd8bd31662d145dc0961fad5') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0bfc245288d8ab1d9eba922a841a66f8 DependenciesID=c842384397fef3514a6b86168de5e0a3 StaticDependenciesID=38f81c6bd26aa8a278a7f71d4cc338aa 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.0793497Z
+  Time since last request: 0.0007877 seconds.
+  importAddress: GUID: 3f212065ba7d19b4498c433687838ed5 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_basecolor.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 3f212065ba7d19b4498c433687838ed5 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_basecolor.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 3f212065ba7d19b4498c433687838ed5' -> (Import Result ID: 'b9452233a3ce19117f49fdcfc70e0cf5') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=82011d4e7fdbdc34379d96585339874a DependenciesID=c8b308d935546ce771742f03f53a167d StaticDependenciesID=895398b72fb1b392cf9355eeb7d17f39 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.1212049Z
+  Time since last request: 0.0011555 seconds.
+  importAddress: GUID: 9072d3737c8a76e4a85127aff5b4cead - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9072d3737c8a76e4a85127aff5b4cead - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9072d3737c8a76e4a85127aff5b4cead' -> (Import Result ID: '164612846f703dbdc59b297c7f6c7e2c') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9bd432befefce1c57a754d0d940034cb DependenciesID=afa19c51869455a39607221b22d12d23 StaticDependenciesID=fa18c8226ae25885615903cad04d1803 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.1618581Z
+  Time since last request: 0.0007126 seconds.
+  importAddress: GUID: aed91fe594610b54e88890ab005f8eb0 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: aed91fe594610b54e88890ab005f8eb0 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: aed91fe594610b54e88890ab005f8eb0' -> (Import Result ID: 'a55fbf26027c2a0c1d3b2ee12f8be9ea') in 0.008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9d17dfd9d9e0eabb13bc3532c4c75e48 DependenciesID=70a87f2bc1f2729bdeb98b1d12fd4a4a StaticDependenciesID=4367d46322c6c15bf1eaeedcc3c7cda9 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.1914798Z
+  Time since last request: 0.0008442 seconds.
+  importAddress: GUID: 9be4b083de197d4438e0681bce4afa7e - Path: Assets/MapAssets/grass/textures/Grass3_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9be4b083de197d4438e0681bce4afa7e - Path: Assets/MapAssets/grass/textures/Grass3_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9be4b083de197d4438e0681bce4afa7e' -> (Import Result ID: 'e6d3c3dc3a3796591382ae511864ebe1') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=903c104388445e1157f3e7db4d9707a9 DependenciesID=91a1b7c4221a3e0845d5761e9b430866 StaticDependenciesID=9bb351de45682a6cc6da8dee3d724b59 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.2324697Z
+  Time since last request: 0.0002108 seconds.
+  importAddress: GUID: d36604b1ee4d77645af06d5a5cad2601 - Path: Assets/MapAssets/grass-patches (1) - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d36604b1ee4d77645af06d5a5cad2601 - Path: Assets/MapAssets/grass-patches (1) - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d36604b1ee4d77645af06d5a5cad2601' -> (Import Result ID: '2443145ce91cd26a183501f53c82ace0') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a9febad5eaae28be33f158fe063dd56a DependenciesID=3e0360f8b3f3ed0179d389dea52108fe StaticDependenciesID=031369c00f4f750be2b145e414cc6799 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.2595265Z
+  Time since last request: 0.0007157 seconds.
+  importAddress: GUID: 8b4aff8b17eeab94f9b02ef4582590e3 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_roughness.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8b4aff8b17eeab94f9b02ef4582590e3 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_roughness.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8b4aff8b17eeab94f9b02ef4582590e3' -> (Import Result ID: 'f81ca098efb61c855c82d84d060e7719') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5a745e82730fd7f7a6c27b4557a3f97b DependenciesID=033fbee2bc8c88cbffee96097c60e393 StaticDependenciesID=d2dc306d79517c922fb3a5c7e5d81f8d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.3003253Z
+  Time since last request: 0.000707 seconds.
+  importAddress: GUID: ef61a42965dcbb34e9cf3d4967ce2e59 - Path: Assets/MapAssets/grass/textures/Grass_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ef61a42965dcbb34e9cf3d4967ce2e59 - Path: Assets/MapAssets/grass/textures/Grass_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ef61a42965dcbb34e9cf3d4967ce2e59' -> (Import Result ID: '2e718fca789ab0c7658f2e0b3d7fb6d1') in 0.016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3266b2998342053cdb719eb2263946e1 DependenciesID=89fa46ae7480c43f3bb33f32d78a5456 StaticDependenciesID=fb4b54ed2733db179518a141a5c0093e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.3374448Z
+  Time since last request: 0.0007034 seconds.
+  importAddress: GUID: d543bffd19a91c344818fdfc3ea76fbf - Path: Assets/MapAssets/dry-grass/source/sketchfabGrass.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d543bffd19a91c344818fdfc3ea76fbf - Path: Assets/MapAssets/dry-grass/source/sketchfabGrass.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d543bffd19a91c344818fdfc3ea76fbf' -> (Import Result ID: '2660b43f823c89a0f05251ddf0f837b4') in 0.031 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5dae6d7676c3818ef8bb5ad2986175f DependenciesID=8a08d55be67c1e34eaed34a5a8909428 StaticDependenciesID=587858cb56ce3fcc260d6ed7971cc09c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 39
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.3909741Z
+  Time since last request: 0.000592 seconds.
+  importAddress: GUID: f7424223dd7f7bc4c9fc448c64862451 - Path: Assets/MapAssets/modular-vines/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: f7424223dd7f7bc4c9fc448c64862451 - Path: Assets/MapAssets/modular-vines/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: f7424223dd7f7bc4c9fc448c64862451' -> (Import Result ID: '7d6e1cbe08d056fec257c5f64275dae8') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32e60fa11a6820ff8088288eabda1704 DependenciesID=5b38e961edea042255362aa0292bbfdf StaticDependenciesID=9f62c4e773d51d620601b9e589498b75 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.42018Z
+  Time since last request: 0.0006979 seconds.
+  importAddress: GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2 - Path: Assets/Materials - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2 - Path: Assets/Materials - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2' -> (Import Result ID: 'c64f64cd9cc8516d6ef0bbf366a676a7') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7fbfce2296bd00cd6a6fd6abc8730e1f DependenciesID=b9f7d7d1a588c2d41eb124b740ae73ab StaticDependenciesID=396dc53e2ac46348dfea920f0a8dc189 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.4479608Z
+  Time since last request: 0.0009529 seconds.
+  importAddress: GUID: 70a14c3898ffc81498b406ec94d5d8a8 - Path: Assets/MapAssets/ivy-set/textures/Default_Material.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 70a14c3898ffc81498b406ec94d5d8a8 - Path: Assets/MapAssets/ivy-set/textures/Default_Material.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 70a14c3898ffc81498b406ec94d5d8a8' -> (Import Result ID: '1ec99b0b6dadcedd9ef7a2995f62ef17') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4460ada96dbc418308735fd11876aec9 DependenciesID=6310fd1f1cfa74aaa5a2d8610cfd66d9 StaticDependenciesID=088b6c13ba0370d9ec045c0f42b97b01 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:04:34.6752669Z
-  Time since last request: 75.51742710000001 seconds.
-  importAddress: GUID: 0dd1b2738b246104a80b43e06d0e79b7 - Path: Assets/MapAssets/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: 0dd1b2738b246104a80b43e06d0e79b7 - Path: Assets/MapAssets/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: 0dd1b2738b246104a80b43e06d0e79b7' -> (Import Result ID: '230275e3a537edd7b4778a94f0735544') in 0.003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6be9f8bce78996a56554a9bfff000914 DependenciesID=bfb5840c1f72a0b8a50bbc5aeb70d8a3 StaticDependenciesID=8a5d0fda204f10dee9cdafa80c6f443b 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (2.9 MB). Loaded Objects now: 5591.
-Memory consumption went from 314.0 MB to 311.1 MB.
-Total: 10.201900 ms (FindLiveObjects: 0.349600 ms CreateObjectMapping: 0.080600 ms MarkObjects: 8.982700 ms  DeleteObjects: 0.613600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:11:54.6723108Z
-  Time since last request: 439.98261839999998 seconds.
-  importAddress: GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2 - Path: Assets/Materials - Importer: PreviewImporter
-Importing 'GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2 - Path: Assets/Materials - Importer: PreviewImporter' with importer (PreviewImporter)
-Imported 'GUID: 942c41a9a5c73fd4aac54ac0eb2a2fe2' -> (Import Result ID: '36e6493a7d46fb2cfd470783d5cfffe9') in 0.001 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=82a00a195dbb759d704bd581d7d65d25 DependenciesID=72939e21abe49e3fe700e3ebc5a5f0cd StaticDependenciesID=8016f6e38d3b80d2d9930860da9e5256 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5591.
-Memory consumption went from 316.3 MB to 313.4 MB.
-Total: 8.857100 ms (FindLiveObjects: 0.386900 ms CreateObjectMapping: 0.085800 ms MarkObjects: 7.704300 ms  DeleteObjects: 0.489900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:17:31.0917395Z
-  Time since last request: 336.40639770000001 seconds.
-  importAddress: GUID: f3f3c1c96ec14ae43ade873ce0d29783 - Path: Assets/Materials/mud_forest/mud_forest_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: f3f3c1c96ec14ae43ade873ce0d29783 - Path: Assets/Materials/mud_forest/mud_forest_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: f3f3c1c96ec14ae43ade873ce0d29783' -> (Import Result ID: '185a2936e3add1d98e387bd71b3d50df') in 0.009 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33185b0856c3f53a9f211539e5393b2c DependenciesID=dee01bca74d2312eaaf6973870f17807 StaticDependenciesID=1b55a92b41b09527d9c97582a1127caf 
+  Time of request: 2026-11-07T00:02:41.4808234Z
+  Time since last request: 0.0006123 seconds.
+  importAddress: GUID: 0ccb76a243f757e49b4c65cd4891d021 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0ccb76a243f757e49b4c65cd4891d021 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0ccb76a243f757e49b4c65cd4891d021' -> (Import Result ID: '44b149b924bb1ec9cbd14d39876bd798') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=79e2c8c4181cf94e8a72d0f144d66a06 DependenciesID=0a5116a491c2a305d0c5ddb9d49b63f1 StaticDependenciesID=948db0c50345fab5773c33baee6b5e47 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:17:31.1209179Z
-  Time since last request: 0.0027696 seconds.
-  importAddress: GUID: b4332bbe1bc4f344ba20347c17ec72e0 - Path: Assets/Materials/mud_forest - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: b4332bbe1bc4f344ba20347c17ec72e0 - Path: Assets/Materials/mud_forest - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: b4332bbe1bc4f344ba20347c17ec72e0' -> (Import Result ID: '08f85abd336bc137996a81edef077568') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=52dee91993c8fa38b2ed68eff6260e10 DependenciesID=dd348c380fbda5594a4c5790df26f5fd StaticDependenciesID=d0191ce121789b108d4c8754e25e24dd 
+  Time of request: 2026-11-07T00:02:41.5235911Z
+  Time since last request: 0.0013391 seconds.
+  importAddress: GUID: b5dcfe68f64fc0c4585a67d8422a84ec - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/source/Vigas1.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: b5dcfe68f64fc0c4585a67d8422a84ec - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/source/Vigas1.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: b5dcfe68f64fc0c4585a67d8422a84ec' -> (Import Result ID: '153b18d93fbc8211e7c086a91fcce82d') in 0.182 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3b0db737b5310c01c2021179570999f1 DependenciesID=c9aa1bf5ae080feb8013b14644ba2570 StaticDependenciesID=f75abc9f9007f049d7c3ff93f48d75c5 
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 421
 ========================================================================
 Received Import Request.
-  Time of request: 2026-11-03T10:17:31.1426897Z
-  Time since last request: 0.0021644 seconds.
-  importAddress: GUID: b52242afe48d50941b1069c15870e7cd - Path: Assets/Materials/mud_forest/mud_forest_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
-Importing 'GUID: b52242afe48d50941b1069c15870e7cd - Path: Assets/Materials/mud_forest/mud_forest_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: b52242afe48d50941b1069c15870e7cd' -> (Import Result ID: 'a3ae759088268dfa2f52bd7f4f467609') in 0.008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=141a44b1e83006dbc0aa425ea25a9094 DependenciesID=bbbeb2754c68babcfdcee67f2d783ef6 StaticDependenciesID=f9dab634f7acb165b2aae71482ebfb94 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time of request: 2026-11-03T10:17:31.1729581Z
-  Time since last request: 0.0027233 seconds.
+  Time of request: 2026-11-07T00:02:41.7296659Z
+  Time since last request: 0.000104 seconds.
   importAddress: GUID: d5c90600d58b02847a25a795de9223c7 - Path: Assets/Materials/mud_forest/mud_forest_diff_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
 Importing 'GUID: d5c90600d58b02847a25a795de9223c7 - Path: Assets/Materials/mud_forest/mud_forest_diff_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
-Imported 'GUID: d5c90600d58b02847a25a795de9223c7' -> (Import Result ID: '1c3f360ae25d128493b05761d4fbf621') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f67caf5fa2b315ef6d00f75b8f5da130 DependenciesID=d65cead3d751bf5198e49fa863abfed1 StaticDependenciesID=043cdacbe8a838206efcec5d212f12f1 
+Imported 'GUID: d5c90600d58b02847a25a795de9223c7' -> (Import Result ID: '5402dfeb9824d8006375c23bffae5c98') in 0.030 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6917fecca83daa6841eadf83f68d3d64 DependenciesID=aefd1744c8d5cd6c9455a2d67e0bd571 StaticDependenciesID=f9e80fa9b260974918f255f6059366bc 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:41.780506Z
+  Time since last request: 0.0008677 seconds.
+  importAddress: GUID: 85d844901f0cd2e43860dd638bfba520 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/Floor_Normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 85d844901f0cd2e43860dd638bfba520 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/Floor_Normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 85d844901f0cd2e43860dd638bfba520' -> (Import Result ID: '0e349437e83131695ded3c3896a53838') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e1b896672c93265f84c78ac783ad236 DependenciesID=b58f61cfb38b22922caac49351e0c25d StaticDependenciesID=ec2a9a006f7f12242b8e2263db44dc5a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.0813047Z
+  Time since last request: 0.2585966 seconds.
+  importAddress: GUID: 017364cf68dfae94ea60aa4d04ce152c - Path: Assets/MapAssets/DeadTreePack/DeadTreePack.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 017364cf68dfae94ea60aa4d04ce152c - Path: Assets/MapAssets/DeadTreePack/DeadTreePack.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 017364cf68dfae94ea60aa4d04ce152c' -> (Import Result ID: '91e21ee02738124006542ea864d9d178') in 0.042 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ff76baf2955ac2ad4a9fa49ddf82ebb2 DependenciesID=1346538abfb8efb9902e6b3a6babed3d StaticDependenciesID=9d8b244676d5ac1a3629aaa6b8886696 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.1459437Z
+  Time since last request: 0.0001746 seconds.
+  importAddress: GUID: 27dca778f86636b4cb1ab4a220388809 - Path: Assets/MapAssets/ivy-set/textures/Ivy_Bark.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 27dca778f86636b4cb1ab4a220388809 - Path: Assets/MapAssets/ivy-set/textures/Ivy_Bark.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 27dca778f86636b4cb1ab4a220388809' -> (Import Result ID: 'b1f6c51752778f13dc462d4a47bcb3ba') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=185af84589648998b74c2af12de47c9d DependenciesID=b877a677945c8b25148040cf8f19be7e StaticDependenciesID=1187cd8f1e2d6a55c52a7b2da316803f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.1772615Z
+  Time since last request: 0.0006192 seconds.
+  importAddress: GUID: a8201e6b41d0b66418be1532d904a766 - Path: Assets/MapAssets/grass-patches (1)/source/grasspatches.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a8201e6b41d0b66418be1532d904a766 - Path: Assets/MapAssets/grass-patches (1)/source/grasspatches.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a8201e6b41d0b66418be1532d904a766' -> (Import Result ID: '5382349c2d8dd8b406f9b48447149bff') in 0.032 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4ec06a312c143e255abb5943ef6cc09a DependenciesID=9d5c3d9ecf3e9137b9ad67fa7918558c StaticDependenciesID=ebc0295843beef9bb3abc848e58b173f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.2554983Z
+  Time since last request: 0.026054 seconds.
+  importAddress: GUID: 940473f6841113a449cb8e48ff82faf4 - Path: Assets/MapAssets/grass/textures/Grass1_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 940473f6841113a449cb8e48ff82faf4 - Path: Assets/MapAssets/grass/textures/Grass1_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 940473f6841113a449cb8e48ff82faf4' -> (Import Result ID: 'a208c0567de4dc95c0c05a7696a8cc46') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2f8ba5f715f9a740c67aa910956d3e73 DependenciesID=6206091b6c434589623798b8e67eeaa5 StaticDependenciesID=50c2c3f01c7c060ee031a2edab186063 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.2953298Z
+  Time since last request: 0.0017458 seconds.
+  importAddress: GUID: 10783d73da1a0df418376f4791191159 - Path: Assets/MapAssets/grass/textures/Grass2_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 10783d73da1a0df418376f4791191159 - Path: Assets/MapAssets/grass/textures/Grass2_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 10783d73da1a0df418376f4791191159' -> (Import Result ID: '11391f32e3c3a7e6e70105a18899ca26') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1a89cca86d0cd8392e1b311d1dc10fee DependenciesID=01fa1ff812a3ff0a044d774886466773 StaticDependenciesID=34a5fb976d35d1737fcb0aedd9c20f70 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.3328909Z
+  Time since last request: 0.0004939 seconds.
+  importAddress: GUID: 32677da1730d5984fa469cc5f22e69d7 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_ambientocclusion.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 32677da1730d5984fa469cc5f22e69d7 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_ambientocclusion.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 32677da1730d5984fa469cc5f22e69d7' -> (Import Result ID: 'e0c20cf2aa9e3deb27e36ef73b33d9d2') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d8757fd435b89713791f01df9938bf66 DependenciesID=78ec117d15ace8c61dc319e3c94dd696 StaticDependenciesID=3e1ed209257e6e0b165b03a50d9f9d37 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.3738096Z
+  Time since last request: 0.0010194 seconds.
+  importAddress: GUID: a9a1b119bf268f0439d53d0b795ee502 - Path: Assets/Characters/Aria/AriaThrowRock.anim - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a9a1b119bf268f0439d53d0b795ee502 - Path: Assets/Characters/Aria/AriaThrowRock.anim - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a9a1b119bf268f0439d53d0b795ee502' -> (Import Result ID: 'c1160e676e7e6f1e02adc4890dbe971e') in 0.084 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=aec796a272e3418792e8e031eae45f55 DependenciesID=63012e525de5b75ee431e787d583c262 StaticDependenciesID=492bee8bc6a47dbbeb009ff4b654ad2b 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.4771591Z
+  Time since last request: 0.000315 seconds.
+  importAddress: GUID: 6455549bc79c0fd448d0343b8844f5d2 - Path: Assets/MapAssets/dry-grass/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 6455549bc79c0fd448d0343b8844f5d2 - Path: Assets/MapAssets/dry-grass/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 6455549bc79c0fd448d0343b8844f5d2' -> (Import Result ID: '25af2e575aa2a2cc3da942703cd1e4c0') in 0.008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a47412be8e34ed098b2a859ca3a105a7 DependenciesID=265859d7a80746435786d6a73ff85753 StaticDependenciesID=0daf8f7be8367334a2fcbcbb6c4d95b7 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.5042415Z
+  Time since last request: 0.0007356 seconds.
+  importAddress: GUID: 793e4c1fe57e30a40aed99f66e07884c - Path: Assets/MapAssets/grass/textures/Grass.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 793e4c1fe57e30a40aed99f66e07884c - Path: Assets/MapAssets/grass/textures/Grass.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 793e4c1fe57e30a40aed99f66e07884c' -> (Import Result ID: '594af923c2de1245fcf165710b98363a') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6a8be79cfcd8fe9d960026f337f30d68 DependenciesID=e05db65def80e26f2a68f92989029ca0 StaticDependenciesID=a2b8aa416ea76987ed2408854857eb30 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.5345524Z
+  Time since last request: 0.0005823 seconds.
+  importAddress: GUID: b4332bbe1bc4f344ba20347c17ec72e0 - Path: Assets/Materials/mud_forest - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: b4332bbe1bc4f344ba20347c17ec72e0 - Path: Assets/Materials/mud_forest - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: b4332bbe1bc4f344ba20347c17ec72e0' -> (Import Result ID: '7b9116ef75c5fc0023b830dac065f84a') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a489cef5298ba7e7c418cdffec6f9a54 DependenciesID=6aa0ac7ac4d36c9320220d80bb64aa88 StaticDependenciesID=2dd0d17ee5c306f0a6ba050e6d87110b 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.5586503Z
+  Time since last request: 0.0006545 seconds.
+  importAddress: GUID: b52242afe48d50941b1069c15870e7cd - Path: Assets/Materials/mud_forest/mud_forest_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: b52242afe48d50941b1069c15870e7cd - Path: Assets/Materials/mud_forest/mud_forest_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: b52242afe48d50941b1069c15870e7cd' -> (Import Result ID: '05ea0a5edf433ae774e022d3d9a2f66e') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6b3a8fb0bfeb2b250f7a941f1294e8b4 DependenciesID=9c3a1613a8a55c67f60ddc02db77da9e StaticDependenciesID=812de7202f2cd800929f0cdfa05fad69 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.5985174Z
+  Time since last request: 0.0001383 seconds.
+  importAddress: GUID: c132c1922ae75564bacce28725509c50 - Path: Assets/MapAssets/archive/sketch.gltf - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: c132c1922ae75564bacce28725509c50 - Path: Assets/MapAssets/archive/sketch.gltf - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: c132c1922ae75564bacce28725509c50' -> (Import Result ID: 'a066dbe8ba6deb3549b94d54d30464ac') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8d4bcab2cb5bd20eaeb6810b04130f01 DependenciesID=0a344a65e3ed714cc65f3783f42a6ff0 StaticDependenciesID=dbe234bcb7ec5873e2180b4bb39fcc6f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.6218022Z
+  Time since last request: 0.0008123 seconds.
+  importAddress: GUID: d992ebb0c297e5d4aa7d20848cf1d460 - Path: Assets/MapAssets/dry-grass - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d992ebb0c297e5d4aa7d20848cf1d460 - Path: Assets/MapAssets/dry-grass - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d992ebb0c297e5d4aa7d20848cf1d460' -> (Import Result ID: 'caa77e2380292b756a3e9e15b8f0891b') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=03c196fe3443e8c60fc81207267461c1 DependenciesID=a9bc5e9e8dcabefa903e03eaa3020a68 StaticDependenciesID=e7b5d08ca78b91838946945e7e49b377 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.6430488Z
+  Time since last request: 0.0006759 seconds.
+  importAddress: GUID: 8854bc95adbd4704c99a47285dfa821f - Path: Assets/MapAssets/modular-vines/source/Bramble/TornMaterial.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8854bc95adbd4704c99a47285dfa821f - Path: Assets/MapAssets/modular-vines/source/Bramble/TornMaterial.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8854bc95adbd4704c99a47285dfa821f' -> (Import Result ID: '9888bd4063fa8e1662f3fccfc635789d') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2947410d454b71de1b91323c819050aa DependenciesID=10fb440c5d2e0949ad45f5bf90c4f17b StaticDependenciesID=12a2e95c401786be9769e16a360ab996 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.6751824Z
+  Time since last request: 0.0006976 seconds.
+  importAddress: GUID: a4d4e7d41eea7aa46b8f625dc02609fb - Path: Assets/MapAssets/modular-vines/source/Bramble - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a4d4e7d41eea7aa46b8f625dc02609fb - Path: Assets/MapAssets/modular-vines/source/Bramble - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a4d4e7d41eea7aa46b8f625dc02609fb' -> (Import Result ID: '543522c3e6048f7b314e1bd71746f770') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=94b95b82ba29344a6153e7a0dbadbf8e DependenciesID=10102776ad32a144486fc24a752d17c9 StaticDependenciesID=fcb5cef1c49ba82c00802de58148c38d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.7015184Z
+  Time since last request: 0.0008655 seconds.
+  importAddress: GUID: 39ec0c72d3e7e5e49b0c1bdf8497cf9b - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Ambient.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 39ec0c72d3e7e5e49b0c1bdf8497cf9b - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Ambient.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 39ec0c72d3e7e5e49b0c1bdf8497cf9b' -> (Import Result ID: '06de88b0238c226c90032a585f9ccd12') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c87d158ff59908419e738612d5f5a9a1 DependenciesID=800d7bbbdd4721faa77e3f755f9dd74c StaticDependenciesID=6fa32ec9e31be874da338af921bc12b5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.7376142Z
+  Time since last request: 0.0011349 seconds.
+  importAddress: GUID: cc94454b9cc95ba4986e57879d3f7b48 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_diff_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: cc94454b9cc95ba4986e57879d3f7b48 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_diff_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: cc94454b9cc95ba4986e57879d3f7b48' -> (Import Result ID: 'afc068c94276fbfc2ba9750948c59c39') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7c1167458b4486651726335cfab80c33 DependenciesID=ecf47479ed55fd5be0330b0a58407b30 StaticDependenciesID=95babc28da8c79aeb3466ffcd7f38242 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.77244Z
+  Time since last request: 0.0009976 seconds.
+  importAddress: GUID: d91ea4177c4aebb4bbcd5ebb1c8c28b0 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_metallic.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: d91ea4177c4aebb4bbcd5ebb1c8c28b0 - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_metallic.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: d91ea4177c4aebb4bbcd5ebb1c8c28b0' -> (Import Result ID: 'adb25518778635437906431fc04c120f') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=46e1eb39b60cce6fcd1e8f0e2ec4b9cd DependenciesID=ed3a9e08c9b46e6ecd30d31888853a8f StaticDependenciesID=0be2399fe5110e2d3cd51308b1295b5e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.8111747Z
+  Time since last request: 0.0006406 seconds.
+  importAddress: GUID: 09cee94aaa847a5479679e28278e0c8a - Path: Assets/MapAssets/grass/textures/Grass1.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 09cee94aaa847a5479679e28278e0c8a - Path: Assets/MapAssets/grass/textures/Grass1.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 09cee94aaa847a5479679e28278e0c8a' -> (Import Result ID: '2f2e017a99309711de80b0cb2be36be5') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d685f03cd43ce90d1c1072a37327ff7e DependenciesID=138bb80039350194b59ea68d75d009b6 StaticDependenciesID=c533b6c44cd9a90db13901bab35c4904 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.8429771Z
+  Time since last request: 0.0007849 seconds.
+  importAddress: GUID: 0abb06748a3338740a84aec903140976 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_tile_Diffuse.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0abb06748a3338740a84aec903140976 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_tile_Diffuse.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0abb06748a3338740a84aec903140976' -> (Import Result ID: '86898f136af9fc4c32071bbb355d0f7d') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7a334a611587eef1945d3cf6bafd8bb3 DependenciesID=2f89116870fab03b0b6b11c94e2b8846 StaticDependenciesID=c2f77656d64edb619515123dc73ac4bb 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.877305Z
+  Time since last request: 0.0008469 seconds.
+  importAddress: GUID: 8edc99f9184777e479493a181bc432f7 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8edc99f9184777e479493a181bc432f7 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_ao_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8edc99f9184777e479493a181bc432f7' -> (Import Result ID: 'c68a7c1704bd858ee793d348b9e63548') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=95c61677448cef3788c0d3731aa46a3a DependenciesID=1c5b8e748a1d55e8477fd8fa0fbf5dd9 StaticDependenciesID=41887df5cdd9fd8e3dbc561cee7a12c8 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.9177737Z
+  Time since last request: 0.0004114 seconds.
+  importAddress: GUID: caa174ac6fd82bd40bab8c10af3b0533 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: caa174ac6fd82bd40bab8c10af3b0533 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: caa174ac6fd82bd40bab8c10af3b0533' -> (Import Result ID: 'fbb178871831f5951b50a85e477d1d0f') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4a758d6d33f383ae06d392e765633347 DependenciesID=c24447d509e6891751d08363c516a393 StaticDependenciesID=e3fda8356a72860340a1fc80364d52ec 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.9440394Z
+  Time since last request: 0.0008524 seconds.
+  importAddress: GUID: ac54f8bd4f4e75643877131d4aa43dc8 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ac54f8bd4f4e75643877131d4aa43dc8 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ac54f8bd4f4e75643877131d4aa43dc8' -> (Import Result ID: '0190881094fcda5346633f1a3b678a73') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef5b7831902ed58ca55a8114e27541f8 DependenciesID=4b7c070e78a5128ceb59fd46f1e379c4 StaticDependenciesID=2ea9e80a171bb0cf86ae41e0f3dbd430 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.9668357Z
+  Time since last request: 0.0005887 seconds.
+  importAddress: GUID: 0090909cd6d5da64485971062d856ef0 - Path: Assets/MapAssets/DeadTreePack/Bark1M.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0090909cd6d5da64485971062d856ef0 - Path: Assets/MapAssets/DeadTreePack/Bark1M.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0090909cd6d5da64485971062d856ef0' -> (Import Result ID: 'a8ed4846cc038b2aa00071f093c7fc73') in 0.011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2b209d9ac9e4ed0fb9161bf15ba30d6a DependenciesID=c2007c4646e744c0616c940056b75599 StaticDependenciesID=a43c78a218be4a50b6564e6774a7c5a2 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:42.9967872Z
+  Time since last request: 0.0010665 seconds.
+  importAddress: GUID: e89ccedfba0e8504cbd0d1be52d7d483 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse3.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e89ccedfba0e8504cbd0d1be52d7d483 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse3.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e89ccedfba0e8504cbd0d1be52d7d483' -> (Import Result ID: '1daee17a9cf5247ec4fa49dec8db9e1a') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=80b360b38791ff9b1443d3025b849136 DependenciesID=8c20ba22622fae80bbc9878b49d9742f StaticDependenciesID=d3024c429669a63da1e16cd9f2108edc 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.0286103Z
+  Time since last request: 0.0009369 seconds.
+  importAddress: GUID: 8f7cca78094fb2445964c11d6f7ae021 - Path: Assets/MapAssets/grass-patches (1)/textures/grassSmoothness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8f7cca78094fb2445964c11d6f7ae021 - Path: Assets/MapAssets/grass-patches (1)/textures/grassSmoothness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8f7cca78094fb2445964c11d6f7ae021' -> (Import Result ID: '3baa79a97d8720c50b01c5a0f4e5ba9a') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d97b3e74ffa6d393b55d1deb27dd7f26 DependenciesID=bd543a22faeb5d7728ccb39983aaa855 StaticDependenciesID=0a07eb39e47baaf4f4d4945ea1528dfb 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.0671014Z
+  Time since last request: 0.0007904 seconds.
+  importAddress: GUID: c20345310a78b944c9fc6698845d7ac9 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: c20345310a78b944c9fc6698845d7ac9 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: c20345310a78b944c9fc6698845d7ac9' -> (Import Result ID: '612a85278fe64f09e4f4d3bef0d462e9') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=27e5f76dd2d883271bfe4834fba4a426 DependenciesID=fcb9c308b45941a46eac5f584023f0b0 StaticDependenciesID=5237f17a5896e3078f9cc70025474017 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.101778Z
+  Time since last request: 0.0005017 seconds.
+  importAddress: GUID: e0a1850a5da060f478db3679da6f5904 - Path: Assets/MapAssets/ivy-set/source/Ivy_Set.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e0a1850a5da060f478db3679da6f5904 - Path: Assets/MapAssets/ivy-set/source/Ivy_Set.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e0a1850a5da060f478db3679da6f5904' -> (Import Result ID: 'cbdb9effc023fbd12d6706e0204d3179') in 0.061 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8fc27dc3a58434c03731d13e76ddfafa DependenciesID=95a6d84f97b3f30a04038428af3caafa StaticDependenciesID=0e36185f8ff5261d9dc507a42efa1fbe 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 144
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.4634491Z
+  Time since last request: 0.2829614 seconds.
+  importAddress: GUID: 001652e9cb1f4ea44b5e294e6410432c - Path: Assets/MapAssets/ivy-set - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 001652e9cb1f4ea44b5e294e6410432c - Path: Assets/MapAssets/ivy-set - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 001652e9cb1f4ea44b5e294e6410432c' -> (Import Result ID: '2c7324f4aa648d7bc245eda2664ca4fc') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e1d767ab9e1c2c00ea8620aa4e1f633 DependenciesID=817e9155a9de81c6f4c28cd00f0ff15e StaticDependenciesID=fc52269855b0c1c2d5c5dc083d6a512a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.4904897Z
+  Time since last request: 0.0006625 seconds.
+  importAddress: GUID: 8bbdfcdee4acec1488f728f6e95624a0 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8bbdfcdee4acec1488f728f6e95624a0 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8bbdfcdee4acec1488f728f6e95624a0' -> (Import Result ID: 'a161b94b57ddb201524a6dfae390f269') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce941be1ed0bbb3cf77733298804bb92 DependenciesID=6b7bc08795649ab58a96437c9064f877 StaticDependenciesID=60561e49c59f75ea9fb65b2712025616 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.5258486Z
+  Time since last request: 0.0006449 seconds.
+  importAddress: GUID: 916052e296d0c7a4690bc52851106365 - Path: Assets/MapAssets/grass-patches (1)/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 916052e296d0c7a4690bc52851106365 - Path: Assets/MapAssets/grass-patches (1)/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 916052e296d0c7a4690bc52851106365' -> (Import Result ID: '2b00d153ed6e090bdd982c24d3d715cf') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d2dd154aba93b17e0cc62c2ae212570c DependenciesID=59a0a07fa6295d9d569dc51eaa77dbec StaticDependenciesID=2a83fd56d956b8b657e7c674910472fc 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.5518286Z
+  Time since last request: 0.0008236 seconds.
+  importAddress: GUID: 553a8390024703046bf2e94fe5c66b62 - Path: Assets/MapAssets - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 553a8390024703046bf2e94fe5c66b62 - Path: Assets/MapAssets - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 553a8390024703046bf2e94fe5c66b62' -> (Import Result ID: '3c648d88b0f925eadef269ab7b86e8c3') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c118f8adaf59731939eba40aaee1a9e8 DependenciesID=970aecf97ea09bd0137b9e3116e2ed8b StaticDependenciesID=ab988b7ff61d919566628fe024add729 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.5775204Z
+  Time since last request: 0.0007014 seconds.
+  importAddress: GUID: 9dbcf000a1d96404282650725e4f0aed - Path: Assets/MapAssets/grass-patches (1)/textures/grassAlphaMapped.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9dbcf000a1d96404282650725e4f0aed - Path: Assets/MapAssets/grass-patches (1)/textures/grassAlphaMapped.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9dbcf000a1d96404282650725e4f0aed' -> (Import Result ID: '0574c3776981db2768a81ba4e9556c51') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=15a13815fdb724de846c093964835bda DependenciesID=aa19db7286e32dfbab75e3588dbd226b StaticDependenciesID=66f1470bf4fdcca67c14b0ba306bd5bd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.6184837Z
+  Time since last request: 0.0011737 seconds.
+  importAddress: GUID: ae00ae230b8b4df4dad8c552b9b4d4e4 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ae00ae230b8b4df4dad8c552b9b4d4e4 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ae00ae230b8b4df4dad8c552b9b4d4e4' -> (Import Result ID: 'd10dc439c6eae2166c0258c3ccd9f94d') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e442126ab74c0ac0a97dc51cc50cb16b DependenciesID=fbd83e39715dbf37906ae06a9038a972 StaticDependenciesID=cac293ebd1bb6cd84c12d9a74601244a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.6597326Z
+  Time since last request: 0.0011147 seconds.
+  importAddress: GUID: 932d1b5e02f1e0d478b55b6f7200880f - Path: Assets/MapAssets/grass-patches (1)/textures/grasscolor.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 932d1b5e02f1e0d478b55b6f7200880f - Path: Assets/MapAssets/grass-patches (1)/textures/grasscolor.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 932d1b5e02f1e0d478b55b6f7200880f' -> (Import Result ID: '5b4ff202d25c5983ac398b0ac49b1aa1') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e781c3aa85c5f24b7f3f8552c53e17a6 DependenciesID=89f448a0f9df7187dc6e89c7c7c53b88 StaticDependenciesID=4327c0c831c14c1457a6b5ebfe89bcab 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.6965697Z
+  Time since last request: 0.0007828 seconds.
+  importAddress: GUID: 5f77d7e7cf4f4a6408a0599b9a9f13da - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 5f77d7e7cf4f4a6408a0599b9a9f13da - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Normal.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 5f77d7e7cf4f4a6408a0599b9a9f13da' -> (Import Result ID: '57554784e2b3ac0fe19747b59de4ff1f') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63d7f0261816c0c095be2ce0e5164f53 DependenciesID=6a90fbef6c9e05a0349e6e52e0525ffa StaticDependenciesID=e7bce122eb4102a488cb5ead01558245 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.7301674Z
+  Time since last request: 0.0008455 seconds.
+  importAddress: GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 519a4f314bc268c44a065fb198c11002 - Path: Assets/MapAssets/DeadTreePack - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 519a4f314bc268c44a065fb198c11002' -> (Import Result ID: '095e99492849b70ee70fb7538f991118') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=88cc65f3ec5c2b8a9e5a926df4542df1 DependenciesID=70ea505a9eab42d4724de8b595202529 StaticDependenciesID=d3c34296755d9e7d2c06d3a27c1aef23 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.7582557Z
+  Time since last request: 0.0000785 seconds.
+  importAddress: GUID: a4587ff9a5ace9944a1d9b77158b9bf7 - Path: Assets/MapAssets/modular-vines - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a4587ff9a5ace9944a1d9b77158b9bf7 - Path: Assets/MapAssets/modular-vines - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a4587ff9a5ace9944a1d9b77158b9bf7' -> (Import Result ID: 'e2617dbf65e03cb56d0e29e3d00f7a60') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1313e4580be568eac698c8a335ba6235 DependenciesID=38aea6c4943269e7ecfb783825181335 StaticDependenciesID=1cbbe26b464da7af5567eea9705410de 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.7829753Z
+  Time since last request: 0.0006456 seconds.
+  importAddress: GUID: 4ed83d048212a07499bc582b30c3e995 - Path: Assets/MapAssets/grass/textures/Grass_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 4ed83d048212a07499bc582b30c3e995 - Path: Assets/MapAssets/grass/textures/Grass_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 4ed83d048212a07499bc582b30c3e995' -> (Import Result ID: 'ff9a33463b72297d6ad6cba79550d55c') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9786f1298c098a8969cff106bcf2100d DependenciesID=8db31e04289f91703304b568a6f1753f StaticDependenciesID=7068715aa937c0360b2e6b799f96e45e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.8132226Z
+  Time since last request: 0.0007561 seconds.
+  importAddress: GUID: 9b42b18115ce1b840ae2794b2ca47c71 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse2.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9b42b18115ce1b840ae2794b2ca47c71 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Diffuse2.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9b42b18115ce1b840ae2794b2ca47c71' -> (Import Result ID: '87e2576761ae470b3009c0c088a20bd4') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=808bdaa3e9509572b2b89857cc89972d DependenciesID=eeba3c0bb2181707ce82cb14a847cdbe StaticDependenciesID=77bd670b50ffc4494cd84a719f4f1516 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.8472927Z
+  Time since last request: 0.0009679 seconds.
+  importAddress: GUID: 4114d7ecfa728a645b122ca7405302c6 - Path: Assets/MapAssets/dry-grass/textures/internal_ground_ao_texture.jpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 4114d7ecfa728a645b122ca7405302c6 - Path: Assets/MapAssets/dry-grass/textures/internal_ground_ao_texture.jpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 4114d7ecfa728a645b122ca7405302c6' -> (Import Result ID: '25e73b1d7e3904c1a41b029563ec0ec3') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b851154368f139f604ae9e3e1bc82f79 DependenciesID=b31577b7aa90ec17eab4ae081884d614 StaticDependenciesID=6d106f9495229d755b4fd9bd45cac8ef 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.8841038Z
+  Time since last request: 0.0010771 seconds.
+  importAddress: GUID: 67bdd6d76032c0746844f2f55e37d62d - Path: Assets/MapAssets/ivy-set/textures/Thorn_01_a.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 67bdd6d76032c0746844f2f55e37d62d - Path: Assets/MapAssets/ivy-set/textures/Thorn_01_a.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 67bdd6d76032c0746844f2f55e37d62d' -> (Import Result ID: '53b0f99decad8224ef8be882620640d9') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5cae8478719e17b9f908180a8bc2e464 DependenciesID=9e294bda5d679ccedcf8636970e4bbb3 StaticDependenciesID=7c40ea3c810fc5c896318a3509f64f30 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.9181322Z
+  Time since last request: 0.0005259 seconds.
+  importAddress: GUID: 2ea051cf88136144da42838e67c769cd - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_nor_gl_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 2ea051cf88136144da42838e67c769cd - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_nor_gl_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 2ea051cf88136144da42838e67c769cd' -> (Import Result ID: '9504bca5e53c17f3b93abe880e9d05ca') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2183d919e0670154bdfd57c70b8bfc46 DependenciesID=72eedfec1725157117ecfa7c202cb114 StaticDependenciesID=dfc3423513e6803b76b4eeb6f76581fc 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.9566121Z
+  Time since last request: 0.000959 seconds.
+  importAddress: GUID: 1be6359e17196b74bbcafaefd90f555c - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_opacity.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 1be6359e17196b74bbcafaefd90f555c - Path: Assets/MapAssets/dry-grass/textures/dry_grass_V1_opacity.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 1be6359e17196b74bbcafaefd90f555c' -> (Import Result ID: '28dfe95e7e0aeb4659d3f1e06c7d8daf') in 0.017 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6f83ca2a31d936a46a0c202d72e3d0e9 DependenciesID=f13fb53fe2de182c7b2c91e96d061cea StaticDependenciesID=e8dac251e8fb2e5c241dbb54ac3d43bd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:43.9932481Z
+  Time since last request: 0.0002783 seconds.
+  importAddress: GUID: 77102d3c810667f4daa111c84363fdbd - Path: Assets/MapAssets/grass-patches (1)/textures/grassNormal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 77102d3c810667f4daa111c84363fdbd - Path: Assets/MapAssets/grass-patches (1)/textures/grassNormal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 77102d3c810667f4daa111c84363fdbd' -> (Import Result ID: '822ae9d9055ec6d461d51bcebeab2b1c') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d44d6d29acae9c2786025a4e17c4a54c DependenciesID=e8f2e3d77e76287dc4fe88dce8bb6c31 StaticDependenciesID=108eeba0c944812ebdefb727314c5553 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.0267747Z
+  Time since last request: 0.0008684 seconds.
+  importAddress: GUID: ba42a9af65ad29b46943db9d93479259 - Path: Assets/MapAssets/grass/textures/Grass1_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ba42a9af65ad29b46943db9d93479259 - Path: Assets/MapAssets/grass/textures/Grass1_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ba42a9af65ad29b46943db9d93479259' -> (Import Result ID: '8dd8f8c94a34af722fe39da671277b63') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=46712215609861d5c69dee9b405ddb32 DependenciesID=1437115924252d3ea1712b1ed8ec2f7a StaticDependenciesID=a46958bbde75e81bd001c41c24b422ad 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.0625744Z
+  Time since last request: 0.0012735 seconds.
+  importAddress: GUID: e63ec7a64cac80148b2def6a4f9c2537 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e63ec7a64cac80148b2def6a4f9c2537 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_nor_dx_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e63ec7a64cac80148b2def6a4f9c2537' -> (Import Result ID: '4f720c87af09f22f8e08f271f907a2cc') in 0.020 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fb954cf618bbdf5498aecb13d800e766 DependenciesID=3bf63536ef9e11b12cfa3915e46c63a7 StaticDependenciesID=2cc7047fb1073bbe6f0069a24e6a5a04 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.101276Z
+  Time since last request: 0.0006334 seconds.
+  importAddress: GUID: 63cb6a9b349771f4cbb93645ee773d1c - Path: Assets/Materials/mud_forest/mud_forest_disp_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 63cb6a9b349771f4cbb93645ee773d1c - Path: Assets/Materials/mud_forest/mud_forest_disp_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 63cb6a9b349771f4cbb93645ee773d1c' -> (Import Result ID: '049da24ac2b035820a800894d950f70c') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a93790b2f4984e9e48415c91411b0b9b DependenciesID=69c81b0284802a694367a495f9858d97 StaticDependenciesID=6d6ad185c3bd20fe1fd65cb90d850ace 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.1391587Z
+  Time since last request: 0.0009169 seconds.
+  importAddress: GUID: 8c502ad847f07e744b2b36d11ce83efc - Path: Assets/MapAssets/grass/textures/Grass_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8c502ad847f07e744b2b36d11ce83efc - Path: Assets/MapAssets/grass/textures/Grass_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8c502ad847f07e744b2b36d11ce83efc' -> (Import Result ID: 'f25637e9607890c89ddaab95dd820fcf') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1450ec60f4098f140ced0c2755dc1bb1 DependenciesID=28fd1544bbac34151afb0324dd70ba04 StaticDependenciesID=c8379fbae3ffb5f8af4076bb9611c870 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.1732685Z
+  Time since last request: 0.000609 seconds.
+  importAddress: GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e31d823679b838a4a801d5b4d511f2eb - Path: Assets/MapAssets/archive/Brush_ThickPaint-75b32cf0-fdd6-4d89-a64b-e2a00b247b0f-v10.0-MainTex.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e31d823679b838a4a801d5b4d511f2eb' -> (Import Result ID: '7df13896c994c3d30538cb8b818e59fa') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cde78d0686525b97be782ed7d45fb6ef DependenciesID=e957237fd67c39cd511caea2d2ee823d StaticDependenciesID=790b75f2283a04f07c69a91681129e5e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.2058844Z
+  Time since last request: 0.00054 seconds.
+  importAddress: GUID: 38094c8f8ef46d34aac93ed046646eeb - Path: Assets/MapAssets/ivy-set/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 38094c8f8ef46d34aac93ed046646eeb - Path: Assets/MapAssets/ivy-set/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 38094c8f8ef46d34aac93ed046646eeb' -> (Import Result ID: 'ef72a66e0fcc109163b28339c098c0c9') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=50b2533ce4be356880c1fdf608db0a42 DependenciesID=70e7be2accaea35fee04d5d8a9526e8b StaticDependenciesID=9c9997225469d1ea4544734e9656ba1e 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.2326592Z
+  Time since last request: 0.0006781 seconds.
+  importAddress: GUID: a86038c49f4acdc40b4943dc0495df4a - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Metallic.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a86038c49f4acdc40b4943dc0495df4a - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/Trees_DefaultMaterial_Metallic.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a86038c49f4acdc40b4943dc0495df4a' -> (Import Result ID: 'bf08ce15b9aa92e9f805c1e636ab5bb9') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f84fa82f62578daeb7cad4247709a3b8 DependenciesID=a605151d6d0bfadf1e3cb88f1eb17bad StaticDependenciesID=45c90f9417942eba19ccb7ba0d34ef2d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.2737438Z
+  Time since last request: 0.0011245 seconds.
+  importAddress: GUID: 04acb4375a97eac4e95b41576f5671cf - Path: Assets/MapAssets/ivy-set/textures/Wall_1.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 04acb4375a97eac4e95b41576f5671cf - Path: Assets/MapAssets/ivy-set/textures/Wall_1.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 04acb4375a97eac4e95b41576f5671cf' -> (Import Result ID: '78901affc8672549b5552ee8015dac4e') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9a6879cac13193e417ffbefe4c23c2e DependenciesID=8dcbfaadd09089849b633b053603bd45 StaticDependenciesID=b63b2da46b36557dbcb191dcb68ba096 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.3078517Z
+  Time since last request: 0.0005119 seconds.
+  importAddress: GUID: 8e4bb714af15a2e4f8d7c201d16d0d8c - Path: Assets/MapAssets/grass/textures/Grass2.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 8e4bb714af15a2e4f8d7c201d16d0d8c - Path: Assets/MapAssets/grass/textures/Grass2.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 8e4bb714af15a2e4f8d7c201d16d0d8c' -> (Import Result ID: 'dec6af99e68bc04695604604f0b36882') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ace441c3a106ad343c1ce0d894817316 DependenciesID=428b041b0e22a8551479baa93426d1d6 StaticDependenciesID=d3796fd0c0d4e4cafd043b95025354ab 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.3473471Z
+  Time since last request: 0.0007172 seconds.
+  importAddress: GUID: c57e5ef19edc95143aabf61b5ab64ca9 - Path: Assets/MapAssets/ivy-set/textures/Material #27.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: c57e5ef19edc95143aabf61b5ab64ca9 - Path: Assets/MapAssets/ivy-set/textures/Material #27.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: c57e5ef19edc95143aabf61b5ab64ca9' -> (Import Result ID: '813c546662e7fab8ff26c01208d6ca8e') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9027297df0c03baf2df9c205d76de91 DependenciesID=80e1675566ce29c8b1d201b09e5d2b65 StaticDependenciesID=d6e5de09ff5547503aa7f102c98b5cdd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.3854349Z
+  Time since last request: 0.0005796 seconds.
+  importAddress: GUID: a0d217ce6aeb1964c8da5c7a0a93a176 - Path: Assets/MapAssets/grass/source/Grass.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a0d217ce6aeb1964c8da5c7a0a93a176 - Path: Assets/MapAssets/grass/source/Grass.fbx - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a0d217ce6aeb1964c8da5c7a0a93a176' -> (Import Result ID: 'a2c037924bf3dd2c1ca794b917f3259b') in 0.065 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a583f846ceb87a9a4dd3520ef5140c86 DependenciesID=f72bafeaebaf97bbfaab315ed70a0a00 StaticDependenciesID=1eb0e2c39df5ab2adbb844244de5ed61 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 37
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.4682638Z
+  Time since last request: 0.0000456 seconds.
+  importAddress: GUID: 1310f140f233a1042bfb17f31c03e914 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Specular.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 1310f140f233a1042bfb17f31c03e914 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures/greek_pillars_Specular.tga.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 1310f140f233a1042bfb17f31c03e914' -> (Import Result ID: 'fc586ddad27c731af1c37c18fe999b32') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=335ac8d13c88c89ccb5e1f732efe90a0 DependenciesID=e4ae00927f9ff6286ec3dad7357df203 StaticDependenciesID=749d5aafcc68350093e18a29114bbd42 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.5006577Z
+  Time since last request: 0.0007395 seconds.
+  importAddress: GUID: 7b85dc84d918c8d45af4f3465618321b - Path: Assets/MapAssets/archive/sketch.bin - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 7b85dc84d918c8d45af4f3465618321b - Path: Assets/MapAssets/archive/sketch.bin - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 7b85dc84d918c8d45af4f3465618321b' -> (Import Result ID: '78a2467979f729d40811b2b0f8c60ae6') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44328c519e31b047ceff18488d870ea1 DependenciesID=a51a205ce6f0ae9cd857b3edede0885e StaticDependenciesID=a8e2f8aa40d349f675b7756056187a53 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.5240117Z
+  Time since last request: 0.0006323 seconds.
+  importAddress: GUID: c77ed6817ed06a24fbb2229f22522c70 - Path: Assets/MapAssets/ivy-set/textures/Grey.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: c77ed6817ed06a24fbb2229f22522c70 - Path: Assets/MapAssets/ivy-set/textures/Grey.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: c77ed6817ed06a24fbb2229f22522c70' -> (Import Result ID: '5fb7c4f1ca129aec1d6ea9aa7e3298a1') in 0.009 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ebea42cd816f38eba5101c7eddc5c270 DependenciesID=16d37b6497a20adf2797b9da96203fb1 StaticDependenciesID=fff766f70a90acca30f6fa524a414539 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.8090785Z
+  Time since last request: 0.2590651 seconds.
+  importAddress: GUID: bf31f10b908755b40bdc3c2da880f316 - Path: Assets/MapAssets/grass/textures/Grass1_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: bf31f10b908755b40bdc3c2da880f316 - Path: Assets/MapAssets/grass/textures/Grass1_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: bf31f10b908755b40bdc3c2da880f316' -> (Import Result ID: '24fa8a1e90afe713581ab44c0146d63a') in 0.015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c8cb5aaaa23ca84c02a06b1e721fb1ae DependenciesID=43302c7dcc08cccc1bb13c56ee151586 StaticDependenciesID=8b2c796029a23cf99c7559237cb5802f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.8455554Z
+  Time since last request: 0.0008172 seconds.
+  importAddress: GUID: bf223a253cc60694a9b5e45d0db611e4 - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Base_color.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: bf223a253cc60694a9b5e45d0db611e4 - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Base_color.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: bf223a253cc60694a9b5e45d0db611e4' -> (Import Result ID: 'f7eab19270fce83b22b0d2da7493b349') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be2b2b38a45878a2b925d74034b9e231 DependenciesID=7dc9420645519adff214c67e84e12b35 StaticDependenciesID=3ba7655be602fbc27eb7af1abf9a39df 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.8788436Z
+  Time since last request: 0.0006137 seconds.
+  importAddress: GUID: 640126261e9e4f64780150753103129d - Path: Assets/Materials/GlossyMaterial.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 640126261e9e4f64780150753103129d - Path: Assets/Materials/GlossyMaterial.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 640126261e9e4f64780150753103129d' -> (Import Result ID: 'a008b105908773c8a8a5d5390d56d9f3') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d71d90eecd3e46a787761e33be30a207 DependenciesID=1bbd5e5e6e1aa848f5e141f5bdaea2b8 StaticDependenciesID=f8ef1d724aa192fed788628ecfeb64e6 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.9100018Z
+  Time since last request: 0.0000362 seconds.
+  importAddress: GUID: ee08e4cb0e687b243a41b983f1e3a3fc - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: ee08e4cb0e687b243a41b983f1e3a3fc - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/source - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: ee08e4cb0e687b243a41b983f1e3a3fc' -> (Import Result ID: 'f6fb4e5a842bb592a37386352e97e63e') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0945836dd24013cf78723c92fdb989a2 DependenciesID=c83cdcf76cffac54edb29ac29e150f88 StaticDependenciesID=448ac0d03cafaca19afc7f2b8dcbaf61 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.9322351Z
+  Time since last request: 0.000587 seconds.
+  importAddress: GUID: 980dfd8ed38daa640bdffeffade4312b - Path: Assets/MapAssets/grass/textures/Grass3_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 980dfd8ed38daa640bdffeffade4312b - Path: Assets/MapAssets/grass/textures/Grass3_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 980dfd8ed38daa640bdffeffade4312b' -> (Import Result ID: '11344c47cc51ed5f26894b09b5216fa2') in 0.011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1d33709f767d5b61e9055cb3763ffc01 DependenciesID=70068395720296ec82bae10871a61a3d StaticDependenciesID=7cb89cad7dde2cae4b83b7b90f2fc014 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.9595891Z
+  Time since last request: 0.0005355 seconds.
+  importAddress: GUID: a586596201cabee49b43d61e37f90907 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a586596201cabee49b43d61e37f90907 - Path: Assets/MapAssets/greek-egyptian-and-fantasy-column-pack/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a586596201cabee49b43d61e37f90907' -> (Import Result ID: 'b1182add403c231a47c719f7586c7f09') in 0.003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d05e8ff9e50e1781b80c0104e582b274 DependenciesID=3bffd95a53d7d834f745d32f3b140edf StaticDependenciesID=c9a119f4178ec23e9c5794e93957d28d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:44.9777941Z
+  Time since last request: 0.0007368 seconds.
+  importAddress: GUID: f37b1d170438afb44b4a4ddd49a86b8a - Path: Assets/MapAssets/grass/textures/Grass3.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: f37b1d170438afb44b4a4ddd49a86b8a - Path: Assets/MapAssets/grass/textures/Grass3.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: f37b1d170438afb44b4a4ddd49a86b8a' -> (Import Result ID: 'b26596b08aeadf0fea31826b5a1ca4e4') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=35f1abcf20c26232e55cb100756d8d4a DependenciesID=9037581c70025a87dd5059d9e1335478 StaticDependenciesID=39fa52c2eaf7498aaf812af2831a8dd0 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.0037377Z
+  Time since last request: 0.0005194 seconds.
+  importAddress: GUID: 87f691b1260c31f46a43c9d723158c88 - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Mixed_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 87f691b1260c31f46a43c9d723158c88 - Path: Assets/MapAssets/modular-vines/textures/DefaultMaterial_Mixed_AO.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 87f691b1260c31f46a43c9d723158c88' -> (Import Result ID: '308d0c4951d72a62f05cba32a0bd6a47') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=403990146fa9d0625a0b42d91256c3e8 DependenciesID=c40f62286c6df3c05cbd98872fb82836 StaticDependenciesID=de7b56ecf8e827a85a8576110d36e48d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.0375973Z
+  Time since last request: 0.0060943 seconds.
+  importAddress: GUID: 9afd30ebb4ef68249a6d66464253b272 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/MaterialOfDeathTrees.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 9afd30ebb4ef68249a6d66464253b272 - Path: Assets/MapAssets/dead-looking-creepy-trees-with-no-leaves/textures/MaterialOfDeathTrees.mat - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 9afd30ebb4ef68249a6d66464253b272' -> (Import Result ID: 'd848e8a089bee7e34662a80353dd853e') in 0.019 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=886801616b52cb18af895579f0984cb1 DependenciesID=c5d30923d969ec35a221b8b298ea6f48 StaticDependenciesID=850992f5642d1b12c85ce915187a219a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.072578Z
+  Time since last request: 0.0004211 seconds.
+  importAddress: GUID: 38f94583510569845b627fdedc6e3c71 - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 38f94583510569845b627fdedc6e3c71 - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Roughness.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 38f94583510569845b627fdedc6e3c71' -> (Import Result ID: '3d74314a723f4b2caf68839435cda93f') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=62ff81bbbe59d0ba053d6fd4199e46ff DependenciesID=bbf1560b0f25f8571d3024e5e952bb0c StaticDependenciesID=9ed156eee998f98d4c61d21591619b56 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.1017247Z
+  Time since last request: 0.0004423 seconds.
+  importAddress: GUID: e398476d91d1273488a408f46ec780a3 - Path: Assets/MapAssets/grass/textures/Grass2_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: e398476d91d1273488a408f46ec780a3 - Path: Assets/MapAssets/grass/textures/Grass2_Gloss.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: e398476d91d1273488a408f46ec780a3' -> (Import Result ID: '49d4d61053470deef23a991845a7eca2') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b9316054665dbaa5e5039fb1cb18fb1a DependenciesID=66323cfbc15938089ade3cea40a9733e StaticDependenciesID=1f966beb70a5a51dd1733e51d83400ac 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.1274757Z
+  Time since last request: 0.0005538 seconds.
+  importAddress: GUID: 0a3448cb20781a24899694db848aa8fa - Path: Assets/MapAssets/ivy-set/textures/Leave_02_a.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 0a3448cb20781a24899694db848aa8fa - Path: Assets/MapAssets/ivy-set/textures/Leave_02_a.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 0a3448cb20781a24899694db848aa8fa' -> (Import Result ID: 'db282d495a4f74a70be19339ae29c615') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=298925046669026f10c293138ce756f9 DependenciesID=435452275b9155a4b62888be6e8f016a StaticDependenciesID=0ad397c834f6633c878211641a02c792 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.1556211Z
+  Time since last request: 0.000613 seconds.
+  importAddress: GUID: f41044b9a8c57ba4092ae704e21212b5 - Path: Assets/MapAssets/ivy-set/textures/Leave_02.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: f41044b9a8c57ba4092ae704e21212b5 - Path: Assets/MapAssets/ivy-set/textures/Leave_02.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: f41044b9a8c57ba4092ae704e21212b5' -> (Import Result ID: '9b285653305861251fe22ca515e2b1f2') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1989840f96c8c3c9f141ed98989f7086 DependenciesID=a39ab40f76310dccc9395f6039765865 StaticDependenciesID=a3594883bf1c94113b10bb72281305d3 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.1833727Z
+  Time since last request: 0.000044 seconds.
+  importAddress: GUID: 455134fce870baa4fb7ca530cad9cfbb - Path: Assets/MapAssets/grass/textures/Grass2_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 455134fce870baa4fb7ca530cad9cfbb - Path: Assets/MapAssets/grass/textures/Grass2_Normal.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 455134fce870baa4fb7ca530cad9cfbb' -> (Import Result ID: '72a7c87f7c23052e0dde0c6b45f1e3d1') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f8a8cdde1a49a61149f460a5b73e5b4c DependenciesID=f435b0aef12774de18c5d42f39ce3eb7 StaticDependenciesID=27ba51826aa79e73a575875f4deffdfa 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.2112915Z
+  Time since last request: 0.0004707 seconds.
+  importAddress: GUID: 3f9848837ac0b6c4586f2d7d6b83e878 - Path: Assets/MapAssets/DeadTreePack/Bark1C.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 3f9848837ac0b6c4586f2d7d6b83e878 - Path: Assets/MapAssets/DeadTreePack/Bark1C.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 3f9848837ac0b6c4586f2d7d6b83e878' -> (Import Result ID: '23040d45dcb8e073148bc0824eed164f') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d3c85cd4d8802daf372bee40d6b4c021 DependenciesID=8885b25190090cfb6aebaaa4e8eefcd2 StaticDependenciesID=1ec7392a640bb0746693f7f58aee182d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.2367178Z
+  Time since last request: 0.0005553 seconds.
+  importAddress: GUID: dc72a59b26c27f04588ec5bbab46b11c - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Base_color.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: dc72a59b26c27f04588ec5bbab46b11c - Path: Assets/MapAssets/modular-vines/source/Bramble/DefaultMaterial_Base_color.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: dc72a59b26c27f04588ec5bbab46b11c' -> (Import Result ID: 'e0c544a59d0e651838d15310dd406f57') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c1736161ec0ed5e5699dccff650a3d3c DependenciesID=392db4eaadcd8a02688cb30c5c97a68e StaticDependenciesID=e2ea2b1faea94430647904968f3e5b53 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.2650163Z
+  Time since last request: 0.0004431 seconds.
+  importAddress: GUID: 372ca41d8bd0ffe44b87351d3750f60e - Path: Assets/MapAssets/grass/textures/Grass2_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 372ca41d8bd0ffe44b87351d3750f60e - Path: Assets/MapAssets/grass/textures/Grass2_Opacity.png - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 372ca41d8bd0ffe44b87351d3750f60e' -> (Import Result ID: '8c5e24aa7f3d9ec0fb3a4e814fdd48bc') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c44c9f9fbee0c9094bc7e507a87a86bb DependenciesID=dc4a89be8bb87d7dae82bea058edb77d StaticDependenciesID=f041a7e5df549acaabd41a720b10e930 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.2914674Z
+  Time since last request: 0.0003769 seconds.
+  importAddress: GUID: 6310a174e87c4094bb74c61f4c6fa3c2 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_disp_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 6310a174e87c4094bb74c61f4c6fa3c2 - Path: Assets/Materials/mud_cracked_dry_riverbed_002/mud_cracked_dry_riverbed_002_disp_4k.jpg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 6310a174e87c4094bb74c61f4c6fa3c2' -> (Import Result ID: '9922332d0e325d70a8bb4f8a15f5bb09') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8cab759e8b34a047328302e5fdc2e2c6 DependenciesID=4322ecbb416502e720825d9a59c93ba8 StaticDependenciesID=f55f82ec0e63516499e3fe0089d78264 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-07T00:02:45.3211665Z
+  Time since last request: 0.0005101 seconds.
+  importAddress: GUID: 5ee5ab75870142d42b2ae5b5bc32100f - Path: Assets/MapAssets/grass/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 5ee5ab75870142d42b2ae5b5bc32100f - Path: Assets/MapAssets/grass/textures - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 5ee5ab75870142d42b2ae5b5bc32100f' -> (Import Result ID: '828ffc92bbcdc60b4a5031e88ada0f90') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=561aed9d6f1c2591813934ad614dc827 DependenciesID=dc701d9e093114fbe2b65df9cc6f5c0c StaticDependenciesID=2fccda818f8aead90d60c6b9bd95e527 
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AcceleratorClientConnectionCallback - disconnected - :0
 AssetImportWorker is now disconnected from the server
 Process exiting
+Curl error 42: Callback aborted
 [ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 0
