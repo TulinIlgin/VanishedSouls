@@ -223,16 +223,9 @@ public class GameMenuManager : MonoBehaviour
 
     public static void ShowGameOver(string reason = "Düşman seni yakaladı!")
     {
-        Debug.Log($"[OYUN BİTTİ] {reason}");
-        if (Instance == null) return;
-        if (Instance.IsGameEnded) return;
-
-        Instance.IsGameEnded = true;
-        if (Instance.gameOverPanel != null)
-        {
-            Instance.gameOverPanel.SetActive(true);
-            Time.timeScale = 0f;
-        }
-        Instance.onGameOver?.Invoke();
+        Debug.Log($"[OYUN BİTTİ] {reason} -> Sahne yeniden başlatılıyor...");
+        Time.timeScale = 1f;
+        skipMainMenuOnReload = true;
+        SceneManager.LoadScene("Vanished");
     }
 }

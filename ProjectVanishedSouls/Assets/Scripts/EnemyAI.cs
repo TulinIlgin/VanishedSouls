@@ -20,12 +20,12 @@ public class EnemyAI : Enemy
     public float eyeHeight = 1.3f;
     public bool drawConeOnGround = true;
 
-    [Header("Saldırı ve Kovalama (Fiziksel Temas Mesafesi)")]
+    [Header("Uzak Mesafe Saldırı ve Kovalama Ayarları")]
     public float chaseSpeed = 2.5f;
-    [Tooltip("Düşmanın vurabilmesi için karaktere fiziksel olarak dokunma mesafesi (metre)")]
-    public float attackRange = 0.55f;
-    public float attackCooldown = 1.1f;
-    [Tooltip("Düşman bizi gördükten sonra öldürme/kovalama moduna geçmeden önceki hata payı süresi (saniye)")]
+    [Tooltip("Düşmanın uzaktan öldürebileceği mesafe (Üçgen görüş alanı mesafesi kadar)")]
+    public float attackRange = 8.5f;
+    public float attackCooldown = 0.8f;
+    [Tooltip("Düşman bizi gördükten sonra öldürme moduna geçmeden önceki hata payı süresi (saniye)")]
     public float detectionGraceTime = 0.1f;
 
     [Header("Bağlı Görsel Model (Küp-Düşman Bağlantısı)")]
@@ -354,8 +354,8 @@ public class EnemyAI : Enemy
         if (ai == null) ai = host.AddComponent<EnemyAI>();
         ai.visualModel = visualMesh;
         ai.extraVisualParts = extraParts;
-        // Sadece düşman fiziksel olarak dokunduğunda (0.55m) vursun!
-        ai.attackRange = 0.55f;
+        // Uzak mesafeci düşman: Üçgen görüş alanının tamamında uzaktan öldürebilir!
+        ai.attackRange = Mathf.Max(ai.viewDistance, 8.5f);
         ai.chaseSpeed = 2.5f;
 
         if (ai.patrolPoints == null || ai.patrolPoints.Length == 0 || ai.patrolPoints[0] == null)
@@ -394,8 +394,8 @@ public class EnemyAI : Enemy
         var nav = GetComponent<NavMeshAgent>();
         if (nav != null) nav.enabled = false;
 
-        // Sahnede eski uzak attackRange (1.6 / 1.8) kayıtlıysa fiziksel temas mesafesine (0.55m) indir
-        if (attackRange > 0.65f) attackRange = 0.55f;
+        // Sahnede eski kısa attackRange (0.55) kayıtlıysa uzak mesafe (üçgen görüş boyu) değerine yükselt
+        if (attackRange < viewDistance) attackRange = viewDistance;
         if (chaseSpeed > 2.8f) chaseSpeed = 2.5f;
 
         anim = GetComponentInChildren<Animator>();
@@ -592,18 +592,14 @@ public class EnemyAI : Enemy
 
             currentSeenDuration += Time.deltaTime;
 
-            // 0.1 saniye hata payı (detectionGraceTime) dolduğunda kovalama/öldürme moduna geç!
-            // Bu andan sonra karakter çalıya girse bile düşman onun çalıya girdiğini gördüğü için çalıya gelip yakalar.
+            // 0.1 saniye hata payı (detectionGraceTime) dolduğunda doğrudan uzaktan öldürme (Attack) moduna geç!
             if (currentSeenDuration >= detectionGraceTime)
             {
                 Bush.MarkSpottedBeforeBush(this, bestTarget);
                 targetPlayer = bestTarget;
                 lastSeenPosition = bestTarget.WorldPosition;
-                if (currentState != State.Attack && currentState != State.Chase)
-                {
-                    currentState = State.Chase;
-                    Debug.Log($"{name}, {bestTarget.characterName} karakterini ({detectionGraceTime:F1}sn) gördü! Çalıya girse bile yakalayacak!");
-                }
+                currentState = State.Attack;
+                Debug.Log($"{name}, üçgen görüş alanında {bestTarget.characterName} karakterini fark etti ve uzaktan saldırıyor!");
             }
         }
         else
@@ -634,11 +630,9 @@ public class EnemyAI : Enemy
         }
     }
 
-    // ---------- KOVALAMA (CHASE: Düşman karaktere fiziksel olarak dokunana kadar yürür) ----------
+    // ---------- KOVALAMA (CHASE: Uzak mesafeci olduğu için menzildeyse anında Attack'a geçer) ----------
     void HandleChase()
     {
-        // Düşman bizi 0.1sn gördükten sonra çalıya girdiysek IsHiddenFromEnemy FALSE döner,
-        // yani çalı artık bizi korumaz ve düşman çalının içine gelip bizi yakalar!
         if (targetPlayer == null || !targetPlayer.isActiveAndEnabled || targetPlayer.IsDead ||
             Bush.IsHiddenFromEnemy(targetPlayer, this))
         {
@@ -651,7 +645,6 @@ public class EnemyAI : Enemy
 
         Vector3 playerPos = targetPlayer.WorldPosition;
 
-        // Eğer karakter bir duvarın (Cube.007 vb.) arkasına geçip görüşü tamamen kopardıysa son görülen noktayı ara
         if (WallObstacle.IsSegmentBlocked(transform.position, playerPos, 0.05f))
         {
             Bush.ClearSpottedState(this, targetPlayer);
@@ -662,10 +655,8 @@ public class EnemyAI : Enemy
         }
 
         lastSeenPosition = playerPos;
-
-        // Düşman karaktere fiziksel olarak dokunacak mesafeye (0.55m) gelene kadar kovalar
-        bool touchingPlayer = MoveTowardsPoint(playerPos, chaseSpeed, attackRange);
-        if (touchingPlayer)
+        bool inRange = MoveTowardsPoint(playerPos, chaseSpeed, attackRange);
+        if (inRange)
         {
             currentState = State.Attack;
         }
@@ -744,7 +735,7 @@ public class EnemyAI : Enemy
         }
     }
 
-    // ---------- SALDIRI (ATTACK: Sadece düşman karaktere fiziksel olarak dokunduğunda vurur!) ----------
+    // ---------- UZAK MESAFE SALDIRI (ATTACK: Üçgenin içindeyken fark ettiği anda uzaktan öldürür!) ----------
     void HandleAttack()
     {
         if (targetPlayer == null || !targetPlayer.isActiveAndEnabled || targetPlayer.IsDead ||
@@ -758,15 +749,23 @@ public class EnemyAI : Enemy
         }
 
         Vector3 playerPos = targetPlayer.WorldPosition;
+        if (WallObstacle.IsSegmentBlocked(transform.position, playerPos, 0.05f))
+        {
+            Bush.ClearSpottedState(this, targetPlayer);
+            currentState = State.Search;
+            stateTimer = 0f;
+            targetPlayer = null;
+            return;
+        }
+
         Vector3 lookDir = playerPos - transform.position;
         lookDir.y = 0f;
         float dist = lookDir.magnitude;
 
         if (lookDir.sqrMagnitude > 0.001f)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 12f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 15f);
 
-        // Eğer karakter düşmandan uzaklaştıysa (dokunma mesafesinden çıktıysa) tekrar kovala!
-        if (dist > attackRange + 0.15f)
+        if (dist > Mathf.Max(attackRange, viewDistance) + 0.5f)
         {
             currentState = State.Chase;
             return;
@@ -776,35 +775,25 @@ public class EnemyAI : Enemy
         {
             nextAttackTime = Time.time + attackCooldown;
             if (anim != null) anim.SetTrigger("Attack");
-            StartCoroutine(AttackTouchRoutine(targetPlayer));
+            StartCoroutine(RangedAttackRoutine(targetPlayer));
         }
     }
 
-    IEnumerator AttackTouchRoutine(PlayerCharacter victim)
+    IEnumerator RangedAttackRoutine(PlayerCharacter victim)
     {
         isLunging = true;
-        float duration = 0.22f;
-        bool hitApplied = false;
 
+        // Fark ettiği anda uzaktan doğrudan öldür!
+        if (victim != null && !victim.IsDead && !Bush.IsHiddenFromEnemy(victim, this))
+        {
+            victim.TakeHit();
+        }
+
+        float duration = 0.18f;
         for (float t = 0f; t < duration; t += Time.deltaTime)
         {
             float normalized = t / duration;
-            currentLungeOffset = Mathf.Sin(normalized * Mathf.PI) * 0.45f;
-
-            // Tam temas anında (ortada) karakter hâlâ dokunma mesafesindeyse ve geçerli şekilde gizlenmediyse öldür
-            if (!hitApplied && normalized >= 0.45f)
-            {
-                hitApplied = true;
-                if (victim != null && !victim.IsDead && !Bush.IsHiddenFromEnemy(victim, this))
-                {
-                    Vector3 d = victim.WorldPosition - transform.position;
-                    d.y = 0f;
-                    if (d.magnitude <= attackRange + 0.35f)
-                    {
-                        victim.TakeHit();
-                    }
-                }
-            }
+            currentLungeOffset = Mathf.Sin(normalized * Mathf.PI) * 0.25f;
             yield return null;
         }
 
@@ -812,23 +801,36 @@ public class EnemyAI : Enemy
         isLunging = false;
     }
 
-    // ---------- ZEMİNDE ÜÇGEN GÖRÜŞ ALANI ÇİZİMİ (DOLU ÜÇGEN + ÇERÇEVE) ----------
+    // ---------- ZEMİNDE ÜÇGEN GÖRÜŞ ALANI ÇİZİMİ (ZEMİNİN ALTINDA KALMAYAN PARLAK ÜÇGEN + ÇERÇEVE) ----------
+    static Material CreateConeMaterial()
+    {
+        var shader = Shader.Find("Hidden/Internal-Colored") ?? Shader.Find("Sprites/Default") ?? Shader.Find("Universal Render Pipeline/Unlit");
+        var mat = new Material(shader);
+        mat.hideFlags = HideFlags.HideAndDontSave;
+        // Çift taraflı çizim ve her zaman zeminin üstünde görünmesi için ZTest Always ayarı
+        if (mat.HasProperty("_SrcBlend")) mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        if (mat.HasProperty("_DstBlend")) mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        if (mat.HasProperty("_Cull")) mat.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
+        if (mat.HasProperty("_ZWrite")) mat.SetInt("_ZWrite", 0);
+        if (mat.HasProperty("_ZTest")) mat.SetInt("_ZTest", (int)UnityEngine.Rendering.CompareFunction.Always);
+        mat.renderQueue = 3200;
+        return mat;
+    }
+
     void SetupVisionConeRenderer()
     {
         var existing = transform.Find("VisionConeVisual");
         if (existing != null) Destroy(existing.gameObject);
 
         var coneObj = new GameObject("VisionConeVisual");
+        coneObj.layer = 0; // Default katmanında olsun ki tüm kameralarda kesin görünsün
         coneObj.transform.SetParent(transform, false);
         coneObj.transform.localPosition = Vector3.zero;
         coneObj.transform.localRotation = Quaternion.identity;
 
-        var shader = Shader.Find("Sprites/Default") ?? Shader.Find("Universal Render Pipeline/Unlit");
-        var mat = new Material(shader);
-
         coneMeshFilter = coneObj.AddComponent<MeshFilter>();
         coneMeshRenderer = coneObj.AddComponent<MeshRenderer>();
-        coneMeshRenderer.material = new Material(mat);
+        coneMeshRenderer.material = CreateConeMaterial();
         coneMeshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         coneMeshRenderer.receiveShadows = false;
         coneMesh = new Mesh { name = "VisionConeMesh" };
@@ -837,32 +839,39 @@ public class EnemyAI : Enemy
         coneLine = coneObj.AddComponent<LineRenderer>();
         coneLine.useWorldSpace = true;
         coneLine.loop = true;
-        coneLine.startWidth = 0.06f;
-        coneLine.endWidth = 0.06f;
-        coneLine.material = new Material(mat);
+        coneLine.startWidth = 0.08f;
+        coneLine.endWidth = 0.08f;
+        coneLine.material = CreateConeMaterial();
         coneLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
     }
 
     void UpdateVisionConeVisual()
     {
         if (!drawConeOnGround) return;
-        if (coneLine == null || coneMesh == null) SetupVisionConeRenderer();
+        if (coneLine == null || coneMesh == null || coneMeshRenderer == null) SetupVisionConeRenderer();
 
         bool alert = currentState == State.Chase || currentState == State.Attack;
-        Color fillColor = alert ? new Color(1f, 0.15f, 0.15f, 0.35f) : new Color(1f, 0.9f, 0.15f, 0.24f);
-        Color lineColor = alert ? new Color(1f, 0.1f, 0.1f, 0.95f) : new Color(1f, 0.85f, 0.1f, 0.85f);
+        Color fillColor = alert ? new Color(1f, 0.15f, 0.15f, 0.42f) : new Color(1f, 0.9f, 0.15f, 0.32f);
+        Color lineColor = alert ? new Color(1f, 0.1f, 0.1f, 0.98f) : new Color(1f, 0.88f, 0.1f, 0.92f);
 
         coneMeshRenderer.material.color = fillColor;
+        if (coneMeshRenderer.material.HasProperty("_Color"))
+            coneMeshRenderer.material.SetColor("_Color", fillColor);
         coneLine.startColor = lineColor;
         coneLine.endColor = lineColor;
+        if (coneLine.material.HasProperty("_Color"))
+            coneLine.material.SetColor("_Color", lineColor);
 
         int segments = 20;
-        Vector3 originWorld = transform.position + Vector3.up * 0.08f;
+        // Düşmanların Y pozisyonu (-0.09 vb.) zeminin altında kaldığı için üçgeni zeminin üst seviyesine (0.38m) kaldır
+        float coneY = Mathf.Max(transform.position.y + 0.38f, 0.38f);
+        Vector3 originWorld = new Vector3(transform.position.x, coneY, transform.position.z);
         Vector3 fwd = GetForward();
 
         Vector3[] vertices = new Vector3[segments + 2];
         Color[] colors = new Color[segments + 2];
-        int[] triangles = new int[segments * 3];
+        // Hem üstten hem alttan görünmesi için çift yönlü üçgen dizisi
+        int[] triangles = new int[segments * 6];
 
         coneLine.positionCount = segments + 2;
         coneLine.SetPosition(0, originWorld);
@@ -878,6 +887,7 @@ public class EnemyAI : Enemy
             Vector3 dir = Quaternion.Euler(0f, ang, 0f) * fwd;
             float rayDist = WallObstacle.RaycastWalls2D(originWorld, dir, viewDistance);
             Vector3 ptWorld = originWorld + dir * rayDist;
+            ptWorld.y = coneY;
 
             coneLine.SetPosition(i + 1, ptWorld);
             vertices[i + 1] = transform.InverseTransformPoint(ptWorld);
@@ -885,9 +895,14 @@ public class EnemyAI : Enemy
 
             if (i < segments)
             {
-                triangles[i * 3] = 0;
-                triangles[i * 3 + 1] = i + 1;
-                triangles[i * 3 + 2] = i + 2;
+                int triIdx = i * 6;
+                triangles[triIdx] = 0;
+                triangles[triIdx + 1] = i + 1;
+                triangles[triIdx + 2] = i + 2;
+
+                triangles[triIdx + 3] = 0;
+                triangles[triIdx + 4] = i + 2;
+                triangles[triIdx + 5] = i + 1;
             }
         }
 

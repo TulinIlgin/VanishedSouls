@@ -136,13 +136,11 @@ public class FinishLine : MonoBehaviour
         onFinishReached?.Invoke();
         GameMenuManager.ShowVictory("Bitiş çizgisine ulaştın! 2. Levele geçiliyor...");
 
-        // Eğer Inspector'dan 2. Level sahne adı girildiyse kararma tamamlanınca o sahneye geç
-        if (!string.IsNullOrEmpty(nextLevelSceneName))
-        {
-            yield return new WaitForSecondsRealtime(0.4f);
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(nextLevelSceneName);
-        }
+        // Eğer Inspector'dan 2. Level sahne adı girildiyse o sahneye geç, girilmediyse siyah ekranda kilitlenmemesi için "Vanished" sahnesini yeniden yükle
+        yield return new WaitForSecondsRealtime(0.4f);
+        Time.timeScale = 1f;
+        string targetScene = !string.IsNullOrEmpty(nextLevelSceneName) ? nextLevelSceneName : "Vanished";
+        SceneManager.LoadScene(targetScene);
     }
 
     // Sadece Scene (Editör) ekranında yerini görebilmeniz için yeşil tel çerçeve çizer

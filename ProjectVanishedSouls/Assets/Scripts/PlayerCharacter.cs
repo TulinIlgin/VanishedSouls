@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 // Oyundaki tüm dost karakterler (Aria, Lumen vb.) için ortak temel sınıf.
 // Düşmanlar sadece Aria'ya değil, bu sınıfa sahip tüm karakterlere saldırır.
@@ -147,16 +148,14 @@ public class PlayerCharacter : MonoBehaviour
                 rotated += step;
                 yield return null;
             }
-            yield return new WaitForSeconds(0.35f);
-            lumenCtrl.HideVisualOnDeath();
-            GameMenuManager.ShowGameOver(gameOverReason);
-            gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.25f);
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Vanished");
             yield break;
         }
 
         Vector3 pivot = WorldPosition;
         Transform visualTarget = cachedRenderer != null ? cachedRenderer.transform : transform;
-        Quaternion originalRot = visualTarget.rotation;
         while (rotated < 90f)
         {
             float step = (90f / duration) * Time.deltaTime;
@@ -166,31 +165,8 @@ public class PlayerCharacter : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.35f);
-        GameMenuManager.ShowGameOver(gameOverReason);
-
-        // Eğer arkadaşın henüz GameOver UI panelini bağlamadıysa testlerin bölünmemesi için Aria'yı başlangıç noktasına dirilt
-        if (GameMenuManager.Instance == null || GameMenuManager.Instance.gameOverPanel == null)
-        {
-            visualTarget.rotation = originalRot;
-            currentHealth = maxHealth;
-            IsDead = false;
-            if (!AllPlayers.Contains(this))
-                AllPlayers.Add(this);
-
-            var agent = GetComponent<NavMeshAgent>();
-            if (agent != null && agent.enabled)
-            {
-                agent.ResetPath();
-                agent.Warp(startPosition);
-            }
-            else
-            {
-                transform.position = startPosition;
-            }
-            yield break;
-        }
-
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Vanished");
     }
 }
