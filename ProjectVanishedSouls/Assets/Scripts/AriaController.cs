@@ -8,8 +8,8 @@ using UnityEngine.InputSystem;
 public class AriaController : MonoBehaviour
 {
     [Header("Taş")]
-    public Transform handPoint;         // Sol avuçtaki Empty objeyi buraya sürükle (boşsa hand.L kullanılır)
-    public float pickupRange = 3f;      // E ile alma mesafesi
+    public Transform handPoint;        
+    public float pickupRange = 3f;     
     public float stoneSpeed = 15f;
     public float throwRange = 10f;
 
@@ -28,14 +28,14 @@ public class AriaController : MonoBehaviour
     public bool HasStone => heldStone != null;
 
     [Header("Bıçak Görseli")]
-    public Renderer[] knifeRenderers; // Otomatik bulunur
+    public Renderer[] knifeRenderers; 
 
     NavMeshAgent agent;
     Animator anim;
     float busyUntil;
     string current;
     GameObject heldStone;
-    bool customHand;   // handPoint Inspector'dan atandı mı
+    bool customHand;   
     Vector3 clickGoal;
     bool hasClickGoal;
 
@@ -47,7 +47,6 @@ public class AriaController : MonoBehaviour
         customHand = handPoint != null;
         if (handPoint == null) handPoint = FindHand(transform);
 
-        // Sahnede Inspector'dan hatalı kaydedilmiş animasyon/menzil değerlerini düzelt
         if (releaseAt >= throwEnd || releaseAt > 2.3f) releaseAt = 2.15f;
         if (throwEnd < 2.5f) throwEnd = 2.9f;
         if (throwRange < 18f) throwRange = 18f;
@@ -79,7 +78,6 @@ public class AriaController : MonoBehaviour
         {
             string n = r.gameObject.name.ToLower();
 
-            // Vücut ve kıyafet materyallerine sahip olanları ASLA gizleme
             bool isBody = false;
             if (r.sharedMaterials != null)
             {
@@ -100,7 +98,7 @@ public class AriaController : MonoBehaviour
             }
             if (isBody) continue;
 
-            // Sadece ismi "knife" içerenler veya materyali "Material.006" olanlar bıçaktır
+            // "knife"
             bool isKnife = n.Contains("knife") || n.Contains("bicak");
             if (!isKnife && r.sharedMaterials != null)
             {
@@ -159,7 +157,6 @@ public class AriaController : MonoBehaviour
 
         if (Busy) return;
 
-        // Tıklanan hedef ile Aria arasında duvar (Cube.007 vb.) varsa etrafından dolanacak köşeye yönlendir
         if (hasClickGoal)
         {
             Vector3 toGoal = clickGoal - transform.position;
@@ -182,7 +179,6 @@ public class AriaController : MonoBehaviour
         if (moving) anim.speed = 1f; PlayState(moving ? walkState : idleState, 0.15f);
     }
 
-    // ---------- F: sadece bıçağı göster / gizle ----------
     [Header("Bıçak Ayarları")]
     public float knifeImpactTime = 1.25f;  // Darbenin indiği an (bu anda küp yok olur)
     public float knifeRange = 2.0f;       // Vurabilmek için düşmana yaklaşma mesafesi
@@ -196,7 +192,6 @@ public class AriaController : MonoBehaviour
         Debug.Log(KnifeMode ? "Bıçak çekildi!" : "Bıçak kınına koyuldu.");
     }
 
-    // ---------- Sağ tık: düşmana bıçakla saldır ----------
     public void KnifeAttackAt(Transform target)
     {
         if (target == null || Busy) return;
@@ -253,13 +248,10 @@ public class AriaController : MonoBehaviour
         float clipLen = ClipLength(knifeState);
         busyUntil = Time.time + clipLen;
 
-        // Bıçak animasyonunu EN BAŞTAN (0'dan) oynat
         anim.CrossFadeInFixedTime(knifeState, 0.1f, 0, 0f);
 
-        // Darbenin indiği ana kadar bekle
         yield return new WaitForSeconds(knifeImpactTime);
 
-        // Darbe anı: Düşman yok olur!
         if (target != null)
         {
             var e = target.GetComponentInParent<Enemy>();
@@ -267,16 +259,13 @@ public class AriaController : MonoBehaviour
             Debug.Log("Darbe indi, düşman yok oldu!");
         }
 
-        // Animasyonun kalan kısmını bekle (vuruş tamamlanması)
         yield return new WaitForSeconds(Mathf.Max(0.1f, clipLen - knifeImpactTime));
 
-        // Saldırı bitti: Idle'a dön (Bıçak F ile kapatılana kadar elinde kalır)
         PlayState(idleState, 0.15f);
     }
 
     bool Busy => Time.time < busyUntil;
 
-    // ---------- E: eğil, yakındaki taşı al ----------
     IEnumerator PickUp()
     {
         hasClickGoal = false;
@@ -289,7 +278,6 @@ public class AriaController : MonoBehaviour
             if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
         }
 
-        // Animasyon her durumda oynar
         busyUntil = Time.time + pickTime;
         PlayState(throwState, 0.1f, true);
         yield return new WaitForSeconds(pickTime);   // ele değdiği an
@@ -304,11 +292,10 @@ public class AriaController : MonoBehaviour
         heldStone.transform.SetParent(null);
     }
 
-    // Taş elde: her karede tutma noktasına taşı (ölçek bozulmaz)
     void LateUpdate()
     {
         if (heldStone == null) return;
-        if (customHand)   // Inspector'dan atanan Empty obje → tam orada dur
+        if (customHand)   
         {
             heldStone.transform.SetPositionAndRotation(handPoint.position, handPoint.rotation);
             return;
@@ -318,21 +305,19 @@ public class AriaController : MonoBehaviour
             heldStone.transform.position = transform.position + Vector3.up * 1f + transform.forward * 0.4f + transform.right * 0.3f;
             return;
         }
-        // Kemik: bilekten parmaklara doğru → avuç içi
+       
         Vector3 palm = handPoint.childCount > 0
             ? Vector3.Lerp(handPoint.position, handPoint.GetChild(0).position, 0.8f)
             : handPoint.position;
         heldStone.transform.position = palm;
     }
 
-    // Stone bileşeni olan ya da adı Sphere/Stone olan en yakın taşınabilir obje (yatay mesafe)
     Transform FindNearestStone(out float bestDist)
     {
         Transform best = null; bestDist = float.MaxValue;
         foreach (var t in FindObjectsByType<Transform>())
         {
             if (t == null || t.IsChildOf(transform)) continue;
-            // LumenFinalNoktasi gibi içinde "tas" hecesi geçen objeleri taş sanmaması için filtrele
             string n = t.name.ToLower();
             if (n.Contains("nokta") || n.Contains("final") || n.Contains("lumen")) continue;
 
@@ -346,7 +331,6 @@ public class AriaController : MonoBehaviour
         return best;
     }
 
-    // ---------- Sağ tık: sağ tıklanan noktaya dikkat dağıtmak için taş fırlat ----------
     public void ThrowStoneAt(Transform target)
     {
         if (target == null) return;
@@ -358,7 +342,6 @@ public class AriaController : MonoBehaviour
         if (Busy || !HasStone) { Debug.Log("Önce E ile taş al!"); return; }
         hasClickGoal = false;
 
-        // Menzil sınırını aşarsa menzil içindeki en uç noktaya at
         Vector3 flatDelta = targetPoint - transform.position;
         flatDelta.y = 0f;
         if (flatDelta.magnitude > throwRange)
@@ -366,7 +349,6 @@ public class AriaController : MonoBehaviour
             targetPoint = transform.position + flatDelta.normalized * throwRange;
         }
 
-        // Duvarın içine düşmesin
         targetPoint = WallObstacle.PushOutOfWalls(targetPoint, 0.45f);
         StartCoroutine(ThrowToPointRoutine(targetPoint));
     }
@@ -387,7 +369,6 @@ public class AriaController : MonoBehaviour
 
         if (heldStone == null) yield break;
 
-        // Taşı elden bırak ve kavisle sağ tıklanan yere uçur
         GameObject stone = heldStone;
         heldStone = null;
         Vector3 start = stone.transform.position;
@@ -410,7 +391,6 @@ public class AriaController : MonoBehaviour
         }
         stone.transform.position = end;
 
-        // Taş yere düştü -> Collider'ı aç, zeminin içinden düşmemesi için yerde sabit tut (tekrar E ile alınabilir)
         Collider sc = stone.GetComponent<Collider>();
         if (sc != null) sc.enabled = true;
         Rigidbody rb = stone.GetComponent<Rigidbody>();
@@ -421,7 +401,6 @@ public class AriaController : MonoBehaviour
             rb.isKinematic = true;
         }
 
-        // Düşmanların dikkatini taşın düştüğü noktaya çek!
         Debug.Log($"Taş {end} noktasına düştü! Yakındaki düşmanlar sesi duyup oraya yöneliyor.");
         EnemyAI.NotifyStoneNoise(end);
     }
@@ -438,7 +417,6 @@ public class AriaController : MonoBehaviour
         return transform;
     }
 
-    // ---------- Ortak ----------
     public void Stop()
     {
         hasClickGoal = false;

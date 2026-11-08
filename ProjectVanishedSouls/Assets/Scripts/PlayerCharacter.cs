@@ -110,15 +110,12 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IsDead) return;
 
-        // Lumen vurulduğunda devrilip ölür ve Oyun Bitti ekranı açılır
         if (diePermanentlyOnHit || characterName == "Lumen")
         {
             Debug.Log($"{characterName} düşman tarafından vuruldu ve öldü!");
             StartCoroutine(DieFallOverRoutine($"{characterName} düşman tarafından öldürüldü!"));
             return;
         }
-
-        // Aria yakalandığında / vurulduğunda öldürme koduna geçer ve Yakalandın menüsü açılır
         currentHealth = 0;
         Debug.Log($"{characterName} düşman tarafından yakalandı!");
         var agent = GetComponent<NavMeshAgent>();
@@ -138,7 +135,6 @@ public class PlayerCharacter : MonoBehaviour
 
         if (lumenCtrl != null && lumenCtrl.visualModel != null)
         {
-            // Lumen görsel modelini ayaklarının etrafında 90 derece yere yatır
             Vector3 footPivot = transform.position;
             while (rotated < 90f)
             {

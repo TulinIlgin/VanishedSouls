@@ -1,7 +1,6 @@
 using UnityEngine;
 
-// Kameranın karakterimizi (Aria) mevcut izometrik bakış açısını ve yüksekliğini bozmadan
-// yumuşak bir şekilde takip etmesini sağlar.
+// kamera izometrik ariayı takip eder
 public class CameraFollow : MonoBehaviour
 {
     [Header("Takip Ayarları")]
@@ -46,8 +45,6 @@ public class CameraFollow : MonoBehaviour
         if (aria != null)
             target = aria.transform;
     }
-
-    // Oyun başladığında kamerayı doğrudan Aria'nın üzerine hizalar
     public void SnapToTarget()
     {
         FindTargetIfNeeded();
@@ -74,7 +71,6 @@ public class CameraFollow : MonoBehaviour
         FindTargetIfNeeded();
         if (target == null) return;
 
-        // Kameranın izometrik açısını sabit tut ve pozisyonunu yumuşakça Aria'yı ekran ortasında tutacak şekilde kaydır
         transform.rotation = initialRotation;
         Vector3 desiredPos = CalculateDesiredPosition();
         transform.position = Vector3.SmoothDamp(transform.position, desiredPos, ref currentVelocity, smoothTime);

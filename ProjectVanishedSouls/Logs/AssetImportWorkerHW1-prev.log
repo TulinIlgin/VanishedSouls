@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc" at "2026-11-07T00:02:46.9417133Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc" at "2026-11-07T22:47:21.7331447Z"
 Built from '6000.6/staging' branch; Version is '6000.6.7f1 (b22767f04f04) revision 11675495'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26300) Professional' Language: 'tr' Physical Memory: 32499 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-07T00:02:46Z
+Date: 2026-11-07T22:47:21Z
 
 COMMAND LINE ARGUMENTS:
 D:\unity1\ınstalls\6000.6.7f1\Editor\Unity.exe
@@ -19,9 +19,9 @@ C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
 -logFile
 Logs/AssetImportWorkerHW1.log
 -srvPort
-60853
+52721
 -parentPid
-2824
+21240
 -analyticsCloudUserId
 18967893274657
 -analyticsCloudProjectId
@@ -85,14 +85,14 @@ C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [13184]  Target information:
+Player connection [5968]  Target information:
 
-Player connection [13184]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2471552157 [EditorId] 2471552157 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5968]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2753144583 [EditorId] 2753144583 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [13184]  * "[IP] 10.66.154.104 [Port] 0 [Flags] 2 [Guid] 2471552157 [EditorId] 2471552157 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5968]  * "[IP] 10.216.228.249 [Port] 0 [Flags] 2 [Guid] 2753144583 [EditorId] 2753144583 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [13184] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [13184] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5968] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5968] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -103,18 +103,18 @@ Library Redirect Path: Library/
 	ResponseStatus: Unsupported protocol version '1.18.3'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-gnc"
 [Licensing::IpcConnector] LicenseClient-gnc channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7" at "2026-11-07T00:02:48.5725511Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21396, path: "D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7" at "2026-11-07T22:47:23.5866373Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 20040, path: "D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              7ba0ec2d9af44e92810fbedb54540fe2
-  Correlation Id:          710119a7ea86afe41173d286242040e8
-  External correlation Id: 210095745399191640
+  Session Id:              775840e1591142fc84553a55ba4fc02d
+  Correlation Id:          6e2d8172c68de9778848ff3262eb8991
+  External correlation Id: 853437938530126431
   Machine Id:              oGEfRbwbEU9RurTXCj3z8AdOdqo=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-gnc-6000.6.7" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7-notifications" at "2026-11-07T00:02:48.588231Z"
-[Licensing::Module] Licensing Background thread has ended after 1.65s
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7-notifications" at "2026-11-07T22:47:23.5960241Z"
+[Licensing::Module] Licensing Background thread has ended after 1.86s
 Initialising UDS system complete:
   - System type: Client
   - Resource namespace: 431e51b1b788ecbe477eaa08b78383a9
@@ -124,7 +124,7 @@ Initialising UDS system complete:
   - Hashmap size: 4194304
   - Service connected: true
   - Service working directory: Library/DataStore/
-Refreshing native plugins compatible for Editor in 3.77 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.67 ms, found 3 plugins.
 [Physics::Module] Selected backend (deferred post-plugins).
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -150,12 +150,12 @@ Mono path[0] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
 Mono path[2] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56652
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56456
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/unity1/ınstalls/6000.6.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002986 seconds.
+Registered in 0.002000 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -163,24 +163,24 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.091 seconds
-Domain Reload Profiling: 2184ms
-	BeginReloadAssembly (245ms)
-	RebuildCommonClasses (9ms)
-	RebuildNativeTypeToScriptingClass (40ms)
-	initialDomainReloadingComplete (117ms)
-	LoadAllAssembliesAndSetupDomain (680ms)
-		LoadAssemblies (243ms)
-		TypeCache.Refresh (474ms)
-			TypeCache.ScanAssembly (440ms)
-		AnalyzeDomain (2ms)
-	FinalizeReload (1093ms)
+- Finished resetting the current domain, in  0.710 seconds
+Domain Reload Profiling: 1517ms
+	BeginReloadAssembly (181ms)
+	RebuildCommonClasses (8ms)
+	RebuildNativeTypeToScriptingClass (30ms)
+	initialDomainReloadingComplete (87ms)
+	LoadAllAssembliesAndSetupDomain (500ms)
+		LoadAssemblies (179ms)
+		TypeCache.Refresh (355ms)
+			TypeCache.ScanAssembly (330ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (711ms)
 		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (4ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			BeforeProcessingInitializeOnLoad (297ms)
-			ProcessInitializeOnLoadAttributes (230ms)
-			ProcessInitializeOnLoadMethodAttributes (330ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (153ms)
+			ProcessInitializeOnLoadAttributes (149ms)
+			ProcessInitializeOnLoadMethodAttributes (265ms)
 Initializing Unity extensions:
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -203,388 +203,99 @@ Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.66 ms, found 3 plugins.
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.565 seconds
-Domain Reload Profiling: 3373ms
-	BeginReloadAssembly (475ms)
-		DisableScriptedObjects (37ms)
-		CreateAndSetChildDomain (82ms)
-	RebuildCommonClasses (20ms)
-	RebuildNativeTypeToScriptingClass (39ms)
-	initialDomainReloadingComplete (109ms)
-	LoadAllAssembliesAndSetupDomain (1164ms)
-		LoadAssemblies (678ms)
-		TypeCache.Refresh (297ms)
-			TypeCache.ScanAssembly (264ms)
-		AnalyzeDomain (120ms)
-			BuildScriptInfoCaches (111ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (1567ms)
+- Finished resetting the current domain, in  1.147 seconds
+Domain Reload Profiling: 2732ms
+	BeginReloadAssembly (466ms)
+		DisableScriptedObjects (109ms)
+		CreateAndSetChildDomain (77ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (35ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (976ms)
+		LoadAssemblies (562ms)
+		TypeCache.Refresh (264ms)
+			TypeCache.ScanAssembly (235ms)
+		AnalyzeDomain (101ms)
+			BuildScriptInfoCaches (94ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1148ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (3ms)
+			BeforeProcessingInitializeOnLoad (162ms)
+			ProcessInitializeOnLoadAttributes (395ms)
+			ProcessInitializeOnLoadMethodAttributes (124ms)
+			AfterProcessingInitializeOnLoad (5ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+AcceleratorClientConnectionCallback - disconnected - :0
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4698 unused Assets / (6.5 MB). Loaded Objects now: 5523.
+Memory consumption went from 310.7 MB to 304.3 MB.
+Total: 13.808700 ms (FindLiveObjects: 0.802400 ms CreateObjectMapping: 0.322500 ms MarkObjects: 8.511900 ms  DeleteObjects: 3.869100 ms)
+
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967893274657-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.223 seconds
+Domain Reload Profiling: 2580ms
+	BeginReloadAssembly (384ms)
+		DisableScriptedObjects (18ms)
+		CreateAndSetChildDomain (85ms)
+	RebuildCommonClasses (14ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (847ms)
+		LoadAssemblies (511ms)
+		TypeCache.Refresh (19ms)
+		AnalyzeDomain (244ms)
+			BuildScriptInfoCaches (237ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1224ms)
 		SetupLoadedEditorAssemblies (0ms)
 			LogAssemblyErrors (5ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			BeforeProcessingInitializeOnLoad (224ms)
-			ProcessInitializeOnLoadAttributes (542ms)
-			ProcessInitializeOnLoadMethodAttributes (165ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (4ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
-AcceleratorClientConnectionCallback - disconnected - :0
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 3.04 ms, found 3 plugins.
-Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (9.7 MB). Loaded Objects now: 5520.
-Memory consumption went from 304.5 MB to 294.8 MB.
-Total: 21.815900 ms (FindLiveObjects: 1.002900 ms CreateObjectMapping: 0.493600 ms MarkObjects: 13.253400 ms  DeleteObjects: 6.702300 ms)
+			BeforeProcessingInitializeOnLoad (163ms)
+			ProcessInitializeOnLoadAttributes (408ms)
+			ProcessInitializeOnLoadMethodAttributes (141ms)
+			AfterProcessingInitializeOnLoad (5ms)
+		AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 2.18 ms, found 3 plugins.
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4696 unused Assets / (8.0 MB). Loaded Objects now: 5573.
+Memory consumption went from 324.1 MB to 316.1 MB.
+Total: 14.946300 ms (FindLiveObjects: 1.418100 ms CreateObjectMapping: 0.674700 ms MarkObjects: 8.329200 ms  DeleteObjects: 4.148600 ms)
 
+Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Prepare
 AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.357 seconds
-Domain Reload Profiling: 2947ms
-	BeginReloadAssembly (475ms)
-		DisableScriptedObjects (30ms)
-		CreateAndSetChildDomain (93ms)
-	RebuildCommonClasses (19ms)
-	RebuildNativeTypeToScriptingClass (37ms)
-	initialDomainReloadingComplete (104ms)
-	LoadAllAssembliesAndSetupDomain (954ms)
-		LoadAssemblies (611ms)
-		TypeCache.Refresh (23ms)
-		AnalyzeDomain (254ms)
-			BuildScriptInfoCaches (246ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (1359ms)
-		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (188ms)
-			ProcessInitializeOnLoadAttributes (436ms)
-			ProcessInitializeOnLoadMethodAttributes (153ms)
-			AfterProcessingInitializeOnLoad (5ms)
-		AwakeInstancesAfterBackupRestoration (33ms)
-Refreshing native plugins compatible for Editor in 2.80 ms, found 3 plugins.
 Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4694 unused Assets / (7.7 MB). Loaded Objects now: 5570.
-Memory consumption went from 318.1 MB to 310.4 MB.
-Total: 16.388000 ms (FindLiveObjects: 0.989000 ms CreateObjectMapping: 0.458000 ms MarkObjects: 10.090400 ms  DeleteObjects: 4.495200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 3.63 ms, found 3 plugins.
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4687 unused Assets / (6.0 MB). Loaded Objects now: 5572.
-Memory consumption went from 319.1 MB to 313.0 MB.
-Total: 44.288900 ms (FindLiveObjects: 2.984500 ms CreateObjectMapping: 1.371300 ms MarkObjects: 25.756400 ms  DeleteObjects: 8.947400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4687 unused Assets / (7.6 MB). Loaded Objects now: 5572.
-Memory consumption went from 319.8 MB to 312.2 MB.
-Total: 20.871000 ms (FindLiveObjects: 1.674200 ms CreateObjectMapping: 1.069300 ms MarkObjects: 11.367400 ms  DeleteObjects: 6.334300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.277 seconds
-Domain Reload Profiling: 2775ms
-	BeginReloadAssembly (438ms)
-		DisableScriptedObjects (24ms)
-		CreateAndSetChildDomain (109ms)
-	RebuildCommonClasses (16ms)
-	RebuildNativeTypeToScriptingClass (30ms)
-	initialDomainReloadingComplete (100ms)
-	LoadAllAssembliesAndSetupDomain (913ms)
-		LoadAssemblies (556ms)
-		TypeCache.Refresh (18ms)
-		AnalyzeDomain (258ms)
-			BuildScriptInfoCaches (250ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (1279ms)
-		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (194ms)
-			ProcessInitializeOnLoadAttributes (480ms)
-			ProcessInitializeOnLoadMethodAttributes (155ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (3ms)
-		AwakeInstancesAfterBackupRestoration (44ms)
-Refreshing native plugins compatible for Editor in 2.53 ms, found 3 plugins.
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (8.1 MB). Loaded Objects now: 5575.
-Memory consumption went from 321.5 MB to 313.3 MB.
-Total: 21.215400 ms (FindLiveObjects: 1.191000 ms CreateObjectMapping: 0.522300 ms MarkObjects: 12.364900 ms  DeleteObjects: 6.743700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  2.199 seconds
-Domain Reload Profiling: 3654ms
-	BeginReloadAssembly (425ms)
-		DisableScriptedObjects (24ms)
-		CreateAndSetChildDomain (90ms)
-	RebuildCommonClasses (20ms)
-	RebuildNativeTypeToScriptingClass (31ms)
-	initialDomainReloadingComplete (94ms)
-	LoadAllAssembliesAndSetupDomain (883ms)
-		LoadAssemblies (547ms)
-		TypeCache.Refresh (18ms)
-		AnalyzeDomain (253ms)
-			BuildScriptInfoCaches (246ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (2200ms)
-		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (4ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (180ms)
-			ProcessInitializeOnLoadAttributes (1452ms)
-			ProcessInitializeOnLoadMethodAttributes (140ms)
-			AfterProcessingInitializeOnLoad (5ms)
-		AwakeInstancesAfterBackupRestoration (43ms)
-Refreshing native plugins compatible for Editor in 2.64 ms, found 3 plugins.
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (7.8 MB). Loaded Objects now: 5578.
-Memory consumption went from 322.9 MB to 315.2 MB.
-Total: 14.340700 ms (FindLiveObjects: 0.842800 ms CreateObjectMapping: 0.388200 ms MarkObjects: 8.848800 ms  DeleteObjects: 3.892000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.798 seconds
-Domain Reload Profiling: 1758ms
-	BeginReloadAssembly (300ms)
-		DisableScriptedObjects (45ms)
-		CreateAndSetChildDomain (58ms)
-	RebuildCommonClasses (12ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (563ms)
-		LoadAssemblies (333ms)
-		TypeCache.Refresh (11ms)
-		AnalyzeDomain (158ms)
-			BuildScriptInfoCaches (153ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (799ms)
-		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			BeforeProcessingInitializeOnLoad (137ms)
-			ProcessInitializeOnLoadAttributes (255ms)
-			ProcessInitializeOnLoadMethodAttributes (94ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (3ms)
-		AwakeInstancesAfterBackupRestoration (33ms)
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (7.9 MB). Loaded Objects now: 5581.
-Memory consumption went from 334.4 MB to 326.6 MB.
-Total: 8.535700 ms (FindLiveObjects: 0.751000 ms CreateObjectMapping: 0.172600 ms MarkObjects: 5.089500 ms  DeleteObjects: 2.331900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.784 seconds
-Domain Reload Profiling: 1791ms
-	BeginReloadAssembly (314ms)
-		DisableScriptedObjects (55ms)
-		CreateAndSetChildDomain (53ms)
-	RebuildCommonClasses (11ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (595ms)
-		LoadAssemblies (380ms)
-		TypeCache.Refresh (12ms)
-		AnalyzeDomain (168ms)
-			BuildScriptInfoCaches (163ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (785ms)
-		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (116ms)
-			ProcessInitializeOnLoadAttributes (282ms)
-			ProcessInitializeOnLoadMethodAttributes (106ms)
-			AfterProcessingInitializeOnLoad (3ms)
-		AwakeInstancesAfterBackupRestoration (26ms)
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (7.6 MB). Loaded Objects now: 5584.
-Memory consumption went from 338.1 MB to 330.4 MB.
-Total: 8.275400 ms (FindLiveObjects: 0.485700 ms CreateObjectMapping: 0.185900 ms MarkObjects: 5.055700 ms  DeleteObjects: 2.385900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
-  Product: Unity Personal
-  Type: ULF
-  Expiration: Unlimited
-[Licensing::Module] License group:
-  Id: 18967893274657-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Begin MonoManager ReloadAssembly
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Native extension for WindowsStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
-Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.855 seconds
-Domain Reload Profiling: 1811ms
-	BeginReloadAssembly (308ms)
-		DisableScriptedObjects (43ms)
-		CreateAndSetChildDomain (66ms)
-	RebuildCommonClasses (10ms)
-	RebuildNativeTypeToScriptingClass (24ms)
-	initialDomainReloadingComplete (57ms)
-	LoadAllAssembliesAndSetupDomain (555ms)
-		LoadAssemblies (348ms)
-		TypeCache.Refresh (12ms)
-		AnalyzeDomain (158ms)
-			BuildScriptInfoCaches (154ms)
-	FinalizeReload (856ms)
-		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			BeforeProcessingInitializeOnLoad (118ms)
-			ProcessInitializeOnLoadAttributes (307ms)
-			ProcessInitializeOnLoadMethodAttributes (126ms)
-			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (3ms)
-		AwakeInstancesAfterBackupRestoration (41ms)
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4696 unused Assets / (7.4 MB). Loaded Objects now: 5587.
-Memory consumption went from 341.7 MB to 334.3 MB.
-Total: 6.460300 ms (FindLiveObjects: 0.589800 ms CreateObjectMapping: 0.141600 ms MarkObjects: 3.665800 ms  DeleteObjects: 1.890300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-AcceleratorClientConnectionCallback - disconnected - :0
-Refreshing native plugins compatible for Editor in 2.29 ms, found 3 plugins.
-Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 61 unused Assets / (5.4 MB). Loaded Objects now: 5587.
-Memory consumption went from 339.3 MB to 333.9 MB.
-Total: 12.882000 ms (FindLiveObjects: 0.660300 ms CreateObjectMapping: 0.232300 ms MarkObjects: 9.458200 ms  DeleteObjects: 2.225000 ms)
+Unloading 61 unused Assets / (5.5 MB). Loaded Objects now: 5573.
+Memory consumption went from 322.3 MB to 316.8 MB.
+Total: 15.137900 ms (FindLiveObjects: 0.697000 ms CreateObjectMapping: 0.260500 ms MarkObjects: 10.802100 ms  DeleteObjects: 3.014000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 Editor requested this worker to shutdown with reason: Editor is closing down
