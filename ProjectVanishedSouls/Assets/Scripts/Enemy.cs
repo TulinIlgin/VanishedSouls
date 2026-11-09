@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Düşman. Küpe (sonra gerçek düşmana) ekle.
+// Düşman temel sınıfı
 public class Enemy : MonoBehaviour
 {
     protected bool dead;
@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     {
         if (dead) return;
         dead = true;
-        // TODO: ölüm animasyonu buraya → GetComponent<Animator>().SetTrigger("Die"); sonra Destroy(gameObject, süre);
         Destroy(gameObject);
     }
 }

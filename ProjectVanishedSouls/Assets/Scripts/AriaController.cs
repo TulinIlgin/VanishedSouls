@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class AriaController : MonoBehaviour
 {
+    [SerializeField]private TrailRenderer trail;
     [Header("Taş")]
     public Transform handPoint;         // Sol avuçtaki Empty objeyi buraya sürükle (boşsa hand.L kullanılır)
     public float pickupRange = 3f;      // E ile alma mesafesi
@@ -16,12 +17,14 @@ public class AriaController : MonoBehaviour
     [Header("AriaThrowRock zamanları (saniye)")]
     public float pickTime   = 0.95f;  // E: 0 → buraya kadar oynar, taş ele geçer (el en altta)
     public float throwStart = 1.75f;  // Sağ tık: animasyon buradan başlar (eğilme atlanır)
-    public float releaseAt  = 2.15f;  // taş bu anda elden çıkar
-    public float throwEnd   = 2.9f;   // atış biter, Idle'a dön
+    public float releaseAt  = 2.15f;  // (Eski zamanlama - artık OnThrowRelease event'i kullanılıyor)
+    public float throwEnd   = 2.9f;   // (Eski zamanlama - artık FinishThrow event'i kullanılıyor)
 
     [Header("Animator State İsimleri")]
     public string idleState  = "Idle";
     public string walkState  = "AriaWalk";
+    public string crouchIdleState = "CrouchIdle";
+    public string crouchWalkState = "CrouchWalk";
     public string knifeState = "AriaKnifeAttack";
     public string throwState = "AriaThrowRock";
 
@@ -39,11 +42,28 @@ public class AriaController : MonoBehaviour
     Vector3 clickGoal;
     bool hasClickGoal;
 
+    Transform pendingKnifeTarget;
+    Vector3 pendingThrowPoint;
+    bool hasPendingThrow;
+    bool isPerformingAction;
+    float actionStartTime;
+
+    public bool Busy => isPerformingAction || Time.time < busyUntil;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim  = GetComponent<Animator>();
-        anim.applyRootMotion = false;
+        if (anim == null) anim = GetComponentInChildren<Animator>();
+        if (anim != null) anim.applyRootMotion = false;
+
+        // Eğer Animator bir alt objedeyse köprü script'i ekle
+        if (anim != null && anim.gameObject != gameObject)
+        {
+            var relay = anim.GetComponent<AriaAnimationEvents>();
+            if (relay == null) anim.gameObject.AddComponent<AriaAnimationEvents>();
+        }
+
         customHand = handPoint != null;
         if (handPoint == null) handPoint = FindHand(transform);
 
@@ -60,6 +80,11 @@ public class AriaController : MonoBehaviour
             var pc = gameObject.AddComponent<PlayerCharacter>();
             pc.characterName = "Aria";
         }
+
+        if (GetComponent<PlayerStealth>() == null)
+        {
+            gameObject.AddComponent<PlayerStealth>();
+        }
         SetKnifeVisual(false);
         EnemyAI.EnsureSceneConfigured();
     }
@@ -69,7 +94,7 @@ public class AriaController : MonoBehaviour
         agent.ResetPath();
         PlayState(idleState, 0f);
         SetKnifeVisual(false);
-        EnemyAI.EnsureSceneConfigured(); // Başlangıçta elinde hiçbir şey olmasın!
+        EnemyAI.EnsureSceneConfigured();
     }
 
     void FindKnifeObjects()
@@ -79,7 +104,7 @@ public class AriaController : MonoBehaviour
         {
             string n = r.gameObject.name.ToLower();
 
-            // Vücut ve kıyafet materyallerine sahip olanları ASLA gizleme
+            // Vücut ve kıyafet materyallerine sahip olanları gizleme
             bool isBody = false;
             if (r.sharedMaterials != null)
             {
@@ -100,7 +125,6 @@ public class AriaController : MonoBehaviour
             }
             if (isBody) continue;
 
-            // Sadece ismi "knife" içerenler veya materyali "Material.006" olanlar bıçaktır
             bool isKnife = n.Contains("knife") || n.Contains("bicak");
             if (!isKnife && r.sharedMaterials != null)
             {
@@ -145,6 +169,31 @@ public class AriaController : MonoBehaviour
     {
         if (GameMenuManager.IsMenuOpen) return;
 
+        // Aksiyon güvenlik kontrolü (animasyon hızlandırıldığında event kaçırılırsa veya takılı kalırsa):
+        if (isPerformingAction)
+        {
+            if (hasPendingThrow)
+            {
+                bool leftThrowState = anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName(throwState) && !anim.IsInTransition(0);
+                bool timeout = Time.time >= actionStartTime + 2.0f;
+                if (leftThrowState || timeout)
+                {
+                    OnThrowRelease();
+                    FinishThrow();
+                }
+            }
+            else if (pendingKnifeTarget != null)
+            {
+                bool leftKnifeState = anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName(knifeState) && !anim.IsInTransition(0);
+                bool timeout = Time.time >= actionStartTime + 2.0f;
+                if (leftKnifeState || timeout)
+                {
+                    OnKnifeHit();
+                    FinishKnifeAttack();
+                }
+            }
+        }
+
         var kb = Keyboard.current;
         if (kb != null && !Busy)
         {
@@ -159,7 +208,7 @@ public class AriaController : MonoBehaviour
 
         if (Busy) return;
 
-        // Tıklanan hedef ile Aria arasında duvar (Cube.007 vb.) varsa etrafından dolanacak köşeye yönlendir
+        // Tıklanan hedef ile Aria arasında duvar varsa etrafından dolanacak köşeye yönlendir
         if (hasClickGoal)
         {
             Vector3 toGoal = clickGoal - transform.position;
@@ -178,13 +227,51 @@ public class AriaController : MonoBehaviour
 
         transform.position = WallObstacle.PushOutOfWalls(transform.position, 0.5f);
 
+        // Eğilme (Crouch) kontrolü: Karakter çalıdaysa kodun zorla Idle oynatıp animasyonu bölmesini engelle!
+        bool isCrouching = false;
+        var stealth = GetComponent<PlayerStealth>();
+        if (stealth != null && stealth.isHidden)
+        {
+            isCrouching = true;
+        }
+        else if (anim != null)
+        {
+            foreach (var p in anim.parameters)
+            {
+                if (p.name == "isCrouching")
+                {
+                    isCrouching = anim.GetBool("isCrouching");
+                    break;
+                }
+            }
+        }
+
         bool moving = agent.hasPath && agent.velocity.magnitude > 0.1f;
-        if (moving) anim.speed = 1f; PlayState(moving ? walkState : idleState, 0.15f);
+        if (moving) anim.speed = 1f;
+
+        // Animator parametrelerini güncelle (Animator'daki geçiş oklarının düzgün çalışması için şart!)
+        if (anim != null)
+        {
+            SetAnimBoolIfExists("IsWalking", moving);
+            SetAnimBoolIfExists("isWalking", moving);
+            SetAnimBoolIfExists("isCrouching", isCrouching);
+        }
+
+        if (isCrouching)
+        {
+            string targetState = moving
+                ? ((HasState(crouchWalkState) || HasClip(crouchWalkState)) ? crouchWalkState : walkState)
+                : ((HasState(crouchIdleState) || HasClip(crouchIdleState)) ? crouchIdleState : idleState);
+            PlayState(targetState, 0.15f);
+        }
+        else
+        {
+            PlayState(moving ? walkState : idleState, 0.15f);
+        }
     }
 
     // ---------- F: sadece bıçağı göster / gizle ----------
     [Header("Bıçak Ayarları")]
-    public float knifeImpactTime = 1.25f;  // Darbenin indiği an (bu anda küp yok olur)
     public float knifeRange = 2.0f;       // Vurabilmek için düşmana yaklaşma mesafesi
 
     public bool KnifeMode { get; private set; }
@@ -218,7 +305,7 @@ public class AriaController : MonoBehaviour
             return;
         }
 
-        StartCoroutine(KnifeStrike(target, target.position - transform.position));
+        StartKnifeAttack(target, target.position - transform.position);
     }
 
     IEnumerator MoveAndStrike(Transform target)
@@ -234,47 +321,64 @@ public class AriaController : MonoBehaviour
             if (d.magnitude <= knifeRange)
             {
                 agent.ResetPath();
-                StartCoroutine(KnifeStrike(target, target.position - transform.position));
+                StartKnifeAttack(target, target.position - transform.position);
                 yield break;
             }
             yield return null;
         }
     }
 
-    IEnumerator KnifeStrike(Transform target, Vector3 dir)
+    void StartKnifeAttack(Transform target, Vector3 dir)
     {
         hasClickGoal = false;
         agent.ResetPath();
         dir.y = 0;
         if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
 
+        pendingKnifeTarget = target;
+        isPerformingAction = true;
+        actionStartTime = Time.time;
         anim.speed = 1f;
         current = knifeState;
-        float clipLen = ClipLength(knifeState);
-        busyUntil = Time.time + clipLen;
 
         // Bıçak animasyonunu EN BAŞTAN (0'dan) oynat
         anim.CrossFadeInFixedTime(knifeState, 0.1f, 0, 0f);
-
-        // Darbenin indiği ana kadar bekle
-        yield return new WaitForSeconds(knifeImpactTime);
-
-        // Darbe anı: Düşman yok olur!
-        if (target != null)
-        {
-            var e = target.GetComponentInParent<Enemy>();
-            if (e != null) e.Die(); else Destroy(target.gameObject);
-            Debug.Log("Darbe indi, düşman yok oldu!");
-        }
-
-        // Animasyonun kalan kısmını bekle (vuruş tamamlanması)
-        yield return new WaitForSeconds(Mathf.Max(0.1f, clipLen - knifeImpactTime));
-
-        // Saldırı bitti: Idle'a dön (Bıçak F ile kapatılana kadar elinde kalır)
-        PlayState(idleState, 0.15f);
+        Debug.Log("Aria: Bıçak saldırısına başladı (OnKnifeHit darbeyi indirir, FinishKnifeAttack hareketi açar).");
     }
 
-    bool Busy => Time.time < busyUntil;
+    // =========================================================================
+    // BIÇAK SALDIRISI ANİMASYON EVENT'LERİ
+    // =========================================================================
+
+    /// <summary>
+    /// Bıçağın düşmana saplandığı / darbenin indiği kareye ekleyin.
+    /// </summary>
+    public void OnKnifeHit()
+    {
+        if (pendingKnifeTarget != null)
+        {
+            var e = pendingKnifeTarget.GetComponentInParent<Enemy>();
+            if (e != null) e.Die(); else Destroy(pendingKnifeTarget.gameObject);
+            Debug.Log("Aria: Bıçak darbesi indi, düşman öldü (OnKnifeHit Event)!");
+            pendingKnifeTarget = null;
+        }
+    }
+
+    /// <summary>
+    /// Bıçak animasyonunun EN SON karesine ekleyin. Bu çağrılana kadar Aria hareket edemez; çağrılınca Idle'a döner.
+    /// </summary>
+    public void FinishKnifeAttack()
+    {
+        if (pendingKnifeTarget != null)
+        {
+            OnKnifeHit();
+        }
+        isPerformingAction = false;
+        pendingKnifeTarget = null;
+        busyUntil = 0f;
+        PlayState(idleState, 0.15f);
+        Debug.Log("Aria: Bıçak saldırısı tamamlandı, hareket serbest (FinishKnifeAttack Event).");
+    }
 
     // ---------- E: eğil, yakındaki taşı al ----------
     IEnumerator PickUp()
@@ -325,14 +429,13 @@ public class AriaController : MonoBehaviour
         heldStone.transform.position = palm;
     }
 
-    // Stone bileşeni olan ya da adı Sphere/Stone olan en yakın taşınabilir obje (yatay mesafe)
+    // Stone bileşeni olan ya da adı Sphere/Stone olan en yakın taşınabilir obje
     Transform FindNearestStone(out float bestDist)
     {
         Transform best = null; bestDist = float.MaxValue;
         foreach (var t in FindObjectsByType<Transform>())
         {
             if (t == null || t.IsChildOf(transform)) continue;
-            // LumenFinalNoktasi gibi içinde "tas" hecesi geçen objeleri taş sanmaması için filtrele
             string n = t.name.ToLower();
             if (n.Contains("nokta") || n.Contains("final") || n.Contains("lumen")) continue;
 
@@ -366,30 +469,55 @@ public class AriaController : MonoBehaviour
             targetPoint = transform.position + flatDelta.normalized * throwRange;
         }
 
-        // Duvarın içine düşmesin
         targetPoint = WallObstacle.PushOutOfWalls(targetPoint, 0.45f);
-        StartCoroutine(ThrowToPointRoutine(targetPoint));
-    }
 
-    IEnumerator ThrowToPointRoutine(Vector3 targetPoint)
-    {
         agent.ResetPath();
         Vector3 dir = targetPoint - transform.position;
         dir.y = 0f;
         if (dir.sqrMagnitude > 0.001f)
             transform.rotation = Quaternion.LookRotation(dir);
 
-        busyUntil = Time.time + (throwEnd - throwStart);
+        pendingThrowPoint = targetPoint;
+        hasPendingThrow = true;
+        isPerformingAction = true;
+        actionStartTime = Time.time;
         current = throwState;
-        anim.CrossFadeInFixedTime(throwState, 0.15f, 0, throwStart); // sadece atış kısmı
 
-        yield return new WaitForSeconds(Mathf.Max(0f, releaseAt - throwStart));
+        // Atış animasyonunu oynat:
+        // Sabit saniye (throwStart) yerine oran (normalizedTime) kullanarak,
+        // animasyon Animator'da 2x, 3x hızlandırılsa bile asla klibin sonuna veya event'in sonrasına zıplamaz!
+        float clipLen = ClipLength(throwState);
+        float normalizedStart = 0f;
+        if (clipLen > 2.2f && throwStart > 0f)
+        {
+            normalizedStart = Mathf.Clamp01(throwStart / clipLen);
+        }
 
-        if (heldStone == null) yield break;
+        anim.CrossFade(throwState, 0.05f, 0, normalizedStart);
+        Debug.Log("Aria: Taş fırlatma başladı (OnThrowRelease taşı atar, FinishThrow bitirir).");
+    }
 
-        // Taşı elden bırak ve kavisle sağ tıklanan yere uçur
+    // =========================================================================
+    // TAŞ FIRLATMA ANİMASYON EVENT'LERİ
+    // =========================================================================
+
+    /// <summary>
+    /// Taşın elden fırlatıldığı karede çağrılır: Taş kavisle hedefe uçar.
+    /// </summary>
+    public void OnThrowRelease()
+    {
+        if (heldStone == null) return;
+
+        hasPendingThrow = false;
         GameObject stone = heldStone;
         heldStone = null;
+
+        StartCoroutine(FlyStoneRoutine(stone, pendingThrowPoint));
+        Debug.Log("Aria: Taş elden fırlatıldı (OnThrowRelease Event)!");
+    }
+
+    IEnumerator FlyStoneRoutine(GameObject stone, Vector3 targetPoint)
+    {
         Vector3 start = stone.transform.position;
 
         float stoneRadius = Mathf.Max(0.12f, stone.transform.lossyScale.y * 0.5f);
@@ -405,26 +533,58 @@ public class AriaController : MonoBehaviour
 
         for (float t = 0f; t < 1f; t += Time.deltaTime / flight)
         {
+            if (stone == null) yield break;
             stone.transform.position = Vector3.Lerp(start, end, t) + Vector3.up * (Mathf.Sin(t * Mathf.PI) * arcHeight);
             yield return null;
         }
-        stone.transform.position = end;
 
-        // Taş yere düştü -> Collider'ı aç, zeminin içinden düşmemesi için yerde sabit tut (tekrar E ile alınabilir)
-        Collider sc = stone.GetComponent<Collider>();
-        if (sc != null) sc.enabled = true;
-        Rigidbody rb = stone.GetComponent<Rigidbody>();
-        if (rb != null)
+        if (stone != null)
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.isKinematic = true;
-        }
+            stone.transform.position = end;
 
-        // Düşmanların dikkatini taşın düştüğü noktaya çek!
-        Debug.Log($"Taş {end} noktasına düştü! Yakındaki düşmanlar sesi duyup oraya yöneliyor.");
-        EnemyAI.NotifyStoneNoise(end);
+            Collider sc = stone.GetComponent<Collider>();
+            if (sc != null) sc.enabled = true;
+            Rigidbody rb = stone.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.isKinematic = true;
+            }
+
+            Debug.Log($"Taş {end} noktasına düştü! Yakındaki düşmanlar sesi duyuyor.");
+            EnemyAI.NotifyStoneNoise(end);
+        }
     }
+
+    /// <summary>
+    /// Taş atış animasyonunun EN SON karesinde çağrılır: Hareketi açar ve Idle'a döner.
+    /// </summary>
+    public void FinishThrow()
+    {
+        if (heldStone != null)
+        {
+            OnThrowRelease();
+        }
+        isPerformingAction = false;
+        hasPendingThrow = false;
+        busyUntil = 0f;
+        PlayState(idleState, 0.15f);
+        Debug.Log("Aria: Taş atışı tamamlandı, hareket serbest (FinishThrow Event).");
+    }
+
+    /// <summary>
+    /// Ortak bitiş fonksiyonu (Her iki animasyon için de FinishAttack seçilirse çalışır)
+    /// </summary>
+    public void FinishAttack()
+    {
+        if (hasPendingThrow) FinishThrow();
+        else FinishKnifeAttack();
+    }
+
+    public void OnAttackHit() => OnKnifeHit();
+    public void ReleaseStone() => OnThrowRelease();
+    public void ThrowStone() => OnThrowRelease();
 
     Transform FindHand(Transform root)
     {
@@ -460,14 +620,6 @@ public class AriaController : MonoBehaviour
         agent.SetDestination(steered);
     }
 
-    void Attack(string state)
-    {
-        hasClickGoal = false;
-        agent.ResetPath();
-        PlayState(state, 0.1f, true);
-        busyUntil = Time.time + ClipLength(state);
-    }
-
     void PlayState(string state, float fade, bool force = false)
     {
         if (!force && current == state &&
@@ -476,10 +628,56 @@ public class AriaController : MonoBehaviour
         anim.CrossFadeInFixedTime(state, fade, 0, 0f);
     }
 
+    void SetAnimBoolIfExists(string paramName, bool val)
+    {
+        if (anim == null) return;
+        foreach (var p in anim.parameters)
+        {
+            if (p.type == AnimatorControllerParameterType.Bool &&
+                string.Equals(p.name, paramName, System.StringComparison.OrdinalIgnoreCase))
+            {
+                if (anim.GetBool(p.name) != val)
+                    anim.SetBool(p.name, val);
+                return;
+            }
+        }
+    }
+
+    bool HasState(string stateName)
+    {
+        if (anim == null || string.IsNullOrEmpty(stateName)) return false;
+        return anim.HasState(0, Animator.StringToHash(stateName));
+    }
+
+    bool HasClip(string stateName)
+    {
+        if (anim != null && anim.runtimeAnimatorController != null)
+        {
+            foreach (var c in anim.runtimeAnimatorController.animationClips)
+                if (c.name == stateName) return true;
+        }
+        return false;
+    }
+
     float ClipLength(string state)
     {
-        foreach (var c in anim.runtimeAnimatorController.animationClips)
-            if (c.name == state) return c.length;
+        if (anim != null && anim.runtimeAnimatorController != null)
+        {
+            foreach (var c in anim.runtimeAnimatorController.animationClips)
+                if (c.name == state) return c.length;
+        }
         return 1f;
     }
+    public void StartTrail()
+    {
+        trail.emitting = true;
+    }
+
+    // İzi Durdurur (Yeni iz çizmez, mevcut iz ekranda sönerek kaybolur)
+    public void StopTrail()
+    {
+        trail.emitting = false;
+    }
+
+
 }
