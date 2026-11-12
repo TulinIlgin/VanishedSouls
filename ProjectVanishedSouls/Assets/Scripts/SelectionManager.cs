@@ -36,11 +36,11 @@ public class SelectionManager : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 500f, groundLayer))
                 selectedAria.MoveTo(hit.point);
         }
-        // Sol tık bırakıldı → dur
+        // Sol tık bırakıldı
         if (mouse.leftButton.wasReleasedThisFrame)
             selectedAria.Stop();
 
-        // Sağ tık → düşmana taş at
+        // Sağ tık düşmana taş at
         if (mouse.rightButton.wasPressedThisFrame)
             TryAction();
     }
@@ -72,10 +72,9 @@ public class SelectionManager : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
         Vector3 myPos = selectedAria.transform.position;
 
-        // 1. Elinde taş varsa -> Sağ tıklanan yere dikkat dağıtmak için taş fırlat!
         if (selectedAria.HasStone)
         {
-            // Fare imlecinin zemindeki (Aria'nın Y yüksekliğindeki) tam karşılığını hesapla (ağaç dalı veya katman farkından etkilenmez)
+           
             Plane groundPlane = new Plane(Vector3.up, new Vector3(0f, myPos.y, 0f));
             if (groundPlane.Raycast(ray, out float enterDist))
             {
@@ -90,7 +89,6 @@ public class SelectionManager : MonoBehaviour
             }
         }
 
-        // 2. Bıçak modundaysa (F'ye basılmışsa) -> Düşmana bıçak saldırısı
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, enemyLayer))
         {
             if (selectedAria.KnifeMode)
@@ -103,7 +101,6 @@ public class SelectionManager : MonoBehaviour
             return;
         }
 
-        // Bıçak modunda boşa sağ tıklandıysa yakındaki düşmana yönel
         if (selectedAria.KnifeMode)
         {
             Transform best = null;

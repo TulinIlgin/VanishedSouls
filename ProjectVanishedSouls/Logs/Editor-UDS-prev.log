@@ -1,9 +1,40 @@
 Initialising UDS system complete:
   - System type: Client
-  - Resource namespace: 1348ec003a54302f0b34e7b4cc9558a5
+  - Resource namespace: 431e51b1b788ecbe477eaa08b78383a9
   - Shared memory size: 1073741824
   - Command buffer id: 1052576
   - Command buffer size: 8192
   - Hashmap size: 4194304
   - Service connected: false
+[Error] Wait handle timed out after 60000
+0x00007ffbb8b5a375 (Unity) Stacktrace::GetStacktrace
+0x00007ffbb5c48192 (Unity) print_call_stack
+0x00007ffbb5c3a4d8 (Unity) uds_internal_wait_handle_complete
+0x00007ffbb5c3de9a (Unity) uds_internal_remove_multiple
+0x00007ffbb5c667d8 (Unity) UDSInterface::RemoveMultiple
+0x00007ffbb5ce2609 (Unity) GarbageCollectArtifactsFromDB
+0x00007ffbb5ce22a6 (Unity) GarbageCollectArtifacts
+0x00007ffbb5dc2c2c (Unity) InitializeAssetDatabaseV2
+0x00007ffbb5e08c76 (Unity) AssetDatabase::InitializeAssetDatabase
+0x00007ffbb6ab58be (Unity) Application::InitializeProject
+0x00007ffbb6378c19 (Unity) UnityMain
+0x00007ff6ecb1260a (Unity) __scrt_common_main_seh
+0x00007ffcdf1cdda7 (KERNEL32) BaseThreadInitThunk
+0x00007ffce0899c5c (ntdll) RtlUserThreadStart
+
+[Error] Failed to wait for remove to complete, timeout reached - leaking the request memory, which the service may still read
+0x00007ffbb8b5a375 (Unity) Stacktrace::GetStacktrace
+0x00007ffbb5c48192 (Unity) print_call_stack
+0x00007ffbb5c3e12d (Unity) uds_internal_remove_multiple
+0x00007ffbb5c667d8 (Unity) UDSInterface::RemoveMultiple
+0x00007ffbb5ce2609 (Unity) GarbageCollectArtifactsFromDB
+0x00007ffbb5ce22a6 (Unity) GarbageCollectArtifacts
+0x00007ffbb5dc2c2c (Unity) InitializeAssetDatabaseV2
+0x00007ffbb5e08c76 (Unity) AssetDatabase::InitializeAssetDatabase
+0x00007ffbb6ab58be (Unity) Application::InitializeProject
+0x00007ffbb6378c19 (Unity) UnityMain
+0x00007ff6ecb1260a (Unity) __scrt_common_main_seh
+0x00007ffcdf1cdda7 (KERNEL32) BaseThreadInitThunk
+0x00007ffce0899c5c (ntdll) RtlUserThreadStart
+
 Shut down UDS service system complete
