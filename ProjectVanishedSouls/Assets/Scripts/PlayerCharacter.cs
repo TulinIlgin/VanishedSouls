@@ -92,6 +92,8 @@ public class PlayerCharacter : MonoBehaviour
         if (lumenCtrl == null)
             lumenCtrl = GetComponent<LumenController>();
 
+        if (GetComponent<PlayerStealth>() != null) return;
+
         bool inBush = Bush.IsPointInAnyBush(WorldPosition) || (lumenCtrl != null && lumenCtrl.IsHiddenWithAria());
         if (inBush != isHidden)
         {

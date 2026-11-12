@@ -17,17 +17,7 @@ public static class SceneAutoSetup
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode) return;
 
-        // FBX altındaki "Enemy" objesine yanlışlıkla eklenmiş NavMeshAgent ve EnemyAI varsa kaldır
-        foreach (var ai in Object.FindObjectsByType<EnemyAI>())
-        {
-            if (ai != null && ai.visualModel == null && ai.transform.parent != null && ai.gameObject.name == "Enemy")
-            {
-                var badAgent = ai.GetComponent<NavMeshAgent>();
-                Object.DestroyImmediate(ai);
-                if (badAgent != null) Object.DestroyImmediate(badAgent);
-            }
-        }
-
+        // Sahneyi ve NavMesh'i güncelle
         EnemyAI.RebuildSceneNavMesh();
 
         foreach (var surface in Object.FindObjectsByType<NavMeshSurface>())
