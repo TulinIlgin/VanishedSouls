@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\enemyanimationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyanimationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\lumencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lumencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\enes arda\\onedrive\\belgeler\\github\\vanishedsouls\\projectvanishedsouls\\assets\\scripts\\ariaanimationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ariaanimationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "LumenController.cs",
+              "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\LumenController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LumenController.cs",
+              "ToolTip": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\LumenController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LumenController.cs",
+              "ViewState": "AgIAAJUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T14:54:23.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AriaAnimationEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaAnimationEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AriaAnimationEvents.cs",
+              "ToolTip": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaAnimationEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AriaAnimationEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T14:36:55.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AdditionalLightsShadowCasterPass.cs",
               "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@ffe395a3a1d1\\Runtime\\Passes\\AdditionalLightsShadowCasterPass.cs",
@@ -43,38 +77,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EnemyAnimationEvents.cs",
               "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAnimationEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAnimationEvents.cs",
               "ToolTip": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAnimationEvents.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyAnimationEvents.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAACIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-08T21:33:02.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "EnemyAI.cs",
               "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
               "ToolTip": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAADgv6gAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAD8CAAAAAAAAAAAcwEgDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-08T21:20:58.473Z"
+              "WhenOpened": "2026-11-08T21:20:58.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AriaController.cs",
               "DocumentMoniker": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AriaController.cs",
               "ToolTip": "C:\\Users\\Enes Arda\\OneDrive\\Belgeler\\GitHub\\VanishedSouls\\ProjectVanishedSouls\\Assets\\Scripts\\AriaController.cs",
               "RelativeToolTip": "Assets\\Scripts\\AriaController.cs",
-              "ViewState": "AgIAAEUCAAAAAAAAAAAuwFcCAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALkCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-01T11:59:08.251Z",
               "EditorCaption": ""

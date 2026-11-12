@@ -3,7 +3,8 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-
+// Arkadaşının yaptığı UI tasarımına (Butonların OnClick eventlerine ve Panellere) bağlanacak Menü Yöneticisi kodu.
+// Kendi başına ekrana görsel çizmez; Inspector'dan atanan panelleri ve sahne geçişlerini yönetir.
 public class GameMenuManager : MonoBehaviour
 {
     public static GameMenuManager Instance { get; private set; }
@@ -23,6 +24,8 @@ public class GameMenuManager : MonoBehaviour
     [Header("Başlangıç Ayarı")]
     [Tooltip("mainMenuPanel atanmışsa oyun başlarken otomatik olarak Ana Menü açık başlar")]
     public bool startInMainMenu = true;
+
+    // "Yeniden Başlat / Tekrar Dene" denildiğinde sahne yüklenince menüyü tekrar açmadan doğrudan oyuna girmesi için
     static bool skipMainMenuOnReload = false;
 
     [Header("UI Eventleri (İsteğe Bağlı Inspector Bağlantıları)")]
@@ -35,6 +38,7 @@ public class GameMenuManager : MonoBehaviour
     public bool IsPaused { get; private set; }
     public bool IsGameEnded { get; private set; }
 
+    // Herhangi bir menü paneli açıkken oyun içi tıklamaları durdurmak için kullanılır
     public static bool IsMenuOpen
     {
         get
@@ -104,6 +108,10 @@ public class GameMenuManager : MonoBehaviour
                 PauseGame();
         }
     }
+
+    // ---------- BUTON OnClick() FONKSİYONLARI (UI TASARIMINDA BUTONLARA BAĞLANACAK) ----------
+
+    // "Oyuna Başla" / "Play" butonu için
     public void StartGame()
     {
         Time.timeScale = 1f;
@@ -113,6 +121,7 @@ public class GameMenuManager : MonoBehaviour
         if (mainMenuPanel != null)
             mainMenuPanel.SetActive(false);
 
+        // Eğer ayrı bir Menü sahnesindeysek oyun sahnesine geçiş yap
         if (!string.IsNullOrEmpty(gameSceneName) && SceneManager.GetActiveScene().name != gameSceneName)
         {
             SceneManager.LoadScene(gameSceneName);
@@ -121,8 +130,11 @@ public class GameMenuManager : MonoBehaviour
 
         onGameStarted?.Invoke();
     }
+
+    // "Oyuna Başla" için alternatif isim (UI butonunda kolay bulunsun diye)
     public void PlayGame() => StartGame();
 
+    // "Duraklat" / "Pause" butonu veya ESC tuşu için
     public void PauseGame()
     {
         if (IsGameEnded) return;
@@ -131,6 +143,8 @@ public class GameMenuManager : MonoBehaviour
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
         onGamePaused?.Invoke();
     }
+
+    // "Devam Et" / "Resume" butonu için
     public void ResumeGame()
     {
         IsPaused = false;
@@ -139,6 +153,7 @@ public class GameMenuManager : MonoBehaviour
         onGameResumed?.Invoke();
     }
 
+    // "Tekrar Dene" / "Yeniden Başlat" / "Restart" butonu için
     public void RestartGame()
     {
         Time.timeScale = 1f;
@@ -147,6 +162,8 @@ public class GameMenuManager : MonoBehaviour
         skipMainMenuOnReload = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    // "Ana Menüye Dön" / "Main Menu" butonu için
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
@@ -187,7 +204,7 @@ public class GameMenuManager : MonoBehaviour
 #endif
     }
 
-
+    // ---------- OYUN İÇİ TETİKLEYİCİLER (BİTİŞ ÇİZGİSİ VE YAKALANMA) ----------
 
     public static void ShowVictory(string message = "Bitiş çizgisine ulaştın!")
     {
