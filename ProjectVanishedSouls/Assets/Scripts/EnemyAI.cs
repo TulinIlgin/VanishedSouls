@@ -248,6 +248,17 @@ public class EnemyAI : Enemy
         // 6. Zemindeki üçgen görüş alanını kur
         if (drawConeOnGround)
             SetupVisionConeRenderer();
+
+        // 7. Savaş Sisi (Fog of War) görünürlük yönetimi: Sis altındayken gizle ve hedeflemeyi engelle
+        var fogVis = GetComponent<FogVisibility>();
+        if (fogVis == null)
+        {
+            fogVis = gameObject.AddComponent<FogVisibility>();
+        }
+        else
+        {
+            fogVis.CacheComponents();
+        }
     }
 
     public void BindVisualParts()

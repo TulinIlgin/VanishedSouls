@@ -93,6 +93,12 @@ public class SelectionManager : MonoBehaviour
         // 2. Bıçak modundaysa (F'ye basılmışsa) -> Düşmana bıçak saldırısı
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, enemyLayer))
         {
+            // Savaş sisi kontrolü: Görüş alanı dışındaki düşman hedef alınamaz!
+            if (FogOfWar.Instance != null && !FogOfWar.Instance.IsPositionInVision(hit.transform.position))
+            {
+                return;
+            }
+
             if (selectedAria.KnifeMode)
             {
                 selectedAria.KnifeAttackAt(hit.transform);
@@ -111,6 +117,10 @@ public class SelectionManager : MonoBehaviour
             float searchRange = selectedAria.knifeRange + 3f;
             foreach (var c in Physics.OverlapSphere(myPos, searchRange, enemyLayer))
             {
+                // Savaş sisi kontrolü: Sis altındaki düşman otomatik seçilemez!
+                if (FogOfWar.Instance != null && !FogOfWar.Instance.IsPositionInVision(c.transform.position))
+                    continue;
+
                 float d = Vector3.Distance(myPos, c.transform.position);
                 if (d < bestDist) { bestDist = d; best = c.transform; }
             }
