@@ -1,29 +1,31 @@
+disk I/O error
+disk I/O error
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.6/staging' branch; Version is '6000.6.7f1 (b22767f04f04) revision 11675495'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda" at "2026-11-12T15:18:49.6788054Z"
-OS: 'Windows 11  (10.0.26200) Professional' Language: 'tr' Physical Memory: 31764 MB
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'tr' Physical Memory: 32499 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-12T15:18:49Z
+Date: 2026-11-12T20:04:51Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc" at "2026-11-12T20:04:51.1449825Z"
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe
+D:\unity1\ınstalls\6000.6.7f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorkerHW1
 -projectPath
-C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
+C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
 -logFile
 Logs/AssetImportWorkerHW1.log
 -srvPort
-58056
+60316
 -parentPid
-6672
+25184
 -analyticsCloudUserId
-18966888549583
+18967893274657
 -analyticsCloudProjectId
 9529805c-4b13-4c86-9d9a-d9edb6f75c23
 -analyticsLocalProjectId
@@ -31,14 +33,14 @@ f22794d068e11a94daf8e7b064b181e3
 -editorAnalyticsEnabled
 1
 -cbmEditorLicense
-39ca964ad7071d2b4da0e82504b63986f9461596
+c0841c19aa84d7caf3bd0527fe21e275dbf83c44
 -cbmMachineId
-owOiYBJUSDZ9rd9ZLrP0/5NtWlo=
+oGEfRbwbEU9RurTXCj3z8AdOdqo=
 -licensingIpc
-LicenseClient-Enes Arda
+LicenseClient-gnc
 -noDiagnosticSwitchPersistentStore
 -job-worker-count
-7
+9
 -background-job-worker-count
 8
 -asset-garbage-collectors
@@ -46,8 +48,8 @@ LicenseClient-Enes Arda
 -force-d3d12
 -name
 AssetImport
-Successfully changed project path to: C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
-C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
+Successfully changed project path to: C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
+C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
@@ -85,27 +87,28 @@ C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [42808]  Target information:
+Player connection [28280]  Target information:
 
-Player connection [42808]  * "[IP] 192.168.1.103 [Port] 0 [Flags] 2 [Guid] 2303642631 [EditorId] 2303642631 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MTVPCQS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [28280]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1010537696 [EditorId] 1010537696 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42808] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [42808] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 7
+Player connection [28280]  * "[IP] 10.67.214.249 [Port] 0 [Flags] 2 [Guid] 1010537696 [EditorId] 1010537696 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2CT6FMH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [28280] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [28280] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
 Library Redirect Path: Library/
 Initialising UDS system complete:
   - System type: Client
-  - Resource namespace: 1348ec003a54302f0b34e7b4cc9558a5
+  - Resource namespace: 431e51b1b788ecbe477eaa08b78383a9
   - Shared memory size: 1073741824
   - Command buffer id: 1052576
   - Command buffer size: 8192
   - Hashmap size: 4194304
   - Service connected: true
   - Service working directory: Library/DataStore/
-Refreshing native plugins compatible for Editor in 12.75 ms, found 3 plugins.
 [Physics::Module] Selected backend (deferred post-plugins).
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -114,54 +117,46 @@ Refreshing native plugins compatible for Editor in 12.75 ms, found 3 plugins.
 [Physics::Module] Threading Mode: Multi-Threaded
 Initialize engine version: 6000.6.7f1 (b22767f04f04)
 [EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=262144, entitiesPerBlock=1024, blocksPerSlotPage=0, slots reserved=4294967296 bytes
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Enes Arda/OneDrive/Belgeler/GitHub/VanishedSouls/ProjectVanishedSouls/Assets
+[Subsystems] Discovering subsystems at path D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/githup/VanishedSouls/VanishedSouls/ProjectVanishedSouls/Assets
 Forcing GfxDevice: Direct3D 12
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 d3d12: failed to query info queue interface (0x80004002).
 Direct3D:
     Version:         Direct3D 12 [level 12.2]
-    Renderer:        NVIDIA GeForce RTX 5070 Laptop GPU (ID=0x2d18)
+    Renderer:        NVIDIA GeForce RTX 4060 Laptop GPU (ID=0x28a0)
     Vendor:          NVIDIA
-    VRAM:            7891 MB
-    App VRAM Budget: 7123 MB
-    Driver:          32.0.15.9282
+    VRAM:            7956 MB
+    App VRAM Budget: 7188 MB
+    Driver:          32.0.16.1742
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
-Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
+Mono path[0] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Managed'
+Mono path[1] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/unity1/ınstalls/6000.6.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56080
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.3'.
-[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-Enes Arda"
-[Licensing::IpcConnector] LicenseClient-Enes Arda channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda-6000.6.7" at "2026-11-12T15:18:51.1005424Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 34132, path: "C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-gnc"
+[Licensing::IpcConnector] LicenseClient-gnc channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7" at "2026-11-12T20:04:51.9885314Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 25504, path: "D:/unity1/ınstalls/6000.6.7f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              1b4c3759b46c4bfb91dbdc2e90597881
-  Correlation Id:          ffa55709726041693ad6f85996aa4563
-  External correlation Id: 3445778045421829
-  Machine Id:              owOiYBJUSDZ9rd9ZLrP0/5NtWlo=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Enes Arda-6000.6.7" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Enes Arda-6000.6.7-notifications" at "2026-11-12T15:18:51.1143875Z"
-[Licensing::Module] Licensing Background thread has ended after 1.44s
+  Session Id:              dc35ce14dba6453d8fd795814bb792fa
+  Correlation Id:          ae7beb33a2b570291b0321e7028e9c90
+  External correlation Id: 5903942319781511122
+  Machine Id:              oGEfRbwbEU9RurTXCj3z8AdOdqo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-gnc-6000.6.7" (connect: 0.00s, validation: 0.00s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-gnc-6000.6.7-notifications" at "2026-11-12T20:04:51.9942412Z"
+[Licensing::Module] Licensing Background thread has ended after 0.85s
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: 18966888549583-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.7f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.008968 seconds.
-Native extension for Android target not found
+Register platform support module: D:/unity1/ınstalls/6000.6.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000880 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -169,85 +164,363 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.902 seconds
-Domain Reload Profiling: 1863ms
-	BeginReloadAssembly (231ms)
-	RebuildCommonClasses (10ms)
-	RebuildNativeTypeToScriptingClass (29ms)
-	initialDomainReloadingComplete (131ms)
-	LoadAllAssembliesAndSetupDomain (557ms)
-		LoadAssemblies (227ms)
-		TypeCache.Refresh (367ms)
-			TypeCache.ScanAssembly (343ms)
+- Finished resetting the current domain, in  0.410 seconds
+Domain Reload Profiling: 849ms
+	BeginReloadAssembly (100ms)
+	RebuildCommonClasses (4ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (275ms)
+		LoadAssemblies (99ms)
+		TypeCache.Refresh (170ms)
+			TypeCache.ScanAssembly (158ms)
 		AnalyzeDomain (1ms)
-	FinalizeReload (904ms)
+	FinalizeReload (412ms)
 		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			BeforeProcessingInitializeOnLoad (144ms)
-			ProcessInitializeOnLoadAttributes (181ms)
-			ProcessInitializeOnLoadMethodAttributes (431ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (159ms)
 Initializing Unity extensions:
 [Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967893274657-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 2.64 ms, found 3 plugins.
-Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 4.56 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 3.64 ms, found 3 plugins.
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.347 seconds
-Domain Reload Profiling: 3022ms
-	BeginReloadAssembly (408ms)
-		DisableScriptedObjects (18ms)
-		CreateAndSetChildDomain (62ms)
-	RebuildCommonClasses (20ms)
-	RebuildNativeTypeToScriptingClass (42ms)
-	initialDomainReloadingComplete (107ms)
-	LoadAllAssembliesAndSetupDomain (1097ms)
-		LoadAssemblies (616ms)
-		TypeCache.Refresh (297ms)
-			TypeCache.ScanAssembly (270ms)
-		AnalyzeDomain (113ms)
-			BuildScriptInfoCaches (106ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (1349ms)
+- Finished resetting the current domain, in  0.914 seconds
+Domain Reload Profiling: 1785ms
+	BeginReloadAssembly (209ms)
+		DisableScriptedObjects (10ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (7ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (598ms)
+		LoadAssemblies (296ms)
+		TypeCache.Refresh (111ms)
+			TypeCache.ScanAssembly (98ms)
+		AnalyzeDomain (41ms)
+			BuildScriptInfoCaches (38ms)
+	FinalizeReload (915ms)
 		SetupLoadedEditorAssemblies (0ms)
 			LogAssemblyErrors (4ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			BeforeProcessingInitializeOnLoad (194ms)
-			ProcessInitializeOnLoadAttributes (484ms)
-			ProcessInitializeOnLoadMethodAttributes (140ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (3ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (133ms)
+			ProcessInitializeOnLoadAttributes (306ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 AcceleratorClientConnectionCallback - disconnected - :0
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 2.03 ms, found 3 plugins.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4664 unused Assets / (6.3 MB). Loaded Objects now: 5594.
-Memory consumption went from 311.2 MB to 304.9 MB.
-Total: 13.760800 ms (FindLiveObjects: 0.877000 ms CreateObjectMapping: 0.212900 ms MarkObjects: 9.764200 ms  DeleteObjects: 2.680800 ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4701 unused Assets / (10.8 MB). Loaded Objects now: 5526.
+Memory consumption went from 305.2 MB to 294.4 MB.
+Total: 8.154300 ms (FindLiveObjects: 0.975100 ms CreateObjectMapping: 0.326800 ms MarkObjects: 3.942200 ms  DeleteObjects: 2.705100 ms)
 
-Curl error 23: Failure writing output to destination, passed 293 returned 0
 ========================================================================
 Received Prepare
 AcceleratorClientConnectionCallback - disconnected - :0
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (3.0 MB). Loaded Objects now: 5594.
-Memory consumption went from 306.4 MB to 303.4 MB.
-Total: 8.571800 ms (FindLiveObjects: 0.732700 ms CreateObjectMapping: 0.164400 ms MarkObjects: 6.686100 ms  DeleteObjects: 0.800300 ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967893274657-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.299 seconds
+Domain Reload Profiling: 2740ms
+	BeginReloadAssembly (394ms)
+		DisableScriptedObjects (18ms)
+		CreateAndSetChildDomain (82ms)
+	RebuildCommonClasses (19ms)
+	RebuildNativeTypeToScriptingClass (34ms)
+	initialDomainReloadingComplete (97ms)
+	LoadAllAssembliesAndSetupDomain (896ms)
+		LoadAssemblies (555ms)
+		TypeCache.Refresh (21ms)
+		AnalyzeDomain (253ms)
+			BuildScriptInfoCaches (246ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1300ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (5ms)
+			BeforeProcessingInitializeOnLoad (187ms)
+			ProcessInitializeOnLoadAttributes (413ms)
+			ProcessInitializeOnLoadMethodAttributes (137ms)
+			AfterProcessingInitializeOnLoad (3ms)
+		AwakeInstancesAfterBackupRestoration (32ms)
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4700 unused Assets / (7.7 MB). Loaded Objects now: 5577.
+Memory consumption went from 318.6 MB to 310.9 MB.
+Total: 15.236300 ms (FindLiveObjects: 1.218600 ms CreateObjectMapping: 0.357900 ms MarkObjects: 9.429900 ms  DeleteObjects: 3.886200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
-Editor requested this worker to shutdown with reason: Editor is closing down
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 2.64 ms, found 3 plugins.
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 61 unused Assets / (5.5 MB). Loaded Objects now: 5577.
+Memory consumption went from 316.9 MB to 311.4 MB.
+Total: 18.915300 ms (FindLiveObjects: 0.834100 ms CreateObjectMapping: 0.467600 ms MarkObjects: 13.851800 ms  DeleteObjects: 3.475600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-H5Y8-4ZTC-6VWD-BPQB-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 18967893274657-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.130 seconds
+Domain Reload Profiling: 2510ms
+	BeginReloadAssembly (413ms)
+		DisableScriptedObjects (18ms)
+		CreateAndSetChildDomain (90ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (30ms)
+	initialDomainReloadingComplete (87ms)
+	LoadAllAssembliesAndSetupDomain (832ms)
+		LoadAssemblies (525ms)
+		TypeCache.Refresh (20ms)
+		AnalyzeDomain (239ms)
+			BuildScriptInfoCaches (231ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1132ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (4ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (176ms)
+			ProcessInitializeOnLoadAttributes (395ms)
+			ProcessInitializeOnLoadMethodAttributes (131ms)
+			AfterProcessingInitializeOnLoad (3ms)
+		AwakeInstancesAfterBackupRestoration (57ms)
+Refreshing native plugins compatible for Editor in 2.32 ms, found 3 plugins.
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4701 unused Assets / (7.7 MB). Loaded Objects now: 5581.
+Memory consumption went from 321.9 MB to 314.2 MB.
+Total: 14.648700 ms (FindLiveObjects: 0.874600 ms CreateObjectMapping: 0.284800 ms MarkObjects: 9.188900 ms  DeleteObjects: 3.991000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 2.38 ms, found 3 plugins.
+Unloading 61 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 61 unused Assets / (5.5 MB). Loaded Objects now: 5581.
+Memory consumption went from 319.9 MB to 314.4 MB.
+Total: 13.444900 ms (FindLiveObjects: 0.624300 ms CreateObjectMapping: 0.328100 ms MarkObjects: 9.590300 ms  DeleteObjects: 2.580200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.1181609Z
+  Time since last request: 34744.44252479999705 seconds.
+  importAddress: GUID: 7b9fe2226a5417147ba199ff20d61eb6 - Path: Assets/Vanished Souls Audio/Ambience/ortamhayaletfisilti.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 7b9fe2226a5417147ba199ff20d61eb6 - Path: Assets/Vanished Souls Audio/Ambience/ortamhayaletfisilti.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 7b9fe2226a5417147ba199ff20d61eb6' -> (Import Result ID: '9e90b134216bc797a36579e9bf93dc1a') in 0.144 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=613f49c5fd8fd71df94f86c2b6563f5f DependenciesID=97fd56d94c402950f1122d324404d078 StaticDependenciesID=b809a142c2b254424c5c7bb13d35495c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.282152Z
+  Time since last request: 0.0010829 seconds.
+  importAddress: GUID: f74c9c8d49938c24396caa1e6be3c204 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/hareketothisirtisi.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: f74c9c8d49938c24396caa1e6be3c204 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/hareketothisirtisi.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: f74c9c8d49938c24396caa1e6be3c204' -> (Import Result ID: '3801569fbd9c67a855f5ff6721cb7fdb') in 0.011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d09e5326fcd7ba5727e1a3d18437c370 DependenciesID=b57f978a3fdf34b08014dd9d46f58669 StaticDependenciesID=1e1b92307c91fbfe9564e61707092416 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.3129743Z
+  Time since last request: 0.0008159 seconds.
+  importAddress: GUID: 467cb06fc5913a741839153a6c471e3b - Path: Assets/Vanished Souls Audio/Footsteps_Movement - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 467cb06fc5913a741839153a6c471e3b - Path: Assets/Vanished Souls Audio/Footsteps_Movement - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 467cb06fc5913a741839153a6c471e3b' -> (Import Result ID: 'd1e9199fae3f53fc46e686c609ae6f10') in 0.007 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3b3b17aea81eb64f1c22080fa3a938ae DependenciesID=f24fa3139003c110f373621d1d4c2fc1 StaticDependenciesID=b999e33cfa606aa23b379816c023c03c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.3411597Z
+  Time since last request: 0.0005918 seconds.
+  importAddress: GUID: 4affd21931791e24d8c3c7a88506f7a5 - Path: Assets/Vanished Souls Audio/Mechanics - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 4affd21931791e24d8c3c7a88506f7a5 - Path: Assets/Vanished Souls Audio/Mechanics - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 4affd21931791e24d8c3c7a88506f7a5' -> (Import Result ID: 'fa170777252f4541115350a01ce1d6d1') in 0.003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a5f15df970a2592045cf9040440c99f8 DependenciesID=3ea6a4a94e4fbdc1a99d0ddb6d9db313 StaticDependenciesID=8ef366af4a74de24258c6c30027d186a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.3614409Z
+  Time since last request: 0.000713 seconds.
+  importAddress: GUID: 1efd3b736e141f6429eed2db06c4f1e2 - Path: Assets/Vanished Souls Audio/Music - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 1efd3b736e141f6429eed2db06c4f1e2 - Path: Assets/Vanished Souls Audio/Music - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 1efd3b736e141f6429eed2db06c4f1e2' -> (Import Result ID: '96c6a8cd0e25efe02a1e7d83dd4f40f8') in 0.003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=324292df053197c77c72f3933f449b63 DependenciesID=eb2f8e7614e49fa7561781e0d7ccea66 StaticDependenciesID=e86914edd9174f9860fc1190b8ee5fb4 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.3814525Z
+  Time since last request: 0.000398 seconds.
+  importAddress: GUID: 648b0d8c74133994c9792fb4ca57d586 - Path: Assets/Vanished Souls Audio/Feedback/geribildirimfarkedildin.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 648b0d8c74133994c9792fb4ca57d586 - Path: Assets/Vanished Souls Audio/Feedback/geribildirimfarkedildin.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 648b0d8c74133994c9792fb4ca57d586' -> (Import Result ID: '5e301581667f8a721ef7648ba6710bbe') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f60e510d72e98f7cb23e65a0d1e51682 DependenciesID=7d94e7fed2da85d1bac06145cc69bfba StaticDependenciesID=8925acbede88ad3c2e4aa5020aba33f5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.404468Z
+  Time since last request: 0.0006374 seconds.
+  importAddress: GUID: a66e59d23e247ca49a3479622b1dd5e1 - Path: Assets/Vanished Souls Audio/Ambience/ortammezarlikruzgar.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a66e59d23e247ca49a3479622b1dd5e1 - Path: Assets/Vanished Souls Audio/Ambience/ortammezarlikruzgar.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a66e59d23e247ca49a3479622b1dd5e1' -> (Import Result ID: '3fb69513655785794849d394132205e2') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=19f3770eac17b1827ade7c54f2a259b4 DependenciesID=b269ddd34e4c4ec1f386eadd6b82b9c9 StaticDependenciesID=60af31beb3ce55cb3c576fbe54eb64f5 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.4266946Z
+  Time since last request: 0.0007287 seconds.
+  importAddress: GUID: 557779c51be98d1438f744a3e4a90ccf - Path: Assets/Vanished Souls Audio/UI/arayuzmenukapama.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 557779c51be98d1438f744a3e4a90ccf - Path: Assets/Vanished Souls Audio/UI/arayuzmenukapama.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 557779c51be98d1438f744a3e4a90ccf' -> (Import Result ID: '6a90501a33d6e4da998b9772152adb25') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=81a31580f81a3b660fae84381e8f89bd DependenciesID=643d35fb2decb1bbb59520daad1631b2 StaticDependenciesID=8bc3686263d804d75207b8318dc3d1dd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.4481486Z
+  Time since last request: 0.0009248 seconds.
+  importAddress: GUID: 59b99db7931a1774783a94b2152ef998 - Path: Assets/Vanished Souls Audio/UI/arayuztiklama.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 59b99db7931a1774783a94b2152ef998 - Path: Assets/Vanished Souls Audio/UI/arayuztiklama.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 59b99db7931a1774783a94b2152ef998' -> (Import Result ID: '6fe4ceb37be884a12f4d237f4967b54c') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8812c23d29fbddeca002596268ffe0ed DependenciesID=5328c1d1a859ce17c312708a8b954c11 StaticDependenciesID=6813d9f690a42ca49a39786bfb4f6100 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.4692665Z
+  Time since last request: 0.0007887 seconds.
+  importAddress: GUID: a331368843c74b1479fffa85ff480078 - Path: Assets/Vanished Souls Audio/Feedback/geribildirimkayitnoktasi.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: a331368843c74b1479fffa85ff480078 - Path: Assets/Vanished Souls Audio/Feedback/geribildirimkayitnoktasi.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: a331368843c74b1479fffa85ff480078' -> (Import Result ID: '4c7e098627c52d0e29256495aed4644d') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8eed88311d6a3cfc8338891e2ab6a29c DependenciesID=28bd1a4f7fa5f53495201361140b451a StaticDependenciesID=98c4ecb47717fd24b1aebf645755fb6b 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.4916544Z
+  Time since last request: 0.000676 seconds.
+  importAddress: GUID: 5383af72752104443b85d875fc64e191 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/adimtoprakcakil.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 5383af72752104443b85d875fc64e191 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/adimtoprakcakil.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 5383af72752104443b85d875fc64e191' -> (Import Result ID: '8920a335ba8b8161db946c993d7aa15c') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5eb4f128a286255450e1d8b188c5b82c DependenciesID=b2e131023035c9026478b606d5350578 StaticDependenciesID=1a62d0a46a97d71ac05b26f2a773110a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.5164984Z
+  Time since last request: 0.0010617 seconds.
+  importAddress: GUID: 77c22b15da4ce584ca6edd30e7c02a04 - Path: Assets/Vanished Souls Audio/UI - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 77c22b15da4ce584ca6edd30e7c02a04 - Path: Assets/Vanished Souls Audio/UI - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 77c22b15da4ce584ca6edd30e7c02a04' -> (Import Result ID: '9862297fb2eab832d0a8bd8a7c73d83d') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=90d5f8f5d63518eda947e348b0c0ca0c DependenciesID=5a1d52300cc5a1a355aff0c9d0c0407a StaticDependenciesID=6cbcfb903b5f208403fd17f735d1b733 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.5386218Z
+  Time since last request: 0.0006583 seconds.
+  importAddress: GUID: 88669ee0eb6995d448f351ceeff993c8 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/adimgizliceegilme.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 88669ee0eb6995d448f351ceeff993c8 - Path: Assets/Vanished Souls Audio/Footsteps_Movement/adimgizliceegilme.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 88669ee0eb6995d448f351ceeff993c8' -> (Import Result ID: '44ada4cccc516359ee97ed3d8798e66b') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=520975f709b34a2077616183c965034a DependenciesID=e27cfc6cc183c4f542bbbdefac07f265 StaticDependenciesID=1b4dab45e3df5fe7573eac5ca73c99d0 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.5631789Z
+  Time since last request: 0.0012877 seconds.
+  importAddress: GUID: 588bd00f7b0e1e44995b7d393c5dcc97 - Path: Assets/Scripts/AriaFootstepAudio.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 588bd00f7b0e1e44995b7d393c5dcc97 - Path: Assets/Scripts/AriaFootstepAudio.cs - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 588bd00f7b0e1e44995b7d393c5dcc97' -> (Import Result ID: 'c7c143950b794dd5ebe14b7cd4ab222c') in 0.023 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b2dca2268a4d3b123e6f78608fad5dae DependenciesID=e51066fa34d33254659c9de97a927665 StaticDependenciesID=fa26a8552225e59c62359bea9ee7027a 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.6041787Z
+  Time since last request: 0.0006688 seconds.
+  importAddress: GUID: 252b17ed8f5cd4e4d86fa725ce824e0d - Path: Assets/Vanished Souls Audio/Feedback/geribildirimolum.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 252b17ed8f5cd4e4d86fa725ce824e0d - Path: Assets/Vanished Souls Audio/Feedback/geribildirimolum.mp3 - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 252b17ed8f5cd4e4d86fa725ce824e0d' -> (Import Result ID: 'cfbbc6ca722c7196a87a97e9e463a7f2') in 0.006 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=24ce4bfac9c890fb67e6158d968b662f DependenciesID=815f9e4138189c9c6273b2e66666dfda StaticDependenciesID=59246635785f2786613f73cf656b3eb9 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:32.6281002Z
+  Time since last request: 0.0007398 seconds.
+  importAddress: GUID: 7119385bef5535449b8d2c3069b2a0d4 - Path: Assets/Vanished Souls Audio/Ambience - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 7119385bef5535449b8d2c3069b2a0d4 - Path: Assets/Vanished Souls Audio/Ambience - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 7119385bef5535449b8d2c3069b2a0d4' -> (Import Result ID: 'eb282355539e40a673db2215a0f1e0f4') in 0.004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d5a35852aa3a7c3d7eff43482a652931 DependenciesID=30410468f885ded9cf66d1b58d9310d6 StaticDependenciesID=ea6b774747991782b4b3ae3bcccc7416 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:43.7428042Z
+  Time since last request: 11.0917989 seconds.
+  importAddress: GUID: 530e58130fbbfa5499fd6486d25604c5 - Path: Assets/Vanished Souls Audio/Mechanics/taş alma.mpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: 530e58130fbbfa5499fd6486d25604c5 - Path: Assets/Vanished Souls Audio/Mechanics/taş alma.mpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: 530e58130fbbfa5499fd6486d25604c5' -> (Import Result ID: '6d1ace39b2bc86298fa6e5db84be53bd') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8a93ee0ebbeedce74b8a5d36f11c4b5a DependenciesID=3006fecdf4e286c3967362e0df5dd07c StaticDependenciesID=fe99b4f51764b67519fcf3f9bfc6be5c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-12T20:46:43.8013135Z
+  Time since last request: 0.0230772 seconds.
+  importAddress: GUID: fa5d2835d2083a145bad718a1d9d7463 - Path: Assets/Vanished Souls Audio/Mechanics/bıçak saaplama.mpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B
+Importing 'GUID: fa5d2835d2083a145bad718a1d9d7463 - Path: Assets/Vanished Souls Audio/Mechanics/bıçak saaplama.mpeg - Importer: ScriptedImporter/UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B' with importer (ScriptedImporter : UnityEditor.QuickSearchModule:UnityEditor.Search:ASIAI0B)
+Imported 'GUID: fa5d2835d2083a145bad718a1d9d7463' -> (Import Result ID: '3fed2c368b6cfd3d75c946bb0df326c6') in 0.005 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2428ca8d735c9314c2e48dd01fdc82a9 DependenciesID=f89685babb1434c20abeca44146e72b4 StaticDependenciesID=868deef939caaaf546afc62bb8e98fbf 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AcceleratorClientConnectionCallback - disconnected - :0
 AssetImportWorker is now disconnected from the server
 Process exiting
