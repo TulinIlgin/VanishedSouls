@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -6,6 +7,8 @@ using UnityEngine;
 public class EnemyAnimationEvents : MonoBehaviour
 {
     EnemyAI enemyAI;
+    public List<AudioClip> Sounds;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -20,8 +23,14 @@ public class EnemyAnimationEvents : MonoBehaviour
         if (enemyAI == null) enemyAI = GetComponentInParent<EnemyAI>();
         if (enemyAI != null)
         {
+            audioSource.PlayOneShot(Sounds[1]);
             enemyAI.OnAttackHit();
         }
+    }
+
+    public void Detected()
+    {
+        audioSource.PlayOneShot(Sounds[0]);
     }
 
     /// <summary>
