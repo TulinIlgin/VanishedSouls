@@ -175,6 +175,23 @@ public class EnemyAI : Enemy
             if (aria != null && camFollow.target == null)
                 camFollow.target = aria.transform;
         }
+
+        // 6. Düşmanlara FogVisibility güvencesi
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (enemy.GetComponent<FogVisibility>() == null)
+                enemy.gameObject.AddComponent<FogVisibility>();
+        }
+
+        // 7. Lambalara FogRevealer güvencesi
+        foreach (var light in FindObjectsByType<Light>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (light.type != LightType.Directional && light.GetComponent<FogRevealer>() == null)
+            {
+                var rev = light.gameObject.AddComponent<FogRevealer>();
+                rev.Radius = light.range > 0f ? light.range : 8f;
+            }
+        }
     }
 
     public static void RebuildSceneNavMesh()

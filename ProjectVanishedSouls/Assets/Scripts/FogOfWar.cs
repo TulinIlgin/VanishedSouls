@@ -114,7 +114,17 @@ public class FogOfWar : MonoBehaviour
 
         if (fogPlaneMeshFilter == null)
         {
-            Debug.LogError("FogOfWar: FogPlane MeshFilter atanmamış!", this);
+            fogPlaneMeshFilter = GetComponent<MeshFilter>();
+            if (fogPlaneMeshFilter == null)
+            {
+                var plane = GameObject.Find("FogPlane");
+                if (plane != null) fogPlaneMeshFilter = plane.GetComponent<MeshFilter>();
+            }
+        }
+
+        if (fogPlaneMeshFilter == null || fogPlaneMeshFilter.sharedMesh == null)
+        {
+            Debug.LogError("FogOfWar: FogPlane MeshFilter veya Mesh atanmamış!", this);
             enabled = false;
             return;
         }
